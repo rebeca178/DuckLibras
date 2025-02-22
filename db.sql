@@ -13,3 +13,8 @@ CREATE TABLE Anotacoes (
 -- data_criacao e data_atualizacao: Adicionamos colunas para registrar automaticamente a data e hora de criação e atualização, ajudando a rastrear alterações no banco de dados.
 -- ENGINE=InnoDB: Utilizamos o mecanismo InnoDB, que oferece suporte a transações e integridade referencial.
 -- <3
+
+--boardSquare
+--FlashCards
+--Anotacoes 
+--Aulas 
