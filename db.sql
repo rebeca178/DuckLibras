@@ -3,8 +3,13 @@ CREATE DATABASE aluno;
 USE aluno;
 
 Create table aluno(
-    id INT(10) NOT NULL AUTO INCREMENT,
-    nome VARCHAR(55) NOT NULL,
+    id INT NOT NULL AUTO_INCREMENT,
+    username VARCHAR(100) NOT NULL,
+    email VARCHAR(320) NOT NULL, 
+    photo  BLOB,
+    senha VARCHAR(255) NOT NULL,
+    nivel int,
+    ponto int,
 
 );
 
