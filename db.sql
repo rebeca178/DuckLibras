@@ -1,5 +1,9 @@
---aluno:Dhermeson 
---boardSquare(BS):rebeca
---FlashCards:Guilherme
---Anotacoes:Ana Clara
---Aulas:Manu 
+CREATE DATABASE FLASCARD;
+USE FLASCARD;
+CREATE TABLE FLASCARD(
+     id INT NOT NULL AUTO_INCREMENT,
+     ponto INT,
+     quest VARCHAR(255) NOT NULL,
+     sinais BYNARY (1),
+     
+);
