@@ -27,6 +27,3 @@ nivel_id int(5) not null
 );
 
 
-create table 
-
-
