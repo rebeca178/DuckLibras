@@ -11,10 +11,9 @@ Create table aluno(
     nivel int,
     ponto int,
 
-FOREIGN KEY (id) REFERENCES boardSquare(id),
+FOREIGN KEY (id) REFERENCES BS(id),
 FOREIGN KEY (id) REFERENCES FLASHCARD(id),
 FOREIGN KEY (id) REFERENCES ANOTACOES(id),
-
 );
 
 --boardSquare
