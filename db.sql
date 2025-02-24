@@ -13,7 +13,7 @@ Create table aluno(
 
 FOREIGN KEY (id) REFERENCES BS(id),
 FOREIGN KEY (id) REFERENCES FLASHCARD(id),
-FOREIGN KEY (id) REFERENCES ANOTACOES(id),
+FOREIGN KEY (id) REFERENCES Anotacao(id),
 );
 
 --boardSquare
