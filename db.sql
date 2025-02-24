@@ -1,11 +1,10 @@
 --aluno:Dhermeson 
 --boardSquare(BS):rebeca
-CREATE DATABASE BS;
-USE BS;
-
 Create table BS(
     id INT(10) NOT NULL AUTO INCREMENT,
     STATUS BOOLEAN NOT NULL,
+    FOREIGN KEY (id) REFERENCES aulas(id),
+    FOREIGN KEY (id) REFERENCES FLASHCARD(id),
 
 FOREIGN KEY (id) REFERENCES id (id)
 );
