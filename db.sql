@@ -10,9 +10,11 @@ Create table aluno(
     senha VARCHAR(255) NOT NULL,
     nivel int,
     ponto int,
-    
+
 FOREIGN KEY (id) REFERENCES boardSquare(id),
 FOREIGN KEY (id) REFERENCES FLASHCARD(id),
+FOREIGN KEY (id) REFERENCES ANOTACOES(id),
+
 );
 
 --boardSquare
