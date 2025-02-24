@@ -1,9 +1,8 @@
-CREATE DATABASE FLASCARD;
-USE FLASCARD;
-CREATE TABLE FLASCARD(
+
+CREATE TABLE FLASHCARD(
      id INT NOT NULL AUTO_INCREMENT,
      ponto INT,
      quest VARCHAR(255) NOT NULL,
-     sinais BYNARY (1),
+     sinais string (255),
      
 );
