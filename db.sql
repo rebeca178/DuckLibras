@@ -83,9 +83,10 @@ CREATE TABLE Traducao_Libras (
 ) ENGINE=InnoDB;
 
 Create table BS(
-    id INT(10) NOT NULL AUTO INCREMENT,
+    id_BS INT(10) NOT NULL AUTO INCREMENT,
     STATUS BOOLEAN NOT NULL,
-    FOREIGN KEY (id) REFERENCES aulas(id),
+    id_usuario int(10) unique not null,
+    FOREIGN KEY (id_usuario) REFERENCES aulas(id_usuario),
     FOREIGN KEY (id) REFERENCES FLASHCARD(id),
 );
  
