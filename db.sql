@@ -1,5 +1,14 @@
 
 
+CREATE TABLE FLASHCARD(
+     id INT NOT NULL AUTO_INCREMENT,
+     ponto INT,
+     quest VARCHAR(255) NOT NULL,
+     sinais string (255),
+     
+);
+
+
 create table aulas
 (
 id_usuario int(10) unique not null,
@@ -38,5 +47,6 @@ Create table BS(
     FOREIGN KEY (id) REFERENCES FLASHCARD(id),
 );
  
+
 
 
