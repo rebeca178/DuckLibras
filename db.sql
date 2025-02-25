@@ -58,11 +58,6 @@ CREATE TABLE Anotacoes (
     data_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
  
---boardSquare(BS):rebeca
-
---FlashCards:Guilherme
---Anotacoes:Ana Clara
---Aulas:Manu 
 
 --Tradução
 CREATE TABLE Traducao_Libras (
@@ -74,7 +69,7 @@ CREATE TABLE Traducao_Libras (
     status BOOLEAN NOT NULL DEFAULT FALSE, 
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB;
+);
 
 Create table BS(
 
