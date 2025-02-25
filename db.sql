@@ -1,12 +1,13 @@
 create database DuckLibras
 DEFAULT CHARACTER SET utf8mb4
 DEFAULT COLLATE utf8mb4_general_ci;
+use DuckLibras;
 
 --aluno
 
 
 Create table aluno(
-    id INT NOT NULL AUTO_INCREMENT,
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     username VARCHAR(100) NOT NULL,
     email VARCHAR(320) NOT NULL, 
     photo  BLOB,
@@ -28,7 +29,7 @@ FOREIGN KEY (id_anotaccao) REFERENCES ANOTACOES(id_anotaccao),
 
 
 CREATE TABLE FLASHCARD(
-     id_flashcard INT NOT NULL AUTO_INCREMENT,
+     id_flashcard INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
      ponto INT,
      quest VARCHAR(255) NOT NULL,
      sinais string (255),
@@ -38,7 +39,7 @@ CREATE TABLE FLASHCARD(
 
 create table aulas
 (
-id_aulas int(10) unique not null,
+id_aulas int(10) PRIMARY KEY unique not null,
 sinal varchar(20),
 explicaçao text(255),
 id_videos int(4) not null,
@@ -47,15 +48,6 @@ resumo text(500),
 nivel_id int(5) not null,
 resultado number ,
 );
-
-
-
---id_usuario é a identificação do usuário.
---id_videos é a identificação dos vídeos nas aulas.
---id_nivel é a identificação dos squareboard e seus níveis.
---explicação é o texto que vai ter em cada atividade.
---resumo vai ter em todas em squaresboard e dicas.
---resultado é das atividades e provas para passar para o próximo nível.
 
 --Tabela Anotações 
 CREATE TABLE Anotacoes (
@@ -86,7 +78,7 @@ CREATE TABLE Traducao_Libras (
 
 Create table BS(
 
-    id_bs INT(10) NOT NULL AUTO_INCREMENT,
+    id_bs INT(10) PRIMARY KEY NOT NULL AUTO_INCREMENT,
     STATUS BOOLEAN NOT NULL,
     FOREIGN KEY (id_aulas) REFERENCES AULAS(id_aulas),
     FOREIGN KEY (id_flashcard) REFERENCES FLASHCARD(id_flashcard),
