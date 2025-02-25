@@ -1,3 +1,4 @@
+
 --Tabela Anotações 
 CREATE TABLE Anotacoes (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -6,8 +7,13 @@ CREATE TABLE Anotacoes (
     data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     data_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
+ 
+--boardSquare(BS):rebeca
+Create table BS(
+    id INT(10) NOT NULL AUTO INCREMENT,
+    STATUS BOOLEAN NOT NULL,
+    FOREIGN KEY (id) REFERENCES aulas(id),
+    FOREIGN KEY (id) REFERENCES FLASHCARD(id),
+);
+ 
 
---boardSquare
---FlashCards
---Anotacoes 
---Aulas 
