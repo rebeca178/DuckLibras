@@ -1,4 +1,5 @@
 
+
 create table aulas
 (
 id_usuario int(10) unique not null,
@@ -19,3 +20,23 @@ resultado number ,
 --explicação é o texto que vai ter em cada atividade.
 --resumo vai ter em todas em squaresboard e dicas.
 --resultado é das atividades e provas para passar para o próximo nível.
+
+--Tabela Anotações 
+CREATE TABLE Anotacoes (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    titulo VARCHAR(255) NOT NULL,
+    conteudo TEXT NOT NULL,
+    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    data_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+ 
+--boardSquare(BS):rebeca
+Create table BS(
+    id INT(10) NOT NULL AUTO INCREMENT,
+    STATUS BOOLEAN NOT NULL,
+    FOREIGN KEY (id) REFERENCES aulas(id),
+    FOREIGN KEY (id) REFERENCES FLASHCARD(id),
+);
+ 
+
+
