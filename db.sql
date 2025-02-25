@@ -5,8 +5,6 @@ Create table BS(
     STATUS BOOLEAN NOT NULL,
     FOREIGN KEY (id) REFERENCES aulas(id),
     FOREIGN KEY (id) REFERENCES FLASHCARD(id),
-
-FOREIGN KEY (id) REFERENCES id (id)
 );
 --FlashCards:Guilherme
 --Anotacoes:Ana Clara
