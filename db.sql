@@ -1,4 +1,13 @@
---aluno:Dhermeson 
+
+--Tabela Anotações 
+CREATE TABLE Anotacoes (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    titulo VARCHAR(255) NOT NULL,
+    conteudo TEXT NOT NULL,
+    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    data_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+ 
 --boardSquare(BS):rebeca
 Create table BS(
     id INT(10) NOT NULL AUTO INCREMENT,
@@ -6,6 +15,5 @@ Create table BS(
     FOREIGN KEY (id) REFERENCES aulas(id),
     FOREIGN KEY (id) REFERENCES FLASHCARD(id),
 );
---FlashCards:Guilherme
---Anotacoes:Ana Clara
---Aulas:Manu 
+ 
+
