@@ -1,6 +1,6 @@
+
 --aluno
-CREATE DATABASE aluno;
-USE aluno;
+
 
 Create table aluno(
     id INT NOT NULL AUTO_INCREMENT,
@@ -15,6 +15,8 @@ FOREIGN KEY (id) REFERENCES BS(id),
 FOREIGN KEY (id) REFERENCES FLASHCARD(id),
 FOREIGN KEY (id) REFERENCES Anotacao(id),
 );
+
+
 
 --boardSquare
 --FlashCards
