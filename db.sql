@@ -40,6 +40,23 @@ CREATE TABLE Anotacoes (
 );
  
 --boardSquare(BS):rebeca
+
+--FlashCards:Guilherme
+--Anotacoes:Ana Clara
+--Aulas:Manu 
+
+--Tradução
+CREATE TABLE Traducao_Libras (
+    id INT PRIMARY KEY AUTO_INCREMENT, 
+    palavra VARCHAR(255) NOT NULL, 
+    sinal VARCHAR(255) NOT NULL, 
+    imagem BLOB NULL, 
+    explicacao TEXT NOT NULL, 
+    status BOOLEAN NOT NULL DEFAULT FALSE, 
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+
 Create table BS(
     id INT(10) NOT NULL AUTO INCREMENT,
     STATUS BOOLEAN NOT NULL,
@@ -47,6 +64,7 @@ Create table BS(
     FOREIGN KEY (id) REFERENCES FLASHCARD(id),
 );
  
+
 
 
 
