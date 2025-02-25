@@ -12,9 +12,9 @@ Create table aluno(
     nivel int,
     ponto int,
 
-FOREIGN KEY (id) REFERENCES BS(id),
-FOREIGN KEY (id) REFERENCES FLASHCARD(id),
-FOREIGN KEY (id) REFERENCES Anotacao(id),
+FOREIGN KEY (id_bs) REFERENCES BS(id_bs),
+FOREIGN KEY (id_flascard) REFERENCES FLASHCARD(id_flascard),
+FOREIGN KEY (id_anotaccao) REFERENCES ANOTACOES(id_anotaccao),
 );
 
 
@@ -26,7 +26,7 @@ FOREIGN KEY (id) REFERENCES Anotacao(id),
 
 
 CREATE TABLE FLASHCARD(
-     id INT NOT NULL AUTO_INCREMENT,
+     id_flashcard INT NOT NULL AUTO_INCREMENT,
      ponto INT,
      quest VARCHAR(255) NOT NULL,
      sinais string (255),
@@ -36,7 +36,7 @@ CREATE TABLE FLASHCARD(
 
 create table aulas
 (
-id_usuario int(10) unique not null,
+id_aulas int(10) unique not null,
 sinal varchar(20),
 explicaçao text(255),
 id_videos int(4) not null,
@@ -57,7 +57,7 @@ resultado number ,
 
 --Tabela Anotações 
 CREATE TABLE Anotacoes (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id_anotacao INT PRIMARY KEY AUTO_INCREMENT,
     titulo VARCHAR(255) NOT NULL,
     conteudo TEXT NOT NULL,
     data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -83,10 +83,10 @@ CREATE TABLE Traducao_Libras (
 ) ENGINE=InnoDB;
 
 Create table BS(
-    id INT(10) NOT NULL AUTO INCREMENT,
+    id_bs INT(10) NOT NULL AUTO INCREMENT,
     STATUS BOOLEAN NOT NULL,
-    FOREIGN KEY (id) REFERENCES aulas(id),
-    FOREIGN KEY (id) REFERENCES FLASHCARD(id),
+    FOREIGN KEY (id_aulas) REFERENCES AULAS(id_aulas),
+    FOREIGN KEY (id_flashcard) REFERENCES FLASHCARD(id_flashcard),
 );
  
 
