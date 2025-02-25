@@ -1,4 +1,6 @@
-
+create database DuckLibras
+DEFAULT CHARACTER SET utf8mb4
+DEFAULT COLLATE utf8mb4_general_ci;
 
 --aluno
 
@@ -72,7 +74,7 @@ CREATE TABLE Anotacoes (
 
 --Tradução
 CREATE TABLE Traducao_Libras (
-    id INT PRIMARY KEY AUTO_INCREMENT, 
+    id_tradu INT PRIMARY KEY AUTO_INCREMENT, 
     palavra VARCHAR(255) NOT NULL, 
     sinal VARCHAR(255) NOT NULL, 
     imagem BLOB NULL, 
@@ -83,7 +85,8 @@ CREATE TABLE Traducao_Libras (
 ) ENGINE=InnoDB;
 
 Create table BS(
-    id_bs INT(10) NOT NULL AUTO INCREMENT,
+
+    id_bs INT(10) NOT NULL AUTO_INCREMENT,
     STATUS BOOLEAN NOT NULL,
     FOREIGN KEY (id_aulas) REFERENCES AULAS(id_aulas),
     FOREIGN KEY (id_flashcard) REFERENCES FLASHCARD(id_flashcard),
