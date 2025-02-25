@@ -17,7 +17,7 @@ Create table aluno(
 
 FOREIGN KEY (id_bs) REFERENCES BS(id_bs),
 FOREIGN KEY (id_flascard) REFERENCES FLASHCARD(id_flascard),
-FOREIGN KEY (id_anotaccao) REFERENCES ANOTACOES(id_anotaccao),
+FOREIGN KEY (id_anotaccao) REFERENCES ANOTACOES(id_anotaccao)
 );
 
 
@@ -32,7 +32,7 @@ CREATE TABLE FLASHCARD(
      id_flashcard INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
      ponto INT,
      quest VARCHAR(255) NOT NULL,
-     sinais string (255),
+     sinais string (255)
      
 );
 
@@ -46,7 +46,7 @@ id_videos int(4) not null,
 atividades  text(500),
 resumo text(500),
 nivel_id int(5) not null,
-resultado number ,
+resultado number 
 );
 
 --Tabela Anotações 
@@ -76,7 +76,7 @@ Create table BS(
     id_bs INT(10) PRIMARY KEY NOT NULL AUTO_INCREMENT,
     STATUS BOOLEAN NOT NULL,
     FOREIGN KEY (id_aulas) REFERENCES AULAS(id_aulas),
-    FOREIGN KEY (id_flashcard) REFERENCES FLASHCARD(id_flashcard),
+    FOREIGN KEY (id_flashcard) REFERENCES FLASHCARD(id_flashcard)
 );
  
 
