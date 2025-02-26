@@ -1,1 +1,1 @@
-insert into BS (id_bs,STATUS,id_aula,id_flashcard) VALUES  (DEFAULT,'1','1','2','3');
+
