@@ -32,21 +32,16 @@ CREATE TABLE Traducao_Libras (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
-create table aulas(
-    id_aula INT PRIMARY KEY AUTO_INCREMENT,
-    id_usuario int(10) unique not null,
-    idsinal varchar(20),
-    explicaçao text(255),
-    id_videos int(4) not null,
-    atividades  text(500),
-    resumo text(500),
-    nivel_id int(5) not null,
-    resultado int(10),
-    id_pergunta int,
-    id_quiz int,
-    pergunta varchar(255),
-     respostacorreta varchar(20)
+create table aulas
+(
+id_aulas int(10) PRIMARY KEY unique not null AUTO_INCREMENT,
+sinal varchar(20),
+explicaçao text(255),
+videos text(255),
+nivel  int(5) not null,
+status BOOLEAN
 );
+
 
 Create table BS(
 
