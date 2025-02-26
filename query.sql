@@ -1,4 +1,4 @@
---RF[01]Login
+--RF[01]cadastrar
 SELECT * FROM aluno a WHERE a.username = 'Francisco' and a.senha = MD5('123') and a.email='email@email.com' and photo= 'photo';
 
 
@@ -6,7 +6,7 @@ SELECT * FROM aluno a WHERE a.username = 'Francisco' and a.senha = MD5('123') an
 SELECT * FROM aluno a WHERE a.username = 'Francisco' and photo= 'photo';
 
 --RF[03]Recuperação de dados
-SELECT * FROM aluno a WHERE a.senha = MD5('123') and a.email='email@email.com';
+SELECT * FROM aluno a WHERE a.email='email@email.com';
 
 
 --RF[05]Entrar no Board square(casa de tabuleiro)
@@ -31,3 +31,6 @@ SELECT * FROM FLASHCARDS f WHERE f.pontos ='35';
 
 --[RF11] Timeline
 SELECT * FROM anotacoes;
+
+--[RF12]Logar 
+SELECT * FROM aluno a WHERE a.senha = MD5('123') and a.email='email@email.com';
