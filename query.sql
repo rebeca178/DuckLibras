@@ -1,12 +1,12 @@
 --RF[01]Login
-SELECT * FROM aluno a WHERE a.username = 'Francisco' and a.senha = MD5('123') and a.email=’email@email.com’ and photo= ‘photo’;
+SELECT * FROM aluno a WHERE a.username = 'Francisco' and a.senha = MD5('123') and a.email='email@email.com' and photo= 'photo';
 
 
 --RF[02]Alteração de login
-SELECT * FROM aluno a WHERE a.username = 'Francisco' and photo= ‘photo’;
+SELECT * FROM aluno a WHERE a.username = 'Francisco' and photo= 'photo';
 
 --RF[03]Recuperação de dados
-SELECT * FROM aluno a WHERE a.senha = MD5('123') and a.email=’email@email.com’’;
+SELECT * FROM aluno a WHERE a.senha = MD5('123') and a.email='email@email.com';
 
 
 --RF[05]Entrar no Board square(casa de tabuleiro)
@@ -21,13 +21,13 @@ SELECT * FROM FLASHCARDS f WHERE f.pontos ='35';
 
 --[RF08] “enviar” aula e atividade
 SELECT * FROM FLASHCARDS f WHERE f.status ='0';
-SELECT * FROM Aulas au WHERE a.status=’0’;
+SELECT * FROM Aulas au WHERE a.status='0';
 
 --[RF09] Ganho de nível
-SELECT * FROM FLASHCARDS f WHERE f.nivel =’99’;
+SELECT * FROM FLASHCARDS f WHERE f.nivel ='99';
 
 --[RF10] Flash Cards
-SELECT * FROM FLASHCARDS f WHERE f.pontos =’35’;
+SELECT * FROM FLASHCARDS f WHERE f.pontos ='35';
 
 --[RF11] Timeline
 SELECT * FROM anotacoes;
