@@ -1,1 +1,1 @@
-
+insert into chatbot (chat, pergunta, respostas) value (DEFAULT, 'O que é manual ?', 'Um manual é um documento que contém instruções detalhadas sobre como usar, operar, montar, instalar ou reparar um determinado produto, equipamento ou sistema.');

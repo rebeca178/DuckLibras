@@ -69,3 +69,9 @@ FOREIGN KEY (id_bs) REFERENCES BS(id_bs),
 FOREIGN KEY (id_flashcard) REFERENCES FLASHCARD(id_flashcard),
 FOREIGN KEY (id_anotacao) REFERENCES Anotacoes(id_anotacao)
 );
+
+create table chatbot(
+    chat int PRIMARY KEY not null AUTO_INCREMENT,
+    pergunta varchar(255) not null ,
+    respostas varchar(255) not null 
+);
