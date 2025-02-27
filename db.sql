@@ -47,6 +47,7 @@ Create table BS(
 
     id_bs INT(10) PRIMARY KEY NOT NULL AUTO_INCREMENT,
     STATUS BOOLEAN NOT NULL,
+    nivel  int(5) not null,
     id_aula int, 
     id_flashcard int,
     FOREIGN KEY (id_aula) REFERENCES aulas(id_aula),
