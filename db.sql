@@ -9,7 +9,7 @@ CREATE TABLE Traducao_Libras (
     id INT PRIMARY KEY AUTO_INCREMENT, 
     palavra VARCHAR(255) NOT NULL, 
     sinal VARCHAR(255) NOT NULL, 
-    imagem BLOB NULL, 
+    imagem VARCHAR(255) NULL, 
     explicacao TEXT NOT NULL, 
     status BOOLEAN NOT NULL DEFAULT FALSE, 
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
