@@ -18,6 +18,7 @@ CREATE TABLE Anotacoes (
     data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     data_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     sinais VARCHAR(255) ,
+    imagens VARCHAR(255) ,
     explicacao TEXT NOT NULL
 );
 
