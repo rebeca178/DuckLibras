@@ -1,1 +1,5 @@
-insert into chatbot (chat, pergunta, respostas) value (DEFAULT, 'O que é manual ?', 'Um manual é um documento que contém instruções detalhadas sobre como usar, operar, montar, instalar ou reparar um determinado produto, equipamento ou sistema.');
+INSERT INTO chatbot (chat, perguntas, respostas) VALUES (default, 'Quem sou eu ?', 'Você é um humano ');
+
+INSERT INTO loja (lol, pato, preco) VALUES (default, 'pato aranha', '100P');
+
+INSERT INTO compra (cop, quantidade, loja_id) VALUES (default, 1);
