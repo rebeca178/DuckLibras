@@ -6,7 +6,7 @@
 
 --tradução
 CREATE TABLE Traducao_Libras (
-    id INT PRIMARY KEY AUTO_INCREMENT, 
+    id_traducao INT PRIMARY KEY AUTO_INCREMENT, 
     palavra VARCHAR(255) NOT NULL, 
     sinal VARCHAR(255) NOT NULL, 
     imagem VARCHAR(255) NULL, 
