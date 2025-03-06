@@ -1,3 +1,8 @@
+create database DuckLibras
+DEFAULT CHARACTER SET utf8mb4
+DEFAULT COLLATE utf8mb4_general_ci;
+use DuckLibras;
+
 CREATE TABLE traducao (
     id_traducao INT PRIMARY KEY AUTO_INCREMENT,
     palavra VARCHAR(255) NOT NULL,
