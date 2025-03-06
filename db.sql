@@ -1,7 +1,9 @@
 create table chatbot(
     id_chat int primary key auto_increment,
     perguntas varchar(255),
-    respostas varchar(255)
+    respostas varchar(255),
+    amizade int,
+    foreign key (id_aluno) references aluno(id_aluno)
 );
 
 create table loja(
