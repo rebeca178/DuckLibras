@@ -16,3 +16,4 @@ FOREIGN KEY (id_traducao) REFERENCES traduçao(id_traducao) ON DELETE SET NULL,
 
 
 
+
