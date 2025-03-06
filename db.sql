@@ -6,7 +6,7 @@ create table chatbot(
 
 create table loja(
     id_lol int primary key auto_increment,
-    pato varchar(255),
+    produto varchar(255),
     preco varchar(255)
 );
 
