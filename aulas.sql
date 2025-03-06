@@ -1,0 +1,1 @@
+SELECT  id_traducao FROM traduçao t WHERE t.id=
