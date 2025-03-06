@@ -1,0 +1,50 @@
+-- RF[01] Cadastrar usuário
+SELECT id, username, email, photo FROM aluno 
+WHERE username = 'Francisco' 
+AND senha = MD5('123') 
+AND email = 'email@email.com' 
+AND photo = 'photo';
+
+-- RF[02] Alteração de login (consultar usuário pelo username e foto)
+SELECT id, username, photo FROM aluno 
+WHERE username = 'Francisco' 
+AND photo = 'photo';
+
+-- RF[03] Recuperação de dados pelo e-mail
+SELECT id, username, email FROM aluno 
+WHERE email = 'email@email.com';
+
+-- RF[05] Entrar no Board Square (casa de tabuleiro ativa)
+SELECT id, nome, status FROM BS 
+WHERE status = 1;
+
+-- RF[06] Finalização do Board Square (casa de tabuleiro inativa)
+SELECT id, nome, status FROM BS 
+WHERE status = 0;
+
+-- RF[07] Emissão de pontuação
+SELECT id, usuario_id, pontos FROM FLASHCARDS 
+WHERE pontos = 35;
+
+-- RF[08] Enviar aula e atividade
+SELECT id, titulo, status FROM FLASHCARDS 
+WHERE status = 0;
+
+SELECT id, titulo, status FROM Aulas 
+WHERE status = 0;
+
+-- RF[09] Ganho de nível
+SELECT id, usuario_id, nivel FROM FLASHCARDS 
+WHERE nivel = 99;
+
+-- RF[10] Consultar Flash Cards por pontuação
+SELECT id, usuario_id, pontos FROM FLASHCARDS 
+WHERE pontos = 35;
+
+-- RF[11] Timeline (consultar anotações)
+SELECT id, usuario_id, texto, imagem, data FROM anotacoes;
+
+-- RF[12] Logar usuário
+SELECT id, username, email FROM aluno 
+WHERE senha = MD5('123') 
+AND email = 'email@email.com';
