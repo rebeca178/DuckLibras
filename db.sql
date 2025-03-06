@@ -2,9 +2,19 @@ CREATE TABLE traducao (
     id_traducao INT PRIMARY KEY AUTO_INCREMENT,
     palavra VARCHAR(255) NOT NULL,
     sinal VARCHAR(255) NOT NULL,
-    imagem VARCHAR(255) NULL,
+    imagem VARCHAR(500),
     explicacao TEXT NOT NULL,
     status BOOLEAN NOT NULL DEFAULT FALSE,
+    usuario_id INT NOT NULL,
+    dicionario_id INT NOT NULL,
+    flashcard_id INT,
+    boardsquare_id INT,
+    anotacao_id INT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (usuario_id) REFERENCES aluno(id),
+    FOREIGN KEY (dicionario_id) REFERENCES dicionario(id),
+    FOREIGN KEY (flashcard_id) REFERENCES flashcards(id_flashcard),
+    FOREIGN KEY (boardsquare_id) REFERENCES boardsquare(id_bs),
+    FOREIGN KEY (anotacao_id) REFERENCES anotacao(id_anotacao)
 );
