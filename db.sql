@@ -7,7 +7,7 @@ CREATE TABLE FLASHCARD(
      id_flashcard INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
      ponto INT,
      quest VARCHAR(255) NOT NULL,
-     sinais VARCHAR(255) 
+     sinais VARCHAR(255)   
      
 );
 
