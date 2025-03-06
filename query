@@ -1,80 +1,61 @@
--- RF[01] Cadastrar novo aluno
-INSERT INTO aluno (username, senha, email, photo) 
-VALUES ('Francisco', MD5('123'), 'email@email.com', 'photo.jpg');
+-- [RF02] Logar
+SELECT id, username, email FROM aluno 
+WHERE senha = MD5('123') AND email = 'email@email.com';
 
--- RF[02] Alteração de login (mudar foto de perfil)
-UPDATE aluno 
-SET photo = 'nova_foto.jpg' 
-WHERE username = 'Francisco';
+-- [RF03] Verificar o Cadastro
+SELECT id, username, email FROM aluno 
+WHERE username = 'Francisco' AND senha = MD5('123') AND email = 'email@email.com';
 
--- RF[03] Recuperação de dados (buscar aluno pelo e-mail)
-SELECT * FROM aluno 
+-- [RF04] Recuperação de dados
+SELECT id, username, email FROM aluno 
 WHERE email = 'email@email.com';
 
--- RF[05] Entrar no Board Square (casa de tabuleiro ativa)
-SELECT * FROM BS 
-WHERE status = '1';
+-- [RF05] Teste de Flashcard
+SELECT id_flashcard, quest, resposta FROM flashcards 
+WHERE quest = 'a';
 
--- RF[06] Finalização do Board Square (casa de tabuleiro concluída)
-SELECT * FROM BS 
-WHERE status = '0';
+-- [RF06] Alteração de login
+SELECT id, username, photo FROM aluno 
+WHERE username = 'Francisco' AND photo = 'photo';
 
--- RF[07] Emissão de pontuação
-SELECT * FROM FLASHCARDS 
-WHERE pontos >= 35;
+-- [RF08] Limitação (nível no Board Square)
+SELECT id_bs, nivel, status FROM boardsquare 
+WHERE nivel = 1;
 
--- RF[08] Enviar aula e atividade
-SELECT * FROM FLASHCARDS 
-WHERE status = '0';
+-- [RF09] Entrar no Board Square (casa de tabuleiro)
+SELECT id_bs, status, nivel FROM boardsquare 
+WHERE status = 1;
 
-SELECT * FROM Aulas 
-WHERE status = '0';
+-- [RF10] Finalização do Board Square
+SELECT id_bs, status FROM boardsquare 
+WHERE status = 0;
 
--- RF[09] Ganho de nível
-SELECT * FROM FLASHCARDS 
-WHERE nivel >= 99;
+-- [RF13] Ganho de nível no Board Square
+SELECT id_bs, status, nivel FROM boardsquare 
+WHERE status = 0 AND nivel = 1;
 
--- RF[10] Flash Cards (consultar por pontuação)
-SELECT * FROM FLASHCARDS 
-WHERE pontos >= 35;
+-- [RF14] Flash Cards (pontuação)
+SELECT id_flashcard, pontos, nivel FROM flashcards 
+WHERE pontos = 35;
 
--- RF[11] Timeline (buscar todas as anotações do sistema)
-SELECT * FROM anotacao;
+-- [RF15] Emitir Aulas
+SELECT id_aula, titulo, descricao, status FROM aulas;
 
--- RF[12] Logar (autenticação de usuário)
-SELECT * FROM aluno 
-WHERE email = 'email@email.com' AND senha = MD5('123');
-
--- RF[13] Criar nova anotação
-INSERT INTO anotacao (usuario_id, titulo, texto, imagem) 
-VALUES (1, 'Nova Anotação', 'Conteúdo da anotação...', 'imagem.jpg');
-
--- RF[14] Atualizar uma anotação existente
-UPDATE anotacao 
-SET titulo = 'Anotação Editada', texto = 'Texto atualizado da anotação' 
-WHERE id_anotacao = 1;
-
--- RF[15] Deletar uma anotação
-DELETE FROM anotacao 
-WHERE id_anotacao = 2;
-
--- RF[16] Buscar todas as anotações de um usuário específico
-SELECT * FROM anotacao 
-WHERE usuario_id = 1;
-
--- RF[17] Criar uma nova tradução
-INSERT INTO traducao (usuario_id, texto_original, texto_traduzido, idioma_origem, idioma_destino) 
-VALUES (1, 'Olá, como vai?', 'Hello, how are you?', 'Português', 'Inglês');
-
--- RF[18] Buscar traduções de um usuário
-SELECT * FROM traducao 
-WHERE usuario_id = 1;
-
--- RF[19] Atualizar uma tradução
-UPDATE traducao 
-SET texto_traduzido = 'Hi, how are you?' 
+-- [RF17] Resposta de Tradução
+SELECT id_traducao, palavra, sinal, explicacao FROM traducao 
 WHERE id_traducao = 1;
 
--- RF[20] Deletar uma tradução
-DELETE FROM traducao 
-WHERE id_traducao = 2;
+-- [RF18] Listar Anotações
+SELECT id_anotacao, titulo, texto, imagem, data_criacao FROM anotacao;
+
+-- [RF19] Loja (produtos e preços)
+SELECT id_produto, produto, preco FROM loja 
+WHERE produto = 'a' AND preco = 1.00;
+
+-- [RF20] Grupos de Alunos
+SELECT id, username, grupo_id FROM aluno 
+WHERE id = 1;
+
+-- [RF21] Amizades no Chatbot
+SELECT id_chatbot, amizades FROM chatbot 
+WHERE amizades = 1;
