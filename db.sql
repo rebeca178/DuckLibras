@@ -14,3 +14,14 @@ CREATE TABLE Traducao_Libras (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB;
+
+--tabela da loja
+
+CREATE TABLE loja (
+    id_product INT PRIMARY KEY AUTO_INCREMENT,
+    titulo VARCHAR(100) NOT NULL,
+    descricao TEXT,
+    imagem VARCHAR (255) NOT NULL,
+    preco DECIMAL(10, 2) NOT NULL,
+    data_lancamento DATE
+);
