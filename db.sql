@@ -1,3 +1,31 @@
+
+Create table aluno(
+    id_Aluno INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    username VARCHAR(100) NOT NULL,
+    email VARCHAR(320) NOT NULL, 
+    photo  VARCHAR(320),
+    senha VARCHAR(255) NOT NULL,
+    nivel int,
+    ponto int,
+	id_bs int,
+    id_flashcard int,
+    id_anotacao int,
+    id_chat int,
+    id_loja int,
+    id_cop int,
+    id_traducao int,
+    id_aulas int,
+FOREIGN KEY (id_bs) REFERENCES BS(id_bs),
+FOREIGN KEY (id_flashcard) REFERENCES FLASHCARD(id_flashcard),
+FOREIGN KEY (id_anotacao) REFERENCES Anotacoes(id_anotacao),
+FOREIGN KEY (id_chat) REFERENCES ChatBOT(id_chat),
+FOREIGN KEY (id_loja) REFERENCES LOJA(id_loja),
+FOREIGN KEY (id_cop) REFERENCES COMPRAS(id_cop),
+FOREIGN KEY (id_traducao) REFERENCES TRADUÇÃO(id_traducao),
+FOREIGN KEY (id_aulas) REFERENCES Aulas(id_aulas),
+
+
+
 create database DuckLibras
 DEFAULT CHARACTER SET utf8mb4
 DEFAULT COLLATE utf8mb4_general_ci;
