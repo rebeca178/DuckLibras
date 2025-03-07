@@ -11,6 +11,7 @@ explicaçao text(255),
 videos text(255),
 nivel  int(255) not null,
 status BOOLEAN
+FOREIGN KEY (id_traduçao) REFERENCES traduçao(id_traduçao)
 );
 
 
