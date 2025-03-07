@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 --RF01
   SELECT *  from aluno  WHERE   a.username = 'Francisco' 
---RF02
-=======
 --[RF02] logar
 SELECT * FROM aluno a WHERE a.senha = MD5('123') and a.email='email@email.com';
 
