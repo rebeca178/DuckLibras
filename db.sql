@@ -15,5 +15,8 @@ create table loja(
 create table compra(
     id_cop int primary key auto_increment,
     quantidade int,
-    foreign key (loja_id) references loja(lol)
+    loja_id INT,
+    ALID
+    foreign key (loja_id) references loja(lol),
+    foreign key (ALID) references aluno(id_Aluno)
 ); 
