@@ -1,10 +1,3 @@
---aluno
---boardSquare
---FlashCards
---Anotacoes 
---Aulas 
-
---Dicionário
 CREATE TABLE Dicionario_Libras (
     id_dicionario SERIAL PRIMARY KEY,
     palavra VARCHAR(100) NOT NULL,
@@ -16,8 +9,6 @@ CREATE TABLE Dicionario_Libras (
     categoria VARCHAR(50),
     dificuldade ENUM('Fácil', 'Médio', 'Difícil') DEFAULT 'Fácil',
 );
-
---tabela de pontuação
 
 CREATE TABLE Pontuacao (
     id_pontuacao SERIAL PRIMARY KEY,
