@@ -33,10 +33,22 @@ Create table FLASHCARD (
 
 Create table aulas (
     ID_aula INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    explicacao VARCHAR(255) NOT NULL,
     Pid INT NOT NULL,
     DICIOid INT NOT NULL,
     FOREIGN KEY(Pid) REFERENCES pontuacao(id_pontucao),
     FOREIGN KEY (DICIOid) REFERENCES Dicionario_Libras (id_dicionario),
+);
+
+Create table BS(
+    id_bs INT(10) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    STATUS BOOLEAN NOT NULL,
+    id_aula int, 
+    id_flashcard int,
+    id_pontuacao int,
+    FOREIGN KEY (id_pontuacao) REFERENCES pontuacao(id_pontuacao),
+    FOREIGN KEY (id_aula) REFERENCES aulas(id_aula),
+    FOREIGN KEY (id_flashcard) REFERENCES FLASHCARD(id_flashcard)
 );
 
 Create table aluno(
@@ -56,6 +68,21 @@ FOREIGN KEY (id_cop) REFERENCES COMPRAS(id_cop),
 FOREIGN KEY (id_traducao) REFERENCES TRADUÇÃO(id_traducao),
 FOREIGN KEY (id_BS) REFERENCES BS(id_BS),
 );
+
+Create table FLASH_AL(
+    id_flashcard int,
+    id_aluno int,
+    FOREIGN KEY (id_aluno) REFERENCES aluno(id_aluno),
+    FOREIGN KEY (id_flashcard) REFERENCES FLASHCARD(id_flashcard)
+);
+
+Create table AU_AL(
+    id_flashcard int,
+    id_aluno int,
+    FOREIGN KEY (id_aula) REFERENCES aulas(id_aula),
+    FOREIGN KEY (id_aluno) REFERENCES aluno(id_aluno)
+);
+
   
 CREATE TABLE traducao (
     id_traducao INT PRIMARY KEY AUTO_INCREMENT,
@@ -116,31 +143,4 @@ create table Dicas (
     FOREIGN KEY (DICIOid) REFERENCES Dicionario_Libras (id_dicionario),
     FOREIGN KEY(CID) REFERENCES compras(id_cop),
     FOREIGN key (Fid) REFERENCES FLASHCARD(id_flashcard)
-);
-
-Create table FLASH_AL(
-    id_flashcard int,
-    id_aluno int,
-    FOREIGN KEY (id_aluno) REFERENCES aluno(id_aluno),
-    FOREIGN KEY (id_flashcard) REFERENCES FLASHCARD(id_flashcard)
-);
-
-Create table AU_AL(
-    id_flashcard int,
-    id_aluno int,
-    FOREIGN KEY (id_aula) REFERENCES aulas(id_aula),
-    FOREIGN KEY (id_aluno) REFERENCES aluno(id_aluno)
-);
-  
-Create table BS(
-    id_bs INT(10) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    STATUS BOOLEAN NOT NULL,
-    nivel int,
-    id_aula int, 
-    id_flashcard int,
-    id_pontuacao int,
-    CONSTRAINT fk_nivel FOREIGN KEY (nivel) REFERENCES pontuacao(nivel),
-    FOREIGN KEY (id_pontuacao) REFERENCES pontuacao(id_pontuacao),
-    FOREIGN KEY (id_aula) REFERENCES aulas(id_aula),
-    FOREIGN KEY (id_flashcard) REFERENCES FLASHCARD(id_flashcard)
 );
