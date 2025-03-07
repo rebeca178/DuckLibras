@@ -12,6 +12,7 @@ reate table FLASHCARD (
     FOREIGN KEY(Lid) REFERENCES pontuacao(id_pontucao),
     FOREIGN KEY (Lid) REFERENCES Dicionario_Libras (id_dicionario),
     FOREIGN key (Lid) REFERENCES traducao(id_traducao),
+    FOREIGN key (Lid) REFERENCES Dicas(id_dicas),
 
 );
 create table Dicas (
