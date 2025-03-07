@@ -34,6 +34,7 @@ CREATE TABLE Anotacoes (
     data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     data_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     sinais VARCHAR(255) ,
+    imagens VARCHAR(255) ,
     explicacao TEXT NOT NULL
 );
 
@@ -63,6 +64,7 @@ Create table BS(
 
     id_bs INT(10) PRIMARY KEY NOT NULL AUTO_INCREMENT,
     STATUS BOOLEAN NOT NULL,
+    nivel  int(5) not null,
     id_aula int, 
     id_flashcard int,
     FOREIGN KEY (id_aula) REFERENCES aulas(id_aula),
