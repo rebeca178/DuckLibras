@@ -71,7 +71,11 @@ CREATE TABLE anotacao (
     FOREIGN KEY (boardsquare_id) REFERENCES boardsquare(id_bs) ON DELETE SET NULL
   );
 
-
+create table loja(
+    id_lol int primary key auto_increment,
+    produto varchar(255),
+    preco varchar(255)
+);
 
 Create table aluno(
     id_Aluno INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -84,11 +88,22 @@ Create table aluno(
     id_cop int,
     id_traducao int,
     id_BS int,
+    id_pont int,
 FOREIGN KEY (id_anotacao) REFERENCES Anotacoes(id_anotacao),
 FOREIGN KEY (id_chat) REFERENCES ChatBOT(id_chat),
 FOREIGN KEY (id_cop) REFERENCES COMPRAS(id_cop),
 FOREIGN KEY (id_traducao) REFERENCES TRADUÇÃO(id_traducao),
 FOREIGN KEY (id_BS) REFERENCES BS(id_BS),
+FOREIGN KEY (id_pont) REFERENCES Pontuacao(id_pontuacao),
+);
+
+create table chat(
+    id_c int primary key auto_increment,
+    mensagem text not null,
+    remetente int,
+    destinatario int,
+    foreign key (remetente) references usuario(id_aluno),
+    foreign key (destinatario) references usuario(id_aluno)
 );
 
 Create table FLASH_AL(
@@ -105,9 +120,14 @@ Create table AU_AL(
     FOREIGN KEY (id_aluno) REFERENCES aluno(id_aluno)
 );
 
-  
-
-
+create table compra(
+    id_cop int primary key auto_increment,
+    quantidade int,
+    loja_id INT,
+    ALID INT,
+    foreign key (loja_id) references loja(lol),
+    foreign key (ALID) references aluno(id_Aluno)
+); 
   
 create table Dicas (
     ID_dicas int primary key not null AUTO_INCREMENT,
@@ -119,26 +139,3 @@ create table Dicas (
     FOREIGN KEY(CID) REFERENCES compras(id_cop),
     FOREIGN key (Fid) REFERENCES FLASHCARD(id_flashcard)
 );
-
-create table chatbot(
-    id_chat int primary key auto_increment,
-    perguntas varchar(255),
-    respostas varchar(255),
-    amizade int,
-    foreign key (id_aluno) references aluno(id_aluno)
-);
-
-create table loja(
-    id_lol int primary key auto_increment,
-    produto varchar(255),
-    preco varchar(255)
-);
-
-create table compra(
-    id_cop int primary key auto_increment,
-    quantidade int,
-    loja_id INT,
-    ALID INT,
-    foreign key (loja_id) references loja(lol),
-    foreign key (ALID) references aluno(id_Aluno)
-); 
