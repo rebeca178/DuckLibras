@@ -1,3 +1,7 @@
+create database DuckLibras
+DEFAULT CHARACTER SET utf8mb4
+DEFAULT COLLATE utf8mb4_general_ci;
+use DuckLibras;
 
 Create table aluno(
     id_Aluno INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -23,13 +27,7 @@ FOREIGN KEY (id_loja) REFERENCES LOJA(id_loja),
 FOREIGN KEY (id_cop) REFERENCES COMPRAS(id_cop),
 FOREIGN KEY (id_traducao) REFERENCES TRADUÇÃO(id_traducao),
 FOREIGN KEY (id_aulas) REFERENCES Aulas(id_aulas),
-
-
-
-create database DuckLibras
-DEFAULT CHARACTER SET utf8mb4
-DEFAULT COLLATE utf8mb4_general_ci;
-use DuckLibras;
+);
 
 CREATE TABLE Dicionario_Libras (
     id_dicionario SERIAL PRIMARY KEY,
