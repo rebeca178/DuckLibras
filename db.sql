@@ -6,8 +6,6 @@ use DuckLibras;
 reate table FLASHCARD (
     ID_FLASHCARD INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     quest VARCHAR(255) NOT NULL,
-    SINAL VARCHAR(255),
-    Img varchar(255),
     Pid INT NOT NULL,
     DICIOid INT NOT NULL,
     DICASid INT NOT NULL,
