@@ -1,1 +1,0 @@
-select name,email,status,role FROM  users u 
