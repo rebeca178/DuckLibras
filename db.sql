@@ -51,6 +51,18 @@ Create table BS(
     FOREIGN KEY (id_flashcard) REFERENCES FLASHCARD(id_flashcard)
 );
 
+CREATE TABLE traducao (
+    id_traducao INT PRIMARY KEY AUTO_INCREMENT,
+    palavra VARCHAR(255) NOT NULL,
+    dicionario_id INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (dicionario_id) REFERENCES dicionario(id) ON DELETE CASCADE
+);
+
+
+
+
 Create table aluno(
     id_Aluno INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     username VARCHAR(100) NOT NULL,
@@ -84,32 +96,7 @@ Create table AU_AL(
 );
 
   
-CREATE TABLE traducao (
-    id_traducao INT PRIMARY KEY AUTO_INCREMENT,
-    palavra VARCHAR(255) NOT NULL,
-    sinal VARCHAR(255) NOT NULL,
-    imagem VARCHAR(500),
-    explicacao TEXT NOT NULL,
-    status BOOLEAN NOT NULL DEFAULT FALSE,
-    usuario_id INT NOT NULL,
-    dicionario_id INT NOT NULL,
-    palavra_id INT,
-    video_id INT,
-    sinal_id INT,
-    flashcard_id INT,
-    boardsquare_id INT,
-    anotacao_id INT,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (usuario_id) REFERENCES aluno(id) ON DELETE CASCADE,
-    FOREIGN KEY (dicionario_id) REFERENCES dicionario(id) ON DELETE CASCADE,
-    FOREIGN KEY (palavra_id) REFERENCES palavras(id) ON DELETE SET NULL,
-    FOREIGN KEY (video_id) REFERENCES videos(id) ON DELETE SET NULL,
-    FOREIGN KEY (sinal_id) REFERENCES sinais(id) ON DELETE SET NULL,
-    FOREIGN KEY (flashcard_id) REFERENCES flashcards(id_flashcard) ON DELETE SET NULL,
-    FOREIGN KEY (boardsquare_id) REFERENCES boardsquare(id_bs) ON DELETE SET NULL,
-    FOREIGN KEY (anotacao_id) REFERENCES anotacao(id_anotacao) ON DELETE SET NULL
-);
+
 
 CREATE TABLE anotacao (
     id_anotacao INT PRIMARY KEY AUTO_INCREMENT,
@@ -144,3 +131,26 @@ create table Dicas (
     FOREIGN KEY(CID) REFERENCES compras(id_cop),
     FOREIGN key (Fid) REFERENCES FLASHCARD(id_flashcard)
 );
+
+create table chatbot(
+    id_chat int primary key auto_increment,
+    perguntas varchar(255),
+    respostas varchar(255),
+    amizade int,
+    foreign key (id_aluno) references aluno(id_aluno)
+);
+
+create table loja(
+    id_lol int primary key auto_increment,
+    produto varchar(255),
+    preco varchar(255)
+);
+
+create table compra(
+    id_cop int primary key auto_increment,
+    quantidade int,
+    loja_id INT,
+    ALID INT,
+    foreign key (loja_id) references loja(lol),
+    foreign key (ALID) references aluno(id_Aluno)
+); 
