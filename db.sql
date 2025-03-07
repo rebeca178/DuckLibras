@@ -1,5 +1,5 @@
 Create table aluno(
-    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    id_Aluno INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     username VARCHAR(100) NOT NULL,
     email VARCHAR(320) NOT NULL, 
     photo  VARCHAR(320),
