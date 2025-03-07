@@ -31,7 +31,13 @@ Create table FLASHCARD (
     FOREIGN KEY (DICIOid) REFERENCES Dicionario_Libras (id_dicionario),
 );
 
-
+Create table aulas (
+    ID_aula INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Pid INT NOT NULL,
+    DICIOid INT NOT NULL,
+    FOREIGN KEY(Pid) REFERENCES pontuacao(id_pontucao),
+    FOREIGN KEY (DICIOid) REFERENCES Dicionario_Libras (id_dicionario),
+);
 
 Create table aluno(
     id_Aluno INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
