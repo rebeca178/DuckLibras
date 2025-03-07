@@ -29,3 +29,25 @@ CREATE TABLE traducao (
     FOREIGN KEY (boardsquare_id) REFERENCES boardsquare(id_bs) ON DELETE SET NULL,
     FOREIGN KEY (anotacao_id) REFERENCES anotacao(id_anotacao) ON DELETE SET NULL
 );
+
+CREATE TABLE anotacao (
+    id_anotacao INT PRIMARY KEY AUTO_INCREMENT,
+    usuario_id INT NOT NULL,
+    titulo VARCHAR(255) NOT NULL,
+    texto TEXT NOT NULL,
+    imagem VARCHAR(500),
+    dicionario_id INT,
+    palavra_id INT,
+    video_id INT,
+    sinal_id INT,
+    flashcard_id INT,
+    boardsquare_id INT,
+    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (usuario_id) REFERENCES aluno(id) ON DELETE CASCADE,
+    FOREIGN KEY (dicionario_id) REFERENCES dicionario(id) ON DELETE SET NULL,
+    FOREIGN KEY (palavra_id) REFERENCES palavras(id) ON DELETE SET NULL,
+    FOREIGN KEY (video_id) REFERENCES videos(id) ON DELETE SET NULL,
+    FOREIGN KEY (sinal_id) REFERENCES sinais(id) ON DELETE SET NULL,
+    FOREIGN KEY (flashcard_id) REFERENCES flashcards(id_flashcard) ON DELETE SET NULL,
+    FOREIGN KEY (boardsquare_id) REFERENCES boardsquare(id_bs) ON DELETE SET NULL
+);
