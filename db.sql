@@ -124,12 +124,13 @@ Create table BS(
     FOREIGN KEY (id_flashcard) REFERENCES FLASHCARD(id_flashcard)
 );
 
-create table chatbot(
-    id_chat int primary key auto_increment,
-    perguntas varchar(255),
-    respostas varchar(255),
-    amizade int,
-    foreign key (id_aluno) references aluno(id_aluno)
+create table chat(
+    id_c int primary key auto_increment,
+    mensagem text not null,
+    remetente int,
+    destinatario int,
+    foreign key (remetente) references usuario(id_aluno),
+    foreign key (destinatario) references usuario(id_aluno)
 );
 
 create table loja(
