@@ -1,7 +1,30 @@
+
 create database DuckLibras
 DEFAULT CHARACTER SET utf8mb4
 DEFAULT COLLATE utf8mb4_general_ci;
 use DuckLibras;
+);
+
+CREATE TABLE Dicionario_Libras (
+    id_dicionario SERIAL PRIMARY KEY,
+    palavra VARCHAR(100) NOT NULL,
+    traducao VARCHAR(100) NOT NULL,
+    sinal VARCHAR(255) NOT NULL,
+    imagem VARCHAR(255) NOT NULL,
+    video_url VARCHAR(255) NOT NULL,
+    descricao TEXT,
+    categoria VARCHAR(50),
+    dificuldade ENUM('Fácil', 'Médio', 'Difícil') DEFAULT 'Fácil',
+  );
+  
+  CREATE TABLE Pontuacao (
+    id_pontuacao SERIAL PRIMARY KEY,
+    id_usuario INT NOT NULL,
+    pontos INT DEFAULT 0,
+    nivel INT DEFAULT 1,
+    ultima_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id)
+);
 
 Create table FLASHCARD (
     ID_FLASHCARD INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -12,6 +35,7 @@ Create table FLASHCARD (
     FOREIGN KEY(Pid) REFERENCES pontuacao(id_pontucao),
     FOREIGN KEY (DICIOid) REFERENCES Dicionario_Libras (id_dicionario),
     FOREIGN key (DICASid) REFERENCES Dicas(id_dicas),
+
 
 );
 create table Dicas (
@@ -24,4 +48,3 @@ create table Dicas (
     FOREIGN KEY(CID) REFERENCES compras(id_cop),
     FOREIGN key (Fid) REFERENCES FLASHCARD(id_flashcard)
 
-);
