@@ -11,3 +11,5 @@ insert into aulas (id,explicacao,Pid,DICIOid) VALUES  ('1','pipipopo','1','1');
 insert into BS (id,STATUS,auID,FlashID,PonId) VALUES  ('1','1','1','1','1');
 
 insert into traducao (id,palavra,dicioId) VALUES  ('1','coelho','1');
+
+insert into anotacao (id,titulo,texto,dicioId,BSid) VALUES  ('1','aula1','sinais','1','1');
