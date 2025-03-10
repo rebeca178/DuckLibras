@@ -48,10 +48,11 @@ create table Dicas (
 
 create table aulas (
 id_aulas int(10) PRIMARY KEY unique not null AUTO_INCREMENT,
-sinal varchar(500),
-explicaçao text(255),
-videos text(255),
+sinal varchar(500) not null,
+explicaçao text(255) not null,
+videos text(255) not null,
 nivel  int(255) not null,
-status BOOLEAN
+status BOOLEAN,
+id_traduçao int not null
 FOREIGN KEY (id_traduçao) REFERENCES traduçao(id_traduçao)
 );
