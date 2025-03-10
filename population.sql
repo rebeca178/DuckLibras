@@ -7,3 +7,5 @@ insert into pontuacao (id,pontos,nivel) VALUES  ('1','5','1');
 insert into FLASHCARD (id,quest,Pid,DICIOid) values ('1', 'WHAT?', '1','1');
 
 insert into aulas (id,explicacao,Pid,DICIOid) VALUES  ('1','pipipopo','1','1');
+
+insert into BS (id,STATUS,auID,FlashID,PonId) VALUES  ('1','1','1','1','1');
