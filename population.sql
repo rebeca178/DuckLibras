@@ -22,3 +22,5 @@ insert into aluno (id,username,email,photo,senha,Anoid,TradId,BSid,pontID) VALUE
 insert into chat(id,mensagem,remetente,destinatario) VALUES  ('1','oi','1','2');
 
 insert into flash_al(id_flashcard,id_aluno) values ('1','1');
+
+insert into au_al(id_aula,id_aluno) VALUES  ('1','1');
