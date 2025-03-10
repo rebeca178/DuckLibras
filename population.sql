@@ -17,5 +17,5 @@ insert into anotacao (id,titulo,texto,dicioId,BSid) VALUES  ('1','aula1','sinais
 insert into loja (id,produto,preco) VALUES  ('1','patobatman','2.50');
 
 insert into aluno (id,username,email,photo,senha,Anoid,TradId,BSid,pontID) VALUES  ('1','francisco','fran@gmail.com','franfoto',MD5 ('1'),'1','1','1','1');
-
+insert into aluno (id,username,email,photo,senha,Anoid,TradId,BSid,pontID) VALUES  ('2','joao','joao@gmail.com','joaofoto',MD5 ('2'),'1','1','1','1');
 
