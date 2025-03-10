@@ -26,3 +26,5 @@ insert into flash_al(id_flashcard,id_aluno) values ('1','1');
 insert into au_al(id_aula,id_aluno) VALUES  ('1','1');
 
 insert into compra (id,quantidade,loja_id,ALID ) values ('1', '1', '1','1');
+
+insert into dicas (ID,ajuda,Fid,Cid,DICIOid ) values ('1', 'help', '1','1','1');
