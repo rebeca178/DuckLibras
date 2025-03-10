@@ -15,3 +15,7 @@ insert into traducao (id,palavra,dicioId) VALUES  ('1','coelho','1');
 insert into anotacao (id,titulo,texto,dicioId,BSid) VALUES  ('1','aula1','sinais','1','1');
 
 insert into loja (id,produto,preco) VALUES  ('1','patobatman','2.50');
+
+insert into aluno (id,username,email,photo,senha,Anoid,TradId,BSid,pontID) VALUES  ('1','francisco','fran@gmail.com','franfoto',MD5 ('1'),'1','1','1','1');
+
+
