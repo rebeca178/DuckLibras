@@ -1,142 +1,71 @@
+-- [RF01] Cadastrar um novo aluno
+-- Cadastra um novo aluno no banco de dados com username, senha (criptografada), email e foto.
+INSERT INTO aluno (username, senha, email, photo) 
+VALUES ('Francisco', MD5('123'), 'email@email.com', 'photo.jpg');
 
 -- [RF02] Logar
-SELECT id, username, email FROM aluno 
-WHERE senha = MD5('123') AND email = 'email@email.com';
+-- Realiza o login do aluno verificando a senha e o e-mail fornecidos.
+SELECT * FROM aluno 
+WHERE senha = MD5('123') 
+AND email = 'email@email.com';
 
--- [RF03] Verificar o Cadastro
-SELECT id, username, email FROM aluno 
-WHERE username = 'Francisco' AND senha = MD5('123') AND email = 'email@email.com';
-
--- [RF04] Recuperação de dados
-SELECT id, username, email FROM aluno 
+-- [RF03] Recuperação de dados pelo e-mail
+-- Recupera as informações do aluno baseado no e-mail fornecido.
+SELECT * FROM aluno 
 WHERE email = 'email@email.com';
 
--- [RF05] Teste de Flashcard
-SELECT id_flashcard, quest, resposta FROM flashcards 
+-- [RF04] Teste Flashcards
+-- Realiza a consulta de flashcards específicos com base na questão.
+SELECT * FROM flashcards 
 WHERE quest = 'a';
 
--- [RF06] Alteração de login
-SELECT id, username, photo FROM aluno 
-WHERE username = 'Francisco' AND photo = 'photo';
+-- [RF05] Alteração de login (verificação de foto associada ao usuário)
+-- Verifica se o aluno tem a foto correta associada ao seu nome de usuário.
+SELECT * FROM aluno 
+WHERE username = 'Francisco' 
+AND photo = 'photo.jpg';
 
--- [RF08] Limitação (nível no Board Square)
-SELECT id_bs, nivel, status FROM boardsquare 
-WHERE nivel = 1;
+-- [RF06] Termos de uso e Política de Privacidade
+-- Verifica se o aluno aceitou os Termos de Uso e Política de Privacidade.
+SELECT * FROM aluno 
+WHERE username = 'Francisco' 
+AND termos_aceitos = TRUE;
 
--- [RF09] Entrar no Board Square (casa de tabuleiro)
-SELECT id_bs, status, nivel FROM boardsquare 
-WHERE status = 1;
+-- [RF07] Entrar no Board Square (casa de tabuleiro)
+-- Verifica se o aluno já possui um status de acesso ao Board Square.
+SELECT * FROM board_square 
+WHERE aluno_id = (SELECT id FROM aluno WHERE username = 'Francisco') 
+AND status = 1;
 
--- [RF10] Finalização do Board Square
-SELECT id_bs, status FROM boardsquare 
-WHERE status = 0;
+-- [RF08] Finalização do Board Square
+-- Verifica se o aluno concluiu todas as atividades no Board Square.
+SELECT * FROM board_square 
+WHERE aluno_id = (SELECT id FROM aluno WHERE username = 'Francisco') 
+AND status = 0;
 
--- [RF13] Ganho de nível no Board Square
-SELECT id_bs, status, nivel FROM boardsquare 
-WHERE status = 0 AND nivel = 1;
+-- [RF09] Ganho de nível ao finalizar Board Square
+-- Verifica o nível do aluno após a finalização de um Board Square.
+SELECT * FROM board_square 
+WHERE aluno_id = (SELECT id FROM aluno WHERE username = 'Francisco') 
+AND status = 0 
+AND nivel = 1;
 
--- [RF14] Flash Cards (pontuação)
-SELECT id_flashcard, pontos, nivel FROM flashcards 
+-- [RF10] Flash Cards com pontuação específica
+-- Recupera flashcards baseados em uma pontuação específica.
+SELECT * FROM flashcards 
 WHERE pontos = 35;
 
--- [RF15] Emitir Aulas
-SELECT id_aula, titulo, descricao, status FROM aulas;
+-- [RF11] Emitir aulas
+-- Exibe todas as aulas disponíveis no sistema.
+SELECT * FROM aulas;
 
--- [RF17] Resposta de Tradução
-SELECT id_traducao, palavra, sinal, explicacao FROM traducao 
-WHERE id_traducao = 1;
-
--- [RF18] Listar Anotações
-SELECT id_anotacao, titulo, texto, imagem, data_criacao FROM anotacao;
-
--- [RF19] Loja (produtos e preços)
-SELECT id_produto, produto, preco FROM loja 
-WHERE produto = 'a' AND preco = 1.00;
-
--- [RF20] Grupos de Alunos
-SELECT id, username, grupo_id FROM aluno 
+-- [RF12] Resposta de tradução
+-- Recupera a tradução de um conteúdo específico com base no ID.
+SELECT * FROM traducoes 
 WHERE id = 1;
 
--- [RF21] Amizades no Chatbot
-SELECT id_chatbot, amizades FROM chatbot 
-WHERE amizades = 1;
-
-
---RF[01]cadastrar
-SELECT * FROM aluno a WHERE a.username = 'Francisco' and a.senha = MD5('123') and a.email='email@email.com' and photo= 'photo';
-
-
---RF[02]Alteração de login
-SELECT * FROM aluno a WHERE a.username = 'Francisco' and photo= 'photo';
-
---RF[03]Recuperação de dados
-SELECT * FROM aluno a WHERE a.email='email@email.com';
-
-
---RF[05]Entrar no Board square(casa de tabuleiro)
-SELECT * FROM BS b WHERE b.status ='1';
-
-
---RF[06] Finalização do board square
-SELECT * FROM BS b WHERE b.status ='0';
-
---RF[07] emissão de pontuação
-SELECT * FROM FLASHCARDS f WHERE f.pontos ='35';
-
---[RF08] “enviar” aula e atividade
-SELECT * FROM FLASHCARDS f WHERE f.status ='0';
-SELECT * FROM Aulas au WHERE a.status='0';
-
---[RF09] Ganho de nível
-SELECT * FROM FLASHCARDS f WHERE f.nivel ='99';
-
---[RF10] Flash Cards
-SELECT * FROM FLASHCARDS f WHERE f.pontos ='35';
-
---[RF11] Timeline
-SELECT * FROM anotacoes;
-
---[RF12]Logar 
-SELECT * FROM aluno a WHERE a.senha = MD5('123') and a.email='email@email.com';
-
-
--- RF01: Registro de aluno
-INSERT INTO aluno (username, email, senha, photo, nivel, ponto) 
-VALUES ('Francisco', 'email@example.com', 'senha', NULL, 1, 0);
-
--- RF02: Alteração de login
-UPDATE aluno 
-SET username = 'Francisco', photo = NULL 
-WHERE email = 'email@example.com' AND senha = 'senha';
-
--- RF03: Recuperação de senha (simplesmente verificando e-mail e senha)
-SELECT * FROM aluno 
-WHERE email = 'email@example.com';
-
--- RF04: Redirecionamento para home (não há necessidade de query, pois é um redirecionamento no app)
-
--- RF05: Verificação de acesso ao Board Square
-SELECT * FROM BS 
-WHERE id_bs = (SELECT id_bs FROM aluno WHERE id = aluno_id);
-
--- RF06: Finalização do Board Square
-SELECT COUNT(*) FROM aulas  WHERE id_aulas IN (SELECT id_aula FROM BS WHERE id_bs = (SELECT id_bs FROM aluno WHERE id = aluno_id));
-
--- RF07: Emissão de pontuação baseada em acertos e erros
-UPDATE aluno 
-SET ponto = ponto + (SELECT COUNT(*) FROM FLASHCARD WHERE id_flashcard IN (SELECT id_flashcard FROM BS WHERE id_bs = aluno.id_bs) WHERE id = aluno_id;
-
--- RF08: Enviar aula e atividade (passar para próxima aba, supomos status TRUE ao finalizar)
-UPDATE BS 
-SET STATUS = TRUE WHERE id_bs = (SELECT id_bs FROM aluno WHERE id = aluno_id);
-
--- RF09: Ganho de nível baseado na quantidade de pontos acumulados
-UPDATE aluno 
-SET nivel = nivel + 1 WHERE ponto >= 100; -- Exemplo: ao atingir 100 pontos sobe de nível
-
--- RF10: Flashcards para aumento de pontos
-SELECT * FROM FLASHCARD WHERE ponto IS NOT NULL ORDER BY RAND() LIMIT 1;
-
--- RF11: Timeline para revisão do aprendizado
-SELECT * FROM Traducao_Libras WHERE id_tradu IN (SELECT id_flashcard FROM BS WHERE id_bs = (SELECT id_bs FROM aluno WHERE id = aluno_id));
+-- [RF13] Anotações
+-- Recupera as anotações do aluno.
+SELECT * FROM anotacoes 
+WHERE aluno_id = (SELECT id FROM aluno WHERE username = 'Francisco');
 
