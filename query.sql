@@ -69,3 +69,35 @@ WHERE id = 1;
 SELECT * FROM anotacoes 
 WHERE aluno_id = (SELECT id FROM aluno WHERE username = 'Francisco');
 
+-- [RF14] Enviar Aulas
+-- Recupera as aulas desbloqueadas para o aluno 'Francisco'
+SELECT aulas.*
+FROM aulas
+JOIN AU_AL ON aulas.ID = AU_AL.id_aula
+JOIN aluno ON AU_AL.id_aluno = aluno.id
+WHERE aluno.username = 'francisco';
+
+-- [RF15] Buscar Tradução
+-- Verifica as traduções de uma palavra específica com base no ID da tradução.
+SELECT * FROM traducao 
+WHERE id = 1 LIMIT 1;
+
+-- [RF16] Resposta da Tradução
+-- Verifica a tradução de uma palavra com base no sinal ou explicação fornecida.
+
+-- [RF17] Anotações
+-- Recupera as anotações do aluno "Francisco".
+SELECT * FROM anotacao 
+WHERE id = (SELECT id FROM aluno WHERE username = 'francisco') 
+LIMIT 5;
+
+-- [RF18] Loja
+-- Realiza a compra de um item da loja com base nos pontos do aluno.
+-- Antes de fazer a compra, verifica se o aluno tem pontos suficientes
+UPDATE aluno 
+SET pontos = pontos - 10 
+WHERE id = (SELECT id FROM aluno WHERE username = 'Francisco') 
+AND pontos >= 10;
+
+INSERT INTO transacoes (aluno_id, produto, pontos) 
+VALUES ((SELECT id FROM aluno WHERE username = 'Francisco'), 'Produto X', 10);
