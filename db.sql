@@ -4,7 +4,7 @@ DEFAULT COLLATE utf8mb4_general_ci;
 use DuckLibras;
 
 CREATE TABLE Dicionario_Libras (
-    id_dicionario SERIAL PRIMARY KEY,
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     palavra VARCHAR(100) NOT NULL,
     traducao VARCHAR(100) NOT NULL,
     sinal VARCHAR(255) NOT NULL,
@@ -16,7 +16,7 @@ CREATE TABLE Dicionario_Libras (
   );
 
   CREATE TABLE Pontuacao (
-    id_pontuacao SERIAL PRIMARY KEY,
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     pontos INT DEFAULT 0,
     nivel INT DEFAULT 1,
     ultima_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
