@@ -12,14 +12,14 @@ CREATE TABLE Dicionario_Libras (
     video_url VARCHAR(255) NOT NULL,
     descricao TEXT,
     categoria VARCHAR(50),
-    dificuldade ENUM('Fácil', 'Médio', 'Difícil') DEFAULT 'Fácil',
+    dificuldade ENUM('Fácil', 'Médio', 'Difícil') DEFAULT 'Fácil'
   );
 
   CREATE TABLE Pontuacao (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     pontos INT DEFAULT 0,
     nivel INT DEFAULT 1,
-    ultima_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    ultima_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 Create table FLASHCARD (
