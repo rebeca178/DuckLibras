@@ -4,7 +4,7 @@ DEFAULT COLLATE utf8mb4_general_ci;
 use DuckLibras;
 
 CREATE TABLE Dicionario_Libras (
-    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    id INT(10) PRIMARY KEY NOT NULL AUTO_INCREMENT,
     palavra VARCHAR(100) NOT NULL,
     traducao VARCHAR(100) NOT NULL,
     sinal VARCHAR(255) NOT NULL,
@@ -16,126 +16,122 @@ CREATE TABLE Dicionario_Libras (
   );
 
   CREATE TABLE Pontuacao (
-    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    id INT(10) PRIMARY KEY NOT NULL AUTO_INCREMENT,
     pontos INT DEFAULT 0,
     nivel INT DEFAULT 1,
     ultima_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 Create table FLASHCARD (
-    ID_FLASHCARD INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     quest VARCHAR(255) NOT NULL,
-    Pid INT NOT NULL,
-    DICIOid INT NOT NULL,
-    FOREIGN KEY(Pid) REFERENCES pontuacao(id_pontucao),
-    FOREIGN KEY (DICIOid) REFERENCES Dicionario_Libras (id_dicionario),
+    Pid INT ,
+    DICIOid INT ,
+    FOREIGN KEY(Pid) REFERENCES pontuacao(id),
+    FOREIGN KEY(DICIOid) REFERENCES Dicionario_Libras(id)
 );
 
 Create table aulas (
-    ID_aula INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    ID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     explicacao VARCHAR(255) NOT NULL,
-    Pid INT NOT NULL,
-    DICIOid INT NOT NULL,
-    FOREIGN KEY(Pid) REFERENCES pontuacao(id_pontucao),
-    FOREIGN KEY (DICIOid) REFERENCES Dicionario_Libras (id_dicionario),
+    Pid INT ,
+    DICIOid INT ,
+    FOREIGN KEY(Pid) REFERENCES pontuacao(id),
+    FOREIGN KEY(DICIOid) REFERENCES Dicionario_Libras(id)
 );
 
 Create table BS(
-    id_bs INT(10) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    id INT(10) PRIMARY KEY NOT NULL AUTO_INCREMENT,
     STATUS BOOLEAN NOT NULL,
-    id_aula int, 
-    id_flashcard int,
-    id_pontuacao int,
-    FOREIGN KEY (id_pontuacao) REFERENCES pontuacao(id_pontuacao),
-    FOREIGN KEY (id_aula) REFERENCES aulas(id_aula),
-    FOREIGN KEY (id_flashcard) REFERENCES FLASHCARD(id_flashcard)
+    auID int, 
+    FlashID int,
+    PonId int,
+    FOREIGN KEY (PonId) REFERENCES pontuacao(id),
+    FOREIGN KEY (auID) REFERENCES aulas(id),
+    FOREIGN KEY (FlashID) REFERENCES FLASHCARD(id)
 );
 
 CREATE TABLE traducao (
-    id_traducao INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     palavra VARCHAR(255) NOT NULL,
-    dicionario_id INT NOT NULL,
+    dicioId INT ,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (dicionario_id) REFERENCES dicionario(id) ON DELETE CASCADE
+    FOREIGN KEY(dicioId) REFERENCES Dicionario_Libras(id) ON DELETE CASCADE
 );
 
 CREATE TABLE anotacao (
-    id_anotacao INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     titulo VARCHAR(255) NOT NULL,
     texto TEXT NOT NULL,
-    dicionario_id INT,
-    boardsquare_id INT,
+    dicioId INT,
+    BSid INT,
     data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (dicionario_id) REFERENCES dicionario(id) ON DELETE SET NULL,
-    FOREIGN KEY (boardsquare_id) REFERENCES boardsquare(id_bs) ON DELETE SET NULL
+    FOREIGN KEY (dicioId) REFERENCES Dicionario_Libras(id) ON DELETE SET NULL,
+    FOREIGN KEY (BSid) REFERENCES BS(id) ON DELETE SET NULL
   );
 
 create table loja(
-    id_lol int primary key auto_increment,
+    id int primary key auto_increment,
     produto varchar(255),
     preco varchar(255)
 );
 
 Create table aluno(
-    id_Aluno INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     username VARCHAR(100) NOT NULL,
     email VARCHAR(320) NOT NULL, 
-    photo  VARCHAR(320),
+    photo VARCHAR(320),
     senha VARCHAR(255) NOT NULL,
-    id_anotacao int,
-    id_chat int,
-    id_cop int,
-    id_traducao int,
-    id_BS int,
-    id_pont int,
-FOREIGN KEY (id_anotacao) REFERENCES Anotacoes(id_anotacao),
-FOREIGN KEY (id_chat) REFERENCES ChatBOT(id_chat),
-FOREIGN KEY (id_cop) REFERENCES COMPRAS(id_cop),
-FOREIGN KEY (id_traducao) REFERENCES TRADUÇÃO(id_traducao),
-FOREIGN KEY (id_BS) REFERENCES BS(id_BS),
-FOREIGN KEY (id_pont) REFERENCES Pontuacao(id_pontuacao),
+    Anoid int,
+    TradId int,
+    BSid int,
+    pontID int,
+FOREIGN KEY (Anoid) REFERENCES anotacao(id),
+FOREIGN KEY (TradId) REFERENCES traducao(id),
+FOREIGN KEY (BSid) REFERENCES BS(id),
+FOREIGN KEY (pontID) REFERENCES Pontuacao(id)
 );
 
+create table compra(
+    id int primary key auto_increment,
+    quantidade int,
+    loja_id INT,
+    ALID INT,
+    foreign key (loja_id) references loja(id),
+    foreign key (ALID) references aluno(id)
+); 
+
 create table chat(
-    id_c int primary key auto_increment,
+    id int primary key auto_increment,
     mensagem text not null,
     remetente int,
     destinatario int,
-    foreign key (remetente) references usuario(id_aluno),
-    foreign key (destinatario) references usuario(id_aluno)
+    foreign key (remetente) references aluno(id),
+    foreign key (destinatario) references aluno(id)
 );
 
 Create table FLASH_AL(
     id_flashcard int,
     id_aluno int,
-    FOREIGN KEY (id_aluno) REFERENCES aluno(id_aluno),
-    FOREIGN KEY (id_flashcard) REFERENCES FLASHCARD(id_flashcard)
+    FOREIGN KEY (id_aluno) REFERENCES aluno(id),
+    FOREIGN KEY (id_flashcard) REFERENCES FLASHCARD(id)
 );
 
 Create table AU_AL(
-    id_flashcard int,
+    id_aula int,
     id_aluno int,
-    FOREIGN KEY (id_aula) REFERENCES aulas(id_aula),
-    FOREIGN KEY (id_aluno) REFERENCES aluno(id_aluno)
+    FOREIGN KEY (id_aula) REFERENCES aulas(id),
+    FOREIGN KEY (id_aluno) REFERENCES aluno(id)
 );
-
-create table compra(
-    id_cop int primary key auto_increment,
-    quantidade int,
-    loja_id INT,
-    ALID INT,
-    foreign key (loja_id) references loja(lol),
-    foreign key (ALID) references aluno(id_Aluno)
-); 
   
 create table Dicas (
-    ID_dicas int primary key not null AUTO_INCREMENT,
+    ID int primary key not null AUTO_INCREMENT,
     ajuda varchar(255),
-    Fid INT NOT NULL,
-    Cid INT NOT NULL,
-    DICIOid INT NOT NULL,
-    FOREIGN KEY (DICIOid) REFERENCES Dicionario_Libras (id_dicionario),
-    FOREIGN KEY(CID) REFERENCES compras(id_cop),
-    FOREIGN key (Fid) REFERENCES FLASHCARD(id_flashcard)
+    Fid INT ,
+    Cid INT ,
+    DICIOid INT,
+    FOREIGN KEY (DICIOid) REFERENCES Dicionario_Libras (id),
+    FOREIGN KEY(CID) REFERENCES compra(id),
+    FOREIGN key (Fid) REFERENCES FLASHCARD(id)
 );
