@@ -1,5 +1,8 @@
 USE DuckLibras;
 
+-- [[RF16] Resposta Tradução
+SELECT t.palavra, t.created_at, t.updated_at, d.palavra AS Palavra_Libras FROM traducao t JOIN Dicionario_Libras d ON t.dicioId = d.id ORDER BY t.created_at DESC;
+
 -- [RF17] Anotações
 SELECT a.username AS Aluno, an.titulo, an.texto, an.data_criacao FROM anotacao an JOIN aluno a ON an.dicioId = a.id ORDER BY an.data_criacao DESC;
 
