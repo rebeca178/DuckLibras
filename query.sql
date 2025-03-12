@@ -98,9 +98,9 @@ SELECT * FROM FLASHCARD WHERE ponto IS NOT NULL ORDER BY RAND() LIMIT 1;
 -- RF11: Timeline para revisão do aprendizado
 SELECT * FROM Traducao_Libras WHERE id_tradu IN (SELECT id_flashcard FROM BS WHERE id_bs = (SELECT id_bs FROM aluno WHERE id = aluno_id));
 
-SELECT c.id, c.mensagem, a1.usurname AS remetente, a2.username AS destinatario FROM chat c 
-JOIN usuario a1 ON c.remetente = a1.username
-JOIN usuario a2 ON c.destinatario = a2.username;
+SELECT c.id, c.mensagem, a1.username AS remetente, a2.username AS destinatario FROM chat c 
+JOIN aluno a1 ON c.remetente = a1.id
+JOIN aluno a2 ON c.destinatario = a2.id;
 
 SELECT id_lol, produto, preco
 FROM loja lo;
