@@ -25,7 +25,7 @@ SELECT * FROM BS b;
 SELECT * FROM BS b WHERE b.status = '0';
 
 --[RF11] Enviar conclusão
-SELECT * FROM BS b INNER JOIN aluno a ON b.auID = a.id WHERE  a.aluno ='joao' ;
+SELECT * FROM BS b INNER JOIN aluno a ON b.auID = a.id WHERE  a.username ='joao' ;
 
 --[RF12] Ganho de nivel 
 SELECT * FROM pontuacao p WHERE p.pontos = '5' and p.nivel = '1';
