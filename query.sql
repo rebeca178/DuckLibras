@@ -142,8 +142,8 @@ SELECT * FROM Traducao_Libras WHERE id_tradu IN (SELECT id_flashcard FROM BS WHE
 
 SELECT u1.nome AS remetente, u2.nome AS destinatario
 FROM chat c
-JOIN usuario u1 ON c.remetente = u1.id_user
-JOIN usuario u2 ON c.destinatario = u2.id_user;
+JOIN aluno u1 ON c.remetente = u1.id
+JOIN aluno u2 ON c.destinatario = u2.id;
 
 SELECT id_lol, produto, preco
 FROM loja lo;
