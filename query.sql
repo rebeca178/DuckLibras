@@ -37,13 +37,13 @@ SELECT * FROM pontuacao p LEFT JOIN FLASHCARD f ON f.Pid = p.id WHERE p.nivel = 
 SELECT * FROM pontuacao p left join aulas a ON a.Pid = p.id WHERE p.nivel = '1' AND a.id= '1';
 
 -- RF15 Buscar Tradução  
-SELECT a.username AS Aluno, an.titulo, an.texto, an.data_criacao FROM anotacao an JOIN aluno a ON an.dicioId = a.id ORDER BY an.data_criacao DESC;  
+SELECT a.username AS aluno, COALESCE(d.palavra, 'Sem palavra') AS palavra, COALESCE(d.traducao, 'Sem tradução') AS traducao, COALESCE(d.sinal, 'Sem sinal') AS sinal, COALESCE(d.imagem, 'Sem imagem') AS imagem, COALESCE(d.video_url, 'Sem vídeo') AS video, COALESCE(d.descricao, 'Sem descrição') AS descricao, COALESCE(d.categoria, 'Sem categoria') AS categoria, COALESCE(d.dificuldade, 'Não definida') AS dificuldade, t.created_at AS data_criacao FROM traducao t JOIN aluno a ON t.dicioId = a.id JOIN dicionario_libras d ON t.palavra = d.palavra ORDER BY t.created_at DESC;
 
 -- [[RF16] Resposta Tradução
 SELECT t.palavra, t.created_at, t.updated_at, d.palavra AS Palavra_Libras FROM traducao t JOIN Dicionario_Libras d ON t.dicioId = d.id ORDER BY t.created_at DESC;
 
 -- [RF17] Anotações
-SELECT a.username AS Aluno, an.titulo, an.texto, an.data_criacao FROM anotacao an JOIN aluno a ON an.dicioId = a.id ORDER BY an.data_criacao DESC;
+SELECT a.username AS aluno, COALESCE(t.palavra, 'Sem palavra') AS palavra, t.created_at AS data_criacao FROM traducao t JOIN aluno a ON t.dicioId = a.id ORDER BY t.created_at DESC;
 
 -- [RF18] Loja
 SELECT l.produto, l.preco, c.quantidade, a.username AS Aluno FROM loja l JOIN compra c ON l.id = c.loja_id JOIN aluno a ON a.id = c.ALID ORDER BY l.produto;
