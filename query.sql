@@ -36,7 +36,7 @@ SELECT * FROM pontcao p left JOIN Flashcards f  ON f.Pid = p.id WHERE p.nivel = 
 -- [RF14] Enviar Aula 
 SELECT * FROM pontucao p left join aulas a ON a.Pid = p.id WHERE p.nivel = '1' AND a.id= '1';
 
--- [RF15] anotações 
+-- [RF15] Buscar Tradução
 SELECT * FROM traducao t left join Dicionario_Libras d on t.dicioId = d.id
 left join  aula a on a.dicioIdid = d.id
 WHERE t.id = '1' AND a.id = '1';
