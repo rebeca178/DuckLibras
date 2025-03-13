@@ -22,7 +22,7 @@ SELECT * FROM pontuacao WHERE nivel = 1;
 SELECT * FROM BS;  
 
 -- RF09 Finalização do Board Square  
-SELECT * FROM BS WHERE status = 0;  
+SELECT * FROM BS WHERE status = 1;  
 
 -- RF11 Enviar conclusão  
 SELECT b.* FROM BS b INNER JOIN aluno a ON b.auID = a.id WHERE a.username = 'joao';  
