@@ -1,4 +1,4 @@
-use DuckLibras;
+USE DuckLibras;
 
 insert into dicionario_libras (id,palavra,traducao,sinal,imagem,video_url,descricao,categoria,dificuldade) VALUES  ('1','coelho','coelho2','sinalcoelho', 'imgcoleho','vidocoelho','oqcoelho','animal','Fácil');
 
