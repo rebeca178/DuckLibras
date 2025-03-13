@@ -2,7 +2,6 @@ use ducklibras;
 
 INSERT INTO chatbot (id_chat,chat, perguntas, respostas,amizade) VALUES ('1', 'Quem sou eu ?', 'Você é um humano ','1');
 
-
 INSERT INTO loja (id_lol, produto, preco) VALUES ('1', 'pato aranha', '100P');
 
 INSERT INTO compra (id_cop, quantidade, loja_id,ALID) VALUES ('1', '1','1','1');
@@ -20,8 +19,6 @@ INSERT INTO anotacao (usuario_id, titulo, texto, imagem) VALUES
 (3, 'Anotação Técnica', 'Analisamos a estrutura do banco de dados e fizemos algumas alterações...', 'imagem3.jpg'),
 (1, 'Anotação de Testes', 'Testes de funcionalidades realizados no sistema para verificar os erros...', 'imagem4.jpg'),
 (4, 'Anotação Pessoal', 'Revisão das anotações de código e melhorias feitas no projeto...', 'imagem5.png');
-
-
 
 insert into BS (id_bs,STATUS,id_aula,id_flashcard,nivel) VALUES  ('1','1','1','1','1');
 
