@@ -6,7 +6,7 @@ DEFAULT COLLATE utf8mb4_general_ci;
 use DuckLibras;
 
 CREATE TABLE Dicionario_Libras (
-    id_dicionario SERIAL PRIMARY KEY,
+    id INT(10) PRIMARY KEY NOT NULL AUTO_INCREMENT,
     palavra VARCHAR(100) NOT NULL,
     traducao VARCHAR(100) NOT NULL,
     sinal VARCHAR(255) NOT NULL,
@@ -14,103 +14,120 @@ CREATE TABLE Dicionario_Libras (
     video_url VARCHAR(255) NOT NULL,
     descricao TEXT,
     categoria VARCHAR(50),
-    dificuldade ENUM('Fácil', 'Médio', 'Difícil') DEFAULT 'Fácil',
+    dificuldade ENUM('Fácil', 'Médio', 'Difícil') DEFAULT 'Fácil'
   );
-  
+
   CREATE TABLE Pontuacao (
-    id_pontuacao SERIAL PRIMARY KEY,
-    id_usuario INT NOT NULL,
+    id INT(10) PRIMARY KEY NOT NULL AUTO_INCREMENT,
     pontos INT DEFAULT 0,
     nivel INT DEFAULT 1,
-    ultima_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id)
+    ultima_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+Create table FLASHCARD (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    quest VARCHAR(255) NOT NULL,
+    Pid INT ,
+    DICIOid INT ,
+    FOREIGN KEY(Pid) REFERENCES pontuacao(id),
+    FOREIGN KEY(DICIOid) REFERENCES Dicionario_Libras(id)
+);
+
+Create table aulas (
+    ID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    explicacao VARCHAR(255) NOT NULL,
+    Pid INT ,
+    DICIOid INT ,
+    FOREIGN KEY(Pid) REFERENCES pontuacao(id),
+    FOREIGN KEY(DICIOid) REFERENCES Dicionario_Libras(id)
+);
+
+Create table BS(
+    id INT(10) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    STATUS BOOLEAN NOT NULL,
+    auID int, 
+    FlashID int,
+    PonId int,
+    FOREIGN KEY (PonId) REFERENCES pontuacao(id),
+    FOREIGN KEY (auID) REFERENCES aulas(id),
+    FOREIGN KEY (FlashID) REFERENCES FLASHCARD(id)
 );
 
 CREATE TABLE traducao (
-    id_traducao INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     palavra VARCHAR(255) NOT NULL,
-    sinal VARCHAR(255) NOT NULL,
-    imagem VARCHAR(500),
-    explicacao TEXT NOT NULL,
-    status BOOLEAN NOT NULL DEFAULT FALSE,
-    usuario_id INT NOT NULL,
-    dicionario_id INT NOT NULL,
-    palavra_id INT,
-    video_id INT,
-    sinal_id INT,
-    flashcard_id INT,
-    boardsquare_id INT,
-    anotacao_id INT,
+    dicioId INT ,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (usuario_id) REFERENCES aluno(id) ON DELETE CASCADE,
-    FOREIGN KEY (dicionario_id) REFERENCES dicionario(id) ON DELETE CASCADE,
-    FOREIGN KEY (palavra_id) REFERENCES palavras(id) ON DELETE SET NULL,
-    FOREIGN KEY (video_id) REFERENCES videos(id) ON DELETE SET NULL,
-    FOREIGN KEY (sinal_id) REFERENCES sinais(id) ON DELETE SET NULL,
-    FOREIGN KEY (flashcard_id) REFERENCES flashcards(id_flashcard) ON DELETE SET NULL,
-    FOREIGN KEY (boardsquare_id) REFERENCES boardsquare(id_bs) ON DELETE SET NULL,
-    FOREIGN KEY (anotacao_id) REFERENCES anotacao(id_anotacao) ON DELETE SET NULL
+    FOREIGN KEY(dicioId) REFERENCES Dicionario_Libras(id) ON DELETE CASCADE
 );
 
 CREATE TABLE anotacao (
-    id_anotacao INT PRIMARY KEY AUTO_INCREMENT,
-    usuario_id INT NOT NULL,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     titulo VARCHAR(255) NOT NULL,
     texto TEXT NOT NULL,
-    imagem VARCHAR(500),
-    dicionario_id INT,
-    palavra_id INT,
-    video_id INT,
-    sinal_id INT,
-    flashcard_id INT,
-    boardsquare_id INT,
+    dicioId INT,
+    BSid INT,
     data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (usuario_id) REFERENCES aluno(id) ON DELETE CASCADE,
-    FOREIGN KEY (dicionario_id) REFERENCES dicionario(id) ON DELETE SET NULL,
-    FOREIGN KEY (palavra_id) REFERENCES palavras(id) ON DELETE SET NULL,
-    FOREIGN KEY (video_id) REFERENCES videos(id) ON DELETE SET NULL,
-    FOREIGN KEY (sinal_id) REFERENCES sinais(id) ON DELETE SET NULL,
-    FOREIGN KEY (flashcard_id) REFERENCES flashcards(id_flashcard) ON DELETE SET NULL,
-    FOREIGN KEY (boardsquare_id) REFERENCES boardsquare(id_bs) ON DELETE SET NULL
+    FOREIGN KEY (dicioId) REFERENCES Dicionario_Libras(id) ON DELETE SET NULL,
+    FOREIGN KEY (BSid) REFERENCES BS(id) ON DELETE SET NULL
   );
 
-Create table FLASHCARD (
-    ID_FLASHCARD INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    quest VARCHAR(255) NOT NULL,
-    Pid INT NOT NULL,
-    DICIOid INT NOT NULL,
-    DICASid INT NOT NULL,
-    FOREIGN KEY(Pid) REFERENCES pontuacao(id_pontucao),
-    FOREIGN KEY (DICIOid) REFERENCES Dicionario_Libras (id_dicionario),
-    FOREIGN key (DICASid) REFERENCES Dicas(id_dicas),
+create table loja(
+    id int primary key auto_increment,
+    produto varchar(255),
+    preco varchar(255)
 );
-  
-create table Dicas (
-    ID_dicas int primary key not null AUTO_INCREMENT,
-    ajuda varchar(255),
-    Fid INT NOT NULL,
-    Cid INT NOT NULL,
-    DICIOid INT NOT NULL,
-    FOREIGN KEY (DICIOid) REFERENCES Dicionario_Libras (id_dicionario),
-    FOREIGN KEY(CID) REFERENCES compras(id_cop),
-    FOREIGN key (Fid) REFERENCES FLASHCARD(id_flashcard)
+
+Create table aluno(
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    username VARCHAR(100) NOT NULL,
+    email VARCHAR(320) NOT NULL, 
+    photo VARCHAR(320),
+    senha VARCHAR(255) NOT NULL,
+    Anoid int,
+    TradId int,
+    BSid int,
+    pontID int,
+FOREIGN KEY (Anoid) REFERENCES anotacao(id),
+FOREIGN KEY (TradId) REFERENCES traducao(id),
+FOREIGN KEY (BSid) REFERENCES BS(id),
+FOREIGN KEY (pontID) REFERENCES Pontuacao(id)
+);
+
+create table compra(
+    id int primary key auto_increment,
+    quantidade int,
+    loja_id INT,
+    ALID INT,
+    foreign key (loja_id) references loja(id),
+    foreign key (ALID) references aluno(id)
+); 
+
+create table chat(
+    id int primary key auto_increment,
+    mensagem text not null,
+    remetente int,
+    destinatario int,
+    foreign key (remetente) references aluno(id),
+    foreign key (destinatario) references aluno(id)
 );
 
 Create table FLASH_AL(
     id_flashcard int,
     id_aluno int,
-    FOREIGN KEY (id_aluno) REFERENCES aluno(id_aluno),
-    FOREIGN KEY (id_flashcard) REFERENCES FLASHCARD(id_flashcard)
+    FOREIGN KEY (id_aluno) REFERENCES aluno(id),
+    FOREIGN KEY (id_flashcard) REFERENCES FLASHCARD(id)
 );
 
 Create table AU_AL(
-    id_flashcard int,
+    id_aula int,
     id_aluno int,
-    FOREIGN KEY (id_aula) REFERENCES aulas(id_aula),
-    FOREIGN KEY (id_aluno) REFERENCES aluno(id_aluno)
+    FOREIGN KEY (id_aula) REFERENCES aulas(id),
+    FOREIGN KEY (id_aluno) REFERENCES aluno(id)
 );
   
+<<<<<<< HEAD
 Create table BS(
     id_bs INT(10) PRIMARY KEY NOT NULL AUTO_INCREMENT,
     STATUS BOOLEAN NOT NULL,
@@ -147,3 +164,15 @@ create table compra(
     foreign key (loja_id) references loja(lol),
     foreign key (ALID) references aluno(id_Aluno)
 ); 
+=======
+create table Dicas (
+    ID int primary key not null AUTO_INCREMENT,
+    ajuda varchar(255),
+    Fid INT ,
+    Cid INT ,
+    DICIOid INT,
+    FOREIGN KEY (DICIOid) REFERENCES Dicionario_Libras (id),
+    FOREIGN KEY(CID) REFERENCES compra(id),
+    FOREIGN key (Fid) REFERENCES FLASHCARD(id)
+);
+>>>>>>> 4b80aea4b536f033ead3b7fb6c3b09ca79a28f08

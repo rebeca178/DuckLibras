@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 use ducklibras;
 
 INSERT INTO chatbot (id_chat,chat, perguntas, respostas,amizade) VALUES ('1', 'Quem sou eu ?', 'Você é um humano ','1');
@@ -5,30 +6,42 @@ INSERT INTO chatbot (id_chat,chat, perguntas, respostas,amizade) VALUES ('1', 'Q
 INSERT INTO loja (id_lol, produto, preco) VALUES ('1', 'pato aranha', '100P');
 
 INSERT INTO compra (id_cop, quantidade, loja_id,ALID) VALUES ('1', '1','1','1');
+=======
+USE DuckLibras;
+>>>>>>> 4b80aea4b536f033ead3b7fb6c3b09ca79a28f08
 
-INSERT INTO traducao (palavra, sinal, imagem, explicacao, status) VALUES
-('Livro', 'SINAL_LIVRO', 'livro.png', 'Sinal correspondente à palavra Livro.', TRUE),
-('Casa', 'SINAL_CASA', 'casa.png', 'Sinal correspondente à palavra Casa.', TRUE),
-('Água', 'SINAL_AGUA', 'agua.png', 'Sinal correspondente à palavra Água.', TRUE),
-('Amigo', 'SINAL_AMIGO', 'amigo.png', 'Sinal correspondente à palavra Amigo.', FALSE),
-('Futuro', 'SINAL_FUTURO', 'futuro.png', 'Sinal correspondente à palavra Futuro.', FALSE);
+insert into dicionario_libras (id,palavra,traducao,sinal,imagem,video_url,descricao,categoria,dificuldade) VALUES  ('1','coelho','coelho2','sinalcoelho', 'imgcoleho','vidocoelho','oqcoelho','animal','Fácil');
 
-INSERT INTO anotacao (usuario_id, titulo, texto, imagem) VALUES
-(1, 'Anotação sobre o Projeto', 'Esta é uma anotação importante sobre o andamento do projeto...', 'imagem1.jpg'),
-(2, 'Anotação de Reunião', 'A reunião discutiu as metas para o mês de setembro...', 'imagem2.png'),
-(3, 'Anotação Técnica', 'Analisamos a estrutura do banco de dados e fizemos algumas alterações...', 'imagem3.jpg'),
-(1, 'Anotação de Testes', 'Testes de funcionalidades realizados no sistema para verificar os erros...', 'imagem4.jpg'),
-(4, 'Anotação Pessoal', 'Revisão das anotações de código e melhorias feitas no projeto...', 'imagem5.png');
+insert into pontuacao (id,pontos,nivel) VALUES  ('1','5','1');
 
+<<<<<<< HEAD
 insert into BS (id_bs,STATUS,id_aula,id_flashcard,nivel) VALUES  ('1','1','1','1','1');
+=======
+insert into FLASHCARD (id,quest,Pid,DICIOid) values ('1', 'WHAT?', '1','1');
 
-insert into FLASH_AL(id_aluno,id_flashcard) VALUES  ('1','1');
+insert into aulas (id,explicacao,Pid,DICIOid) VALUES  ('1','pipipopo','1','1');
 
-insert into AU_AL(id_aula,id_aluno) VALUES  ('1','1');
+insert into BS (id,STATUS,auID,FlashID,PonId) VALUES  ('1','1','1','1','1');
+>>>>>>> 4b80aea4b536f033ead3b7fb6c3b09ca79a28f08
 
-insert into traducao_libras (palavra, sinal, explicacao, status, created_at, updated_at), values ('Acusar', 'https://sistemas.cead.ufv.br/capes/dicionario/wp-content/uploads/2017/08/04.jpg', 'atribuir falta, infração ou crime a (alguém ou si próprio); culpar(-se), incriminar(-se)', 'ativa', '2602', 'não');
+insert into traducao (id,palavra,dicioId) VALUES  ('1','coelho','1');
 
-insert into FLASHCARD (ID_FLASHCARD,quest,Pid,DICIOid,DICASid ) values ('1', 'WHAT?', '1','1','1');
+insert into anotacao (id,titulo,texto,dicioId,BSid) VALUES  ('1','aula1','sinais','1','1');
 
-insert into Dicas (ID_dicas,ajuda,Fid,Cid,DICIOid ) values ('1', 'help', '1','1','1');
+insert into loja (id,produto,preco) VALUES  ('1','patobatman','2.50');
 
+insert into aluno (id,username,email,photo,senha,Anoid,TradId,BSid,pontID) VALUES  ('1','francisco','fran@gmail.com','franfoto',MD5 ('1'),'1','1','1','1');
+insert into aluno (id,username,email,photo,senha,Anoid,TradId,BSid,pontID) VALUES  ('2','joao','joao@gmail.com','joaofoto',MD5 ('2'),'1','1','1','1');
+
+insert into chat(id,mensagem,remetente,destinatario) VALUES  ('1','oi','1','2');
+
+<<<<<<< HEAD
+=======
+insert into flash_al(id_flashcard,id_aluno) values ('1','1');
+
+insert into au_al(id_aula,id_aluno) VALUES  ('1','1');
+
+insert into compra (id,quantidade,loja_id,ALID ) values ('1', '1', '1','1');
+
+insert into dicas (ID,ajuda,Fid,Cid,DICIOid ) values ('1', 'help', '1','1','1');
+>>>>>>> 4b80aea4b536f033ead3b7fb6c3b09ca79a28f08
