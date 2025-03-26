@@ -1,6 +1,6 @@
-package com.api.springapi.models.dtos;
+package com.api.ducklibras.models.dtos;
 
-import com.api.springapi.models.entitys.UsersEntity;
+import com.api.ducklibras.models.entitys.UsersEntity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -24,8 +24,8 @@ public class AlunoDto implements Serializable{
     @column(name = "pass", nullable = false, length = "TEXT")
     private String pass;
     
-    @column(name = "emnail", nullable = false, length = "160")
-    private float email;
+    @column(name = "email", nullable = false, length = "160")
+    private String email;
 
     @column(name = "pass", nullable = false, length = "TEXT")
     private String pass;
