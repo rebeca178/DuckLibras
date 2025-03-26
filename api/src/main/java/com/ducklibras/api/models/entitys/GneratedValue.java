@@ -1,4 +1,5 @@
 package com.ducklibras.api.models.entitys;
-public class teste {
-    
+
+public @interface GneratedValue {
+
 }
