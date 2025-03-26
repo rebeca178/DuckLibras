@@ -8,6 +8,9 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -28,9 +31,17 @@ public class BsDtos implements Serializable{
     @Column(name = "status", nullable = false, columnDefinition = "boolean")
     private String status;
 
-    
+    @OneToOne
+    @JoinColumn(name = "auID")
+    private AulasEntity Aulas_id;
 
+    @ManyToOne
+    @JoinColumn(name = "flashId")
+    private FlashcardEntity flashId;
 
-    
+    @OneToOne
+    @JoinColumn(name = "ponId")
+    private PontuacaoEntity ponID;
 
 }
+
