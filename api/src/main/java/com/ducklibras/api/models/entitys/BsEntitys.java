@@ -2,7 +2,7 @@ package com.ducklibras.api.models.entitys;
 
 import java.io.Serializable;
 
-import com.ducklibras.api.models.entitys.BsDtos;
+import com.ducklibras.api.models.entitys.BsEntitys;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -20,7 +20,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "BS")
-public class BsDtos implements Serializable{
+public class BsEntitys implements Serializable{
     
     private static final long serialVersionUID = 1L;
 
