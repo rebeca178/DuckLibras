@@ -41,7 +41,7 @@ public class AlunoDto implements Serializable{
         inverseJoinColumns = @JoinColumn(name = "id_aluno")
     )
     
-    @OneToMany
+    @OneToOne
     @JoinColumn(name = "BSid")
     private BSEntity BSid;
 
