@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 public interface AlunoRepo extends JpaRepository<AlunoEntity, Long> {
 
     @Query("SELECT u FROM AlunoEntity u WHERE u.username = ?1 AND u.email = ?2")
-    AlunoEntity findByNameAndMail(String usename, String email);
+    AlunoEntity findByUsernameAndEmail(String usename, String email);
 
 }
