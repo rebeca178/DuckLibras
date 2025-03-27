@@ -1,4 +1,4 @@
-package com.api.springapi.models.repos;
+package com.api.ducklibras.models.repos;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
