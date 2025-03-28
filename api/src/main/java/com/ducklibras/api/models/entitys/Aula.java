@@ -7,13 +7,12 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 import jakarta.persistence.Column;
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.JoinTable;
+
+@Getter
+@Setter
 
 @Entity
 @Table(name = "aulas")
@@ -28,56 +27,18 @@ public class Aula {
 
     @ManyToOne
     @JoinColumn(name = "Pid")
-    private Pontuacao pontuacao;
+    private PontuacaoEntity pontuacao;
 
     @ManyToOne
     @JoinColumn(name = "DICIOid")
-    private Dicionario_Libras dicionarioLibras;
+    private DicionarioLibrasEntity dicionarioLibras;
 
     public Aula() {
     }
 
-    public Aula(String explicacao, Pontuacao pontuacao, Dicionario_Libras dicionarioLibras) {
+    public Aula(String explicacao, PontuacaoEntity pontuacao, DicionarioLibrasEntity dicionarioLibras) {
         this.explicacao = explicacao;
         this.pontuacao = pontuacao;
         this.dicionarioLibras = dicionarioLibras;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getExplicacao() {
-        return explicacao;
-    }
-
-    public void setExplicacao(String explicacao) {
-        this.explicacao = explicacao;
-    }
-
-    public Pontuacao getPontuacao() {
-        return pontuacao;
-    }
-
-    public void setPontuacao(Pontuacao pontuacao) {
-        this.pontuacao = pontuacao;
-    }
-
-    public Dicionario_Libras getDicionarioLibras() {
-        return dicionarioLibras;
-    }
-
-    public void setDicionarioLibras(Dicionario_Libras dicionarioLibras) {
-        this.dicionarioLibras = dicionarioLibras;
-    }
-}
-
-
-    public void setDicionarioLibrasName(String dicionarioLibrasName) {
-        this.dicionarioLibrasName = dicionarioLibrasName;
     }
 }
