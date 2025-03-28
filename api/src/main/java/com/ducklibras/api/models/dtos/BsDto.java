@@ -10,7 +10,4 @@ public class BsDto{
 
     private long id;
     private boolean status;
-    private Long aulasId;
-    private Long flashId;
-    private Long ponID;
 }
