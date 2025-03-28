@@ -11,6 +11,6 @@ public class FlashcardEntity {
 
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-    private Long id;
+    private Long flashId;
 
 }

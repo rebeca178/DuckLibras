@@ -11,6 +11,6 @@ public class AulasEntity {
 
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-    private Long id;
+    private Long Aulas_id;
 
 }
