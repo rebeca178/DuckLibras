@@ -1,15 +1,14 @@
-package com.ducklibras.api.models.dtos;
+package com.seuprojeto.models.dtos;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class AnotacaoDTO {
-
+    private Long id;
+    private String titulo;
     private String conteudo;
-
-    // Getters e Setters
-    public String getConteudo() {
-        return conteudo;
-    }
-
-    public void setConteudo(String conteudo) {
-        this.conteudo = conteudo;
-    }
 }
