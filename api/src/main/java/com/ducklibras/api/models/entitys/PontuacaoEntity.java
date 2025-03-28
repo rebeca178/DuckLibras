@@ -22,7 +22,7 @@ public class PontuacaoEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long ponId;
 
     @Column(name = "pontos", nullable = false, columnDefinition = "INT DEFAULT 0")
     private int pontos;
