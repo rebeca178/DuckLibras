@@ -44,5 +44,4 @@ public class BsEntitys implements Serializable{
     private PontuacaoEntity ponID;
 
 }
-
    
