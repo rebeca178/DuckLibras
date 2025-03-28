@@ -33,7 +33,7 @@ public class comprasEntitys {
 
     @OneToMany
     @JoinColumn(name = "Id_al" , nullable = false)
-    private alEntitys aluno;
+    private AlunoEntitys aluno;
 
     public comprasEntitys() {
     }
