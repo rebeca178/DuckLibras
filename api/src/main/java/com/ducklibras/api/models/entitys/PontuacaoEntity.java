@@ -11,6 +11,6 @@ public class PontuacaoEntity {
 
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-    private Long ponID;
+    private Long ponId;
 
 }
