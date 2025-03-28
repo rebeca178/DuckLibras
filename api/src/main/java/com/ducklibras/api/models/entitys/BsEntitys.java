@@ -35,9 +35,11 @@ public class BsEntitys implements Serializable{
     @JoinColumn(name = "aulasId")
     private AulasEntity aulasId;
 
+
     @ManyToOne
     @JoinColumn(name = "flashId")
     private FlashcardEntity flashId;
+
 
     @OneToOne
     @JoinColumn(name = "ponId")
