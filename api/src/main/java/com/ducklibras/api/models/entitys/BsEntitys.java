@@ -43,7 +43,7 @@ public class BsEntitys implements Serializable{
 
     @OneToOne
     @JoinColumn(name = "ponId")
-    private PontuacaoEntity ponID;
+    private PontuacaoEntity ponId;
 
 }
    
