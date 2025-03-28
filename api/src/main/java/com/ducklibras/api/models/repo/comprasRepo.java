@@ -1,5 +1,17 @@
 package com.ducklibras.api.models.repo;
 
-public class comprasRepo {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import com.ducklibras.api.models.entitys.comprasEntitys;
+
+@Repository
+public interface comprasRepo extends JpaRepository<comprasEntitys, Long> {
     
-}
+    // Aqui você pode adicionar métodos personalizados, se necessário.
+    // Por exemplo:
+    // List<comprasEntitys> findByLojaId(Long lojaId);
+    
+    // Outros métodos de consulta podem ser adicionados aqui.
+
+    
+} 

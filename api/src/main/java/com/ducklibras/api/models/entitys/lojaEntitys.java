@@ -23,8 +23,8 @@ public class lojaEntitys {
     @Column(name = "produto", nullable = false, length = 255)
     private String produto;
 
-    @Column(name = "preco", nullable = false, length = 255)
-    private String preco;
+    @Column(name = "preco", nullable = false, length = 11)
+    private int preco;
     
     public lojaEntitys() {
     }

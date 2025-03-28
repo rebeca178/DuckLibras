@@ -24,8 +24,8 @@ public class comprasEntitys {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column (name = "quantidade", nullable = false, length = 255)
-    private String quantidade;
+    @Column (name = "quantidade", nullable = false, length = 160)
+    private int quantidade;
 
     @OneToMany
     @JoinColumn(name = "Id_loja" , nullable = false)
