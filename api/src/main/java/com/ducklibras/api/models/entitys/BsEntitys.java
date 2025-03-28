@@ -29,7 +29,7 @@ public class BsEntitys implements Serializable{
     private Long id;
 
     @Column(name = "status", nullable = false, columnDefinition = "boolean")
-    private String status;
+    private boolean status;
 
     @OneToOne
     @JoinColumn(name = "auID")
