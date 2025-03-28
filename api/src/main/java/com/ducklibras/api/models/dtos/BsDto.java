@@ -14,7 +14,7 @@ public class BsDto{
 
     private long id;
     private boolean status;
-    private AulasEntity aulasId;
-    private FlashcardEntity flashId;
-    private PontuacaoEntity ponID;
+    private Long aulasId;
+    private Long flashId;
+    private Long ponID;
 }
