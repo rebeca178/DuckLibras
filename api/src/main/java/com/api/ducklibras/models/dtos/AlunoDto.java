@@ -26,7 +26,7 @@ public class AlunoDto implements Serializable{
     @Column(name = "username", nullable = false, length = 255)
     private String username;
      
-    @Column(name = "pass", nullable = false, length = "TEXT")
+    @Column(name = "pass", nullable = false, columnDefinition =  "TEXT")
     private String pass;
     
     @Column(name = "email", nullable = false, length = 160)
