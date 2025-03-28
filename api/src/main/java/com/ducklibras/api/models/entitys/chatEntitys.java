@@ -2,7 +2,6 @@ package com.ducklibras.api.models.entitys;
 
 import java.io.Serializable;
 
-import jakarta.annotation.Generated;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -33,11 +32,11 @@ public class chatEntitys implements Serializable {
 
     @OneToOne
     @JoinColumn(name = "remetente" , nullable = false)
-    private usuarioEntitys remetente;
+    private AlunoEntitys remetente;
 
     @OneToOne
     @JoinColumn(name = "destinatario" , nullable = false)
-    private usuarioEntitys destinatario;
+    private AlunoEntitys destinatario;
 
     public chatEntitys() {
     }
