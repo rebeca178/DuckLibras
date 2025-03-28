@@ -33,7 +33,7 @@ public class BsEntitys implements Serializable{
 
     @OneToOne
     @JoinColumn(name = "auID")
-    private AulasEntity aulas_id;
+    private AulasEntity aulasId;
 
     @ManyToOne
     @JoinColumn(name = "flashId")
