@@ -57,8 +57,5 @@ public class AlunoEntity implements Serializable{
     @JoinColumn(name = "pontID")
     private PontacaoEntity pontId;
 
-    public AlunoEntity ()(
-    
-    )
 
 }
