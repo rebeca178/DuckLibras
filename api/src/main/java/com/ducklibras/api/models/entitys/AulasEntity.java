@@ -48,4 +48,8 @@ public class AulasEntity {
 
     @ManyToMany(mappedBy = "asAluno")
     private Set<AlunoEntitys> asAulas;
+
+    @ManyToOne
+    @JoinColumn(name = "alunoId", nullable = false)
+    private AlunoEntitys aluno;
 }

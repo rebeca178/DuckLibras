@@ -3,8 +3,12 @@ package com.ducklibras.api.models.entitys;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.GenerationType;
+
+import java.util.Set;
+
 import jakarta.persistence.Column;
 import lombok.Getter;
 import lombok.Setter;
@@ -28,4 +32,7 @@ public class lojaEntitys {
     
     public lojaEntitys() {
     }
+
+    @OneToMany(mappedBy = "loja")
+    private Set<CompraEntitys> compra;
 }

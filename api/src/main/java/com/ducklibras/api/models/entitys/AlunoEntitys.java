@@ -61,9 +61,8 @@ public class AlunoEntitys implements Serializable{
     @JoinColumn(name = "Id_al",nullable = false)
     private CompraEntitys compra;
 
-    @OneToMany
-    @JoinColumn(name = "Id_au" , nullable = false)
-    private AulasEntity aulas;
+    @OneToMany(mappedBy = "aluno")
+    private Set<AulasEntity> aulas;
 
 
 
