@@ -1,6 +1,7 @@
 package com.ducklibras.api.models.entitys;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,6 +11,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -36,8 +38,8 @@ public class AlunoEntitys implements Serializable{
     private String photo;
 
     @ManyToOne
-    @JoinColumn(name = "TradId", nullable = false)
-    private TraducaoEntity TradId;
+    @JoinColumn(name = "tradId", nullable = false)
+    private TraducaoEntity tradId;
 
     @ManyToMany
     @JoinTable(
@@ -45,7 +47,7 @@ public class AlunoEntitys implements Serializable{
         joinColumns = @JoinColumn(name = "id_aula"),
         inverseJoinColumns = @JoinColumn(name = "id_aluno")
     )
-    private AulasEntity asAluno;
+    private Set<AulasEntity> asAluno;
     
     @OneToOne
     @JoinColumn(name = "BSid")
@@ -54,6 +56,15 @@ public class AlunoEntitys implements Serializable{
     @OneToOne
     @JoinColumn(name = "pontID")
     private PontuacaoEntity pontId;
+
+    @ManyToOne
+    @JoinColumn(name = "Id_al",nullable = false)
+    private CompraEntitys compra;
+
+    @OneToMany
+    @JoinColumn(name = "Id_al" , nullable = false)
+    private AlunoEntitys aluno;
+
 
 
 }

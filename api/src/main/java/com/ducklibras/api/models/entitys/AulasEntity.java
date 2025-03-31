@@ -5,12 +5,14 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.Set;
+
 import jakarta.persistence.Column;
 
 @Getter
@@ -44,11 +46,6 @@ public class AulasEntity {
         this.dicionarioLibras = dicionarioLibras;
     }
 
-    @ManyToMany
-    @JoinTable(
-        name = "au_al",
-        joinColumns = @JoinColumn(name = "id_aula"),
-        inverseJoinColumns = @JoinColumn(name = "id_aluno")
-    )
-    private AlunoEntitys asAulas;
+    @ManyToMany(mappedBy = "asAluno")
+    private Set<AlunoEntitys> asAulas;
 }
