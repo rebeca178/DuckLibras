@@ -1,5 +1,59 @@
 package com.ducklibras.api.models.entitys;
 
-public class AlunoEntitys {
+import java.io.Serializable;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "aluno")
+public class AlunoEntitys implements Serializable{
+    
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
+    private Long id; 
+    
+    @Column(name = "username", nullable = false, length = 255)
+    private String username;
+     
+    @Column(name = "pass", nullable = false, length = 160)
+    private String pass;
+    
+    @Column(name = "email", nullable = false, length = 160)
+    private String email;
+
+    @Column(name = "photo", nullable = false, length = 160)
+    private String photo;
+
+    @ManyToOne
+    @JoinColumn(name = "TradId", nullable = false)
+    private TraducaoEntity TradId;
+
+    @ManyToMany
+    @JoinTable(
+        name = "au_al",
+        joinColumns = @JoinColumn(name = "id_aula"),
+        inverseJoinColumns = @JoinColumn(name = "id_aluno")
+    )
+    private AlunoEntitys AsAluno;
+    
+    @OneToOne
+    @JoinColumn(name = "BSid")
+    private BsEntitys BSid;
+
+    @OneToOne
+    @JoinColumn(name = "pontID")
+    private PontuacaoEntity pontId;
+
 
 }

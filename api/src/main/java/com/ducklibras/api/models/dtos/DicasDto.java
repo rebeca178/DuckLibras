@@ -1,6 +1,8 @@
-package com.api.ducklibras.models.dtos;
+package com.ducklibras.api.models.dtos;
 
-import com.api.ducklibras.models.entitys.UsersEntity;
+import com.ducklibras.api.models.entitys.DicaEntity;
+
+
 
 import lombok.Getter;
 import lombok.Setter;
@@ -14,7 +16,7 @@ public class DicasDto {
     private String ajuda;
 
 
-    public DicasDto(DicasEntity user) {
+    public DicasDto(DicaEntity user) {
         if(user!= null){
             this.id = user.getId();
             this.ajuda = user.getAjuda();

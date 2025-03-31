@@ -2,7 +2,6 @@ package com.ducklibras.api.models.entitys;
 
 import java.io.Serializable;
 
-import com.ducklibras.api.models.entitys.BsEntitys;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -38,7 +37,7 @@ public class BsEntitys implements Serializable{
 
     @ManyToOne
     @JoinColumn(name = "flashId")
-    private FlashcardEntity flashId;
+    private FlashCardEntity flashId;
 
 
     @OneToOne
