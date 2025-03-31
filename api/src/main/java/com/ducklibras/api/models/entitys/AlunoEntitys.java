@@ -63,7 +63,7 @@ public class AlunoEntitys implements Serializable{
 
     @OneToMany
     @JoinColumn(name = "Id_au" , nullable = false)
-    private AlunoEntitys aluno;
+    private AulasEntity aulas;
 
 
 
