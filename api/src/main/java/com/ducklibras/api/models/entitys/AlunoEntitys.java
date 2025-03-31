@@ -45,7 +45,7 @@ public class AlunoEntitys implements Serializable{
         joinColumns = @JoinColumn(name = "id_aula"),
         inverseJoinColumns = @JoinColumn(name = "id_aluno")
     )
-    private AlunoEntitys AsAluno;
+    private Aula asAluno;
     
     @OneToOne
     @JoinColumn(name = "BSid")
