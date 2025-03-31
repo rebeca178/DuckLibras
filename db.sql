@@ -127,7 +127,7 @@ Create table AU_AL(
     FOREIGN KEY (id_aluno) REFERENCES aluno(id)
 );
   
-<<<<<<< HEAD
+
 Create table BS(
     id_bs INT(10) PRIMARY KEY NOT NULL AUTO_INCREMENT,
     STATUS BOOLEAN NOT NULL,
@@ -164,7 +164,7 @@ create table compra(
     foreign key (loja_id) references loja(lol),
     foreign key (ALID) references aluno(id_Aluno)
 ); 
-=======
+
 create table Dicas (
     ID int primary key not null AUTO_INCREMENT,
     ajuda varchar(255),
@@ -175,4 +175,3 @@ create table Dicas (
     FOREIGN KEY(CID) REFERENCES compra(id),
     FOREIGN key (Fid) REFERENCES FLASHCARD(id)
 );
->>>>>>> 4b80aea4b536f033ead3b7fb6c3b09ca79a28f08

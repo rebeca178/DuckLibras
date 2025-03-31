@@ -16,7 +16,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "compras")
-public class comprasEntitys {
+public class CompraEntitys {
     
     private static final long serialVersionUID = 1L;
    
@@ -35,6 +35,6 @@ public class comprasEntitys {
     @JoinColumn(name = "Id_al" , nullable = false)
     private AlunoEntitys aluno;
 
-    public comprasEntitys() {
+    public CompraEntitys() {
     }
 }
