@@ -1,5 +1,6 @@
 package com.ducklibras.api.models.entitys;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import jakarta.persistence.Column;
@@ -19,7 +20,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "compras")
-public class CompraEntitys {
+public class CompraEntitys implements Serializable {
     
     private static final long serialVersionUID = 1L;
    

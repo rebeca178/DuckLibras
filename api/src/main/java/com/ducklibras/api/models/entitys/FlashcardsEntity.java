@@ -19,7 +19,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "flashCard")
-public class FlashCardEntity implements Serializable{
+public class FlashcardsEntity implements Serializable{
 
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
@@ -37,7 +37,7 @@ public class FlashCardEntity implements Serializable{
     @JoinColumn(name = "DicioId", nullable = false)
     private DicionarioLibrasEntity DicioIdId;
    
-    public FlashCardEntity(FlashCardDto user){
+    public FlashcardsEntity(FlashCardDto user){
         this.quest = user.getQuest();
  
     }
