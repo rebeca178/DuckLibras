@@ -50,5 +50,6 @@ public class FlashCardEntity implements Serializable{
     public String getQuest() {
         throw new UnsupportedOperationException("Unimplemented method 'getQuest'");
     }
+
 }
 
