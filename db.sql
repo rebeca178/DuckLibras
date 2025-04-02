@@ -1,3 +1,5 @@
+
+
 create database DuckLibras
 DEFAULT CHARACTER SET utf8mb4
 DEFAULT COLLATE utf8mb4_general_ci;
@@ -125,6 +127,44 @@ Create table AU_AL(
     FOREIGN KEY (id_aluno) REFERENCES aluno(id)
 );
   
+
+Create table BS(
+    id_bs INT(10) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    STATUS BOOLEAN NOT NULL,
+    nivel int,
+    id_aula int, 
+    id_flashcard int,
+    id_pontuacao int,
+    CONSTRAINT fk_nivel FOREIGN KEY (nivel) REFERENCES pontuacao(nivel),
+    FOREIGN KEY (id_pontuacao) REFERENCES pontuacao(id_pontuacao),
+    FOREIGN KEY (id_aula) REFERENCES aulas(id_aula),
+    FOREIGN KEY (id_flashcard) REFERENCES FLASHCARD(id_flashcard)
+);
+
+create table chat(
+    id_c int primary key auto_increment,
+    mensagem text not null,
+    remetente int,
+    destinatario int,
+    foreign key (remetente) references usuario(id_aluno),
+    foreign key (destinatario) references usuario(id_aluno)
+);
+
+create table loja(
+    id_lol int primary key auto_increment,
+    produto varchar(255),
+    preco varchar(255)
+);
+
+create table compra(
+    id_cop int primary key auto_increment,
+    quantidade int,
+    loja_id INT,
+    ALID INT,
+    foreign key (loja_id) references loja(lol),
+    foreign key (ALID) references aluno(id_Aluno)
+); 
+
 create table Dicas (
     ID int primary key not null AUTO_INCREMENT,
     ajuda varchar(255),
