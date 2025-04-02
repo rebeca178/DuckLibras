@@ -41,7 +41,7 @@ public class DicaEntity implements Serializable{
 
     @OneToOne
     @JoinColumn(name = "FId", nullable = false)
-    private FlashCardEntity FId;
+    private FlashcardsEntity FId;
    
     
     public DicaEntity(DicasDto user){

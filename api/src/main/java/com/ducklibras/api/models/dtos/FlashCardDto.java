@@ -1,6 +1,6 @@
 package com.ducklibras.api.models.dtos;
 
-import com.ducklibras.api.models.entitys.FlashCardEntity;
+import com.ducklibras.api.models.entitys.FlashcardsEntity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -14,7 +14,7 @@ public class FlashCardDto {
     private String quest;
 
 
-    public FlashCardDto(FlashCardEntity user) {
+    public FlashCardDto(FlashcardsEntity user) {
         if(user!= null){
             this.id = user.getId();
             this.quest = user.getQuest();
