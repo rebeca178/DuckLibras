@@ -41,7 +41,7 @@ public class DicaEntity implements Serializable{
 
     @OneToOne
     @JoinColumn(name = "FId", nullable = false)
-    private FlashcardsEntity FId;
+    private FlashCardsEntitys FId;
    
     
     public DicaEntity(DicasDto user){
@@ -51,13 +51,11 @@ public class DicaEntity implements Serializable{
 
 
     public Long getId() {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getId'");
     }
 
 
     public String getAjuda() {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getAjuda'");
     }
 
