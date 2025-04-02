@@ -1,5 +1,6 @@
 package com.ducklibras.api.models.entitys;
 
+import lombok.Getter;
 import lombok.Setter;
 
 import com.ducklibras.api.models.dtos.FlashCardDto;
@@ -14,7 +15,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
-
+@Getter
 @Setter
 
 @Entity
@@ -49,7 +50,5 @@ public class FlashCardEntity implements Serializable{
     public String getQuest() {
         throw new UnsupportedOperationException("Unimplemented method 'getQuest'");
     }
-
-
 }
 
