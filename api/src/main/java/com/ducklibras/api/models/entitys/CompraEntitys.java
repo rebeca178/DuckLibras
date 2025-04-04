@@ -1,7 +1,6 @@
 package com.ducklibras.api.models.entitys;
 
 import java.io.Serializable;
-import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -34,9 +33,6 @@ public class CompraEntitys implements Serializable {
     @ManyToOne
     @JoinColumn(name = "lojaId", nullable = false)
     private lojaEntitys loja;
-
-    @OneToMany(mappedBy = "compra")
-    private Set<AlunoEntitys> aluno;
 
     public CompraEntitys() {
     }

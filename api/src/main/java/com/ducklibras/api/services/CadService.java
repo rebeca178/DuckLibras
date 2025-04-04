@@ -21,10 +21,10 @@ public class CadService {
     public String createAluno(AlunoInDto aluno) {
         String response;
         if(ValidateUsers(aluno.getUsername(), aluno.getEmail())) {
-            response = "ERROR: usuario ja cadastrado";
-        }else{
             alunoRepo.save(new AlunoEntitys(aluno));
             response = "Usuario Cadastrado com Sucesso";
+        }else{
+            response = "ERROR: usuario ja cadastrado";
         }
 
         return response;

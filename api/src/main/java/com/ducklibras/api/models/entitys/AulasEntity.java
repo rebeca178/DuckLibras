@@ -45,11 +45,4 @@ public class AulasEntity {
         this.pontuacao = pontuacao;
         this.dicionarioLibras = dicionarioLibras;
     }
-
-    @ManyToMany(mappedBy = "asAluno")
-    private Set<AlunoEntitys> asAulas;
-
-    @ManyToOne
-    @JoinColumn(name = "alunoId", nullable = false)
-    private AlunoEntitys aluno;
 }
