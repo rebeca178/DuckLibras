@@ -31,7 +31,7 @@ public class CadService {
     /*
      * Name: [NF012] Validate User
      * Description: Method to validate if the user already exists
-     * Author: Kevin da Costa Vinagre
+     * Author: Dhemerson
     */
     public boolean ValidateUsers(String username, String email){
         return alunoRepo.findByUsernameAndEmail(username, email).isEmpty();
