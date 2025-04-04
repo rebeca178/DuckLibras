@@ -17,7 +17,6 @@ public interface AnotacaoRepository extends JpaRepository<AnotacaoEntity, Long> 
     @Query("SELECT a FROM AnotacaoEntity a WHERE LOWER(a.conteudo) LIKE LOWER(CONCAT('%', :keyword, '%'))")
     List<AnotacaoEntity> searchByKeyword(String keyword);
 
-    // Busca por usuário (exemplo: pegar todas as anotações de um usuário específico)
     List<AnotacaoEntity> findByUsuarioId(Long usuarioId);
 
     Page<AnotacaoEntity> findAll(Pageable pageable);
