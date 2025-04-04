@@ -1,7 +1,10 @@
 package com.ducklibras.api.models.entitys;
 
+
 import java.io.Serializable;
 import java.util.Set;
+
+import com.ducklibras.api.models.dtos.AlunoInDto;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -14,6 +17,11 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 
 @Entity
 @Table(name = "aluno")
@@ -64,26 +72,33 @@ public class AlunoEntitys implements Serializable{
     @OneToMany(mappedBy = "aluno")
     private Set<AulasEntity> aulas;
 
-    public Long getId() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getId'");
+    public AlunoEntitys() {
     }
 
-    public String getUsername() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getUsername'");
+    public AlunoEntitys(Long id, String username, String pass, String email, String photo) {
+        if (id != null) this.id = id;
+        if (username != null) this.username = username;
+        if (pass != null) this.pass = pass;
+        if (email != null) this.email = email;
+        if (photo != null) this.photo = photo;
+    }
+    public AlunoEntitys(String username, String pass, String email, String photo) {
+        if (username != null) this.username = username;
+        if (pass != null) this.pass = pass;
+        if (email != null) this.email = email;
+        if (photo != null) this.photo = photo;
+    }
+    public AlunoEntitys(String username, String pass, String email) {
+        if (username != null) this.username = username;
+        if (pass != null) this.pass = pass;
+        if (email != null) this.email = email;
     }
 
-    public String getPass() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getPass'");
+    public AlunoEntitys(AlunoInDto user){
+        this.username = user.getUsername();
+        this.pass = user.getPass();
+        this.email = user.getEmail();
+        this.photo = user.getPhoto();
     }
-
-    public String getEmail() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getEmail'");
-    }
-
-
 
 }
