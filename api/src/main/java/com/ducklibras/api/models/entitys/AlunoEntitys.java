@@ -74,6 +74,16 @@ public class AlunoEntitys implements Serializable{
         throw new UnsupportedOperationException("Unimplemented method 'getUsername'");
     }
 
+    public String getPass() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getPass'");
+    }
+
+    public String getEmail() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getEmail'");
+    }
+
 
 
 }

@@ -48,7 +48,7 @@ public class AlunoDto {
             this.username = user.getUsername();
             this.pass = user.getPass();
             this.email = user.getEmail();
-            this.photo = user.getPhoto();
+            this.photo = user.getPass();
         }
     }
 
