@@ -28,38 +28,42 @@ import com.ducklibras.api.services.CadService;
 class CadServicesTests {
 
     @Mock
-    private AlunoRepo AlunoRepo;
+    private AlunoRepo alunoRepo;
+
+    @Mock
+    private AlunoEntitys alunoEntitys;
+
 
     @InjectMocks
-    private CadService CadService;
+    private CadService cadService;
 
     @BeforeEach
     void setUp() {
-        MockitoAnnotations.openMocks(CadService);
+        MockitoAnnotations.openMocks(cadService);
     }
 
     @Test
     void testCreateUsers_Success() {
 
         AlunoInDto user= new AlunoInDto("Lucas","email1@email.com");
-        when(AlunoRepo.findByUsernameAndEmail(user.getUsername(), user.getEmail())).thenReturn(Optional.empty());
+        when(alunoRepo.findByUsernameAndEmail(user.getUsername(), user.getEmail())).thenReturn(Optional.empty());
         AlunoEntitys AlunoEntitys = new AlunoEntitys(user);
-        when(AlunoRepo.save(any(AlunoEntitys.class))).thenReturn(AlunoEntitys);
-        AlunoEntitys result = CadService.createUsers(user);
+        when(alunoRepo.save(any(AlunoEntitys.class))).thenReturn(alunoEntitys);
+        AlunoEntitys result = cadService.createUsers(user);
         assertNotNull(result);
         assertEquals(user.getUsername(), result.getUsername());
         assertEquals(user.getEmail(), result.getEmail());
-        verify(AlunoRepo, times(1)).save(any(AlunoEntitys.class));
+        verify(alunoRepo, times(1)).save(any(AlunoEntitys.class));
     }
 
     @Test
     void testValidateUsers_UserExist() {
         String username = "Lucas";
         String email = "email1@email.com";
-        when(AlunoRepo.findByUsernameAndEmail(username, email)).thenReturn(Optional.empty());
-        boolean result = CadService.ValidateUsers(username, email);
+        when(alunoRepo.findByUsernameAndEmail(username, email)).thenReturn(Optional.empty());
+        boolean result = cadService.ValidateUsers(username, email);
         assertTrue(result);
-        verify(AlunoRepo, times(1)).findByUsernameAndEmail(username, email);
+        verify(alunoRepo, times(1)).findByUsernameAndEmail(username, email);
     }
 
 }
