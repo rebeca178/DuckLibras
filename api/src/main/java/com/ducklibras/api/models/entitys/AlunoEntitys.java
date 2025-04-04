@@ -64,6 +64,16 @@ public class AlunoEntitys implements Serializable{
     @OneToMany(mappedBy = "aluno")
     private Set<AulasEntity> aulas;
 
+    public Long getId() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getId'");
+    }
+
+    public String getUsername() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getUsername'");
+    }
+
 
 
 }

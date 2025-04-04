@@ -1,10 +1,14 @@
 package com.api.ducklibras.services;
 
-import com.api.springapi.models.dtos.UserInDto;
-import com.api.springapi.models.entitys.UsersEntity;
-import com.api.springapi.models.repos.InstitutesRepo;
-import com.api.springapi.models.repos.UsersRepo;
-import com.api.springapi.models.repos.VisitorsRepo;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.ducklibras.api.models.repo.AlunoRepo;
+import com.ducklibras.api.services.CadService;
 
 
 
@@ -12,21 +16,21 @@ import com.api.springapi.models.repos.VisitorsRepo;
 class CadServicesTests {
 
     @Mock
-    private AlunoRepo AlunoiRepo;
+    private AlunoRepo AlunoRepo;
 
     @InjectMocks
-    private CadService cadServices;
+    private CadService CadService;
 
     @BeforeEach
     void setUp() {
-        MockitoAnnotations.openMocks(cadServices);
+        MockitoAnnotations.openMocks(CadService);
     }
 
     @Test
     void testCreateUsers_Success() {
 
-        UserInDto user= new UserInDto("Lucas","email1@email.com");
-        when(usersRepo.findByNameAndMail(user.getNames(), user.getMail())).thenReturn(Optional.empty());
+        AlunoInDto user= new AlunoInDto("Lucas","email1@email.com");
+        when(AlunoRepo.findByNameAndMail(user.getNames(), user.getMail())).thenReturn(Optional.empty());
         UsersEntity userEntity = new UsersEntity(user);
         when(usersRepo.save(any(UsersEntity.class))).thenReturn(userEntity);
         UsersEntity result = cadServices.createUsers(user);
