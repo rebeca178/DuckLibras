@@ -11,7 +11,7 @@ import com.ducklibras.api.models.entitys.AlunoEntitys;
 @Repository
 public interface AlunoRepo extends JpaRepository<AlunoEntitys, Long> {
     
-        @Query("SELECT u FROM UsersEntity u WHERE u.username = ?1 AND u.email = ?2")
+    @Query("SELECT a FROM AlunoEntitys a WHERE a.username = ?1 AND a.email = ?2")
     public Optional<AlunoEntitys> findByUsernameAndEmail(String username, String email);
 
 }

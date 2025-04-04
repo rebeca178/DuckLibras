@@ -1,13 +1,11 @@
 package com.api.ducklibras.services;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-
 import java.util.Optional;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -49,10 +47,8 @@ class CadServicesTests {
         when(alunoRepo.findByUsernameAndEmail(user.getUsername(), user.getEmail())).thenReturn(Optional.empty());
         AlunoEntitys AlunoEntitys = new AlunoEntitys(user);
         when(alunoRepo.save(any(AlunoEntitys.class))).thenReturn(alunoEntitys);
-        AlunoEntitys result = cadService.createUsers(user);
+        String result = cadService.createAluno(user);
         assertNotNull(result);
-        assertEquals(user.getUsername(), result.getUsername());
-        assertEquals(user.getEmail(), result.getEmail());
         verify(alunoRepo, times(1)).save(any(AlunoEntitys.class));
     }
 

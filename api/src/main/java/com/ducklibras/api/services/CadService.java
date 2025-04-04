@@ -1,11 +1,8 @@
 package com.ducklibras.api.services;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ducklibras.api.models.dtos.AlunoDto;
 import com.ducklibras.api.models.dtos.AlunoInDto;
 import com.ducklibras.api.models.entitys.AlunoEntitys;
 import com.ducklibras.api.models.repo.AlunoRepo;
@@ -23,7 +20,7 @@ public class CadService {
     */
     public String createAluno(AlunoInDto aluno) {
         String response;
-        if(ValidateUsers(aluno.getUsername(), user.getEmail())) {
+        if(ValidateUsers(aluno.getUsername(), aluno.getEmail())) {
             response = "ERROR: usuario ja cadastrado";
         }else{
             alunoRepo.save(new AlunoEntitys(aluno));
