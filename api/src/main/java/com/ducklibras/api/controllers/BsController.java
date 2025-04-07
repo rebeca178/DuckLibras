@@ -52,9 +52,6 @@ public class BsController {
     public ResponseEntity<?> getLessonsForBoardSquare(@PathVariable Long boardSquareId) {
         return ResponseEntity.ok().body(Map.of(
             "lessons", new String[]{
-                "Lesson 1: Introduction",
-                "Lesson 2: Basic Concepts",
-                "Lesson 3: Advanced Topics"
             }
         ));
     }
@@ -63,9 +60,6 @@ public class BsController {
     public ResponseEntity<?> getFlashcardsForBoardSquare(@PathVariable Long boardSquareId) {
         return ResponseEntity.ok().body(Map.of(
             "flashcards", new String[]{
-                "Flashcard 1: Definition",
-                "Flashcard 2: Question",
-                "Flashcard 3: Challenge"
             }
         ));
     }
