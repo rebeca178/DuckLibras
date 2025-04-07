@@ -19,13 +19,12 @@ public class BsService {
         
 
         return !studentBoardStatus.getOrDefault(studentId, new ConcurrentHashMap<>())
-                                 .getOrDefault(boardSquareId, false);
+        .getOrDefault(boardSquareId, false);
     }
     
  
     public void completeBoardSquare(Long studentId, Long boardSquareId) {
-        studentBoardStatus.computeIfAbsent(studentId, _ -> new ConcurrentHashMap<>())
-                         .put(boardSquareId, true);
+        studentBoardStatus.computeIfAbsent(studentId, _ -> new ConcurrentHashMap<>()).put(boardSquareId, true);
     }
     
 
