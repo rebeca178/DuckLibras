@@ -6,29 +6,26 @@ import java.util.concurrent.ConcurrentHashMap;
 
 @Service
 public class BsService {
-    private final Map<Long, Map<Long, Boolean>> studentBoardStatus = new ConcurrentHashMap<>();
-    private final Map<Long, Integer> studentLevels = new ConcurrentHashMap<>();
-    
+    private final Map<Long, Map<Long, Boolean>> alunoBoardStatus = new ConcurrentHashMap<>();
+    private final Map<Long, Integer> alunoNivel = new ConcurrentHashMap<>();
 
-    public boolean canAccessBoardSquare(Long studentId, Long boardSquareId, int requiredLevel) {
-
-        Integer studentLevel = studentLevels.getOrDefault(studentId, 0);
-        if (studentLevel < requiredLevel) {
+    public boolean acessoBoardSquare(Long alunoId, Long boardSquareId, int nivelRequerido) {
+        Integer nivelDoAluno = alunoNivel.getOrDefault(alunoId, 1);
+        if (nivelDoAluno < nivelRequerido) {
             return false;
         }
-        
+        return !alunoBoardStatus
+                .getOrDefault(alunoId, new ConcurrentHashMap<>())
+                .getOrDefault(boardSquareId, false);
+    }
 
-        return !studentBoardStatus.getOrDefault(studentId, new ConcurrentHashMap<>())
-        .getOrDefault(boardSquareId, false);
+    public void completeBoardSquare(Long alunoId, Long boardSquareId) {
+        alunoBoardStatus
+                .computeIfAbsent(alunoId, _ -> new ConcurrentHashMap<>())
+                .put(boardSquareId, true);
     }
-    
- 
-    public void completeBoardSquare(Long studentId, Long boardSquareId) {
-        studentBoardStatus.computeIfAbsent(studentId, _ -> new ConcurrentHashMap<>()).put(boardSquareId, true);
-    }
-    
 
     public void updateStudentLevel(Long studentId, int newLevel) {
-        studentLevels.put(studentId, newLevel);
+        alunoNivel.put(studentId, newLevel);
     }
 }

@@ -18,20 +18,20 @@ public class BsController {
     @GetMapping("/{boardSquareId}/access")
     public ResponseEntity<?> checkAccess(
             @PathVariable Long boardSquareId,
-            @RequestParam Long studentId,
-            @RequestParam int requiredLevel) {
+            @RequestParam Long alunoId,
+            @RequestParam int nivelRequerido) {
         
-        boolean canAccess = boardSquareService.canAccessBoardSquare(studentId, boardSquareId, requiredLevel);
+        boolean acesso = boardSquareService.acessoBoardSquare(alunoId, boardSquareId, nivelRequerido);
         
-        if (canAccess) {
+        if (acesso) {
             return ResponseEntity.ok().body(Map.of(
-                "canAccess", true,
-                "message", "Student can access this Board Square"
+                "acesso", true,
+                "message", "Aluno pode ter acesso ao BS"
             ));
         } else {
             return ResponseEntity.badRequest().body(Map.of(
-                "canAccess", false,
-                "message", "Student cannot access this Board Square"
+                "acesso", false,
+                "message", "Aluno nao pode ter acesso ao BS"
             ));
         }
     }
@@ -39,18 +39,17 @@ public class BsController {
     @PostMapping("/{boardSquareId}/complete")
     public ResponseEntity<?> completeBoardSquare(
             @PathVariable Long boardSquareId,
-            @RequestParam Long studentId) {
+            @RequestParam Long alunoId) {
         
-        boardSquareService.completeBoardSquare(studentId, boardSquareId);
+        boardSquareService.completeBoardSquare(alunoId, boardSquareId);
         return ResponseEntity.ok().body(Map.of(
-            "success", true,
-            "message", "Board Square marked as completed"
+            "sucesso", true,
+            "message", "Board Square completo"
         ));
     }
     
     @GetMapping("/{boardSquareId}/lessons")
     public ResponseEntity<?> getLessonsForBoardSquare(@PathVariable Long boardSquareId) {
-        // Simulação - na prática, isso viria de um repositório de aulas
         return ResponseEntity.ok().body(Map.of(
             "lessons", new String[]{
                 "Lesson 1: Introduction",
@@ -62,7 +61,6 @@ public class BsController {
     
     @GetMapping("/{boardSquareId}/flashcards")
     public ResponseEntity<?> getFlashcardsForBoardSquare(@PathVariable Long boardSquareId) {
-        // Simulação - na prática, isso viria de um repositório de flashcards
         return ResponseEntity.ok().body(Map.of(
             "flashcards", new String[]{
                 "Flashcard 1: Definition",
