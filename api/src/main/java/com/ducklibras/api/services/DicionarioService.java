@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DicionarioService {
@@ -19,7 +20,7 @@ public class DicionarioService {
      * @param palavraChave A palavra-chave para buscar sinais.
      * @return Lista de sinais que correspondem à palavra-chave.
      */
-    public List<DicionarioLibrasEntity> buscarPorPalavra(String palavraChave) {
-        return dicionarioLibrasRepo.findByPalavraContainingIgnoreCase(palavraChave);
+    public Optional<List<DicionarioLibrasEntity>> buscarPorPalavra(String palavraChave) {
+        return Optional.of(dicionarioLibrasRepo.findByPalavraContainingIgnoreCase(palavraChave));
     }
 }
