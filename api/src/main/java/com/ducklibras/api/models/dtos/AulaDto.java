@@ -9,7 +9,8 @@ public class AulaDto {
     public AulaDto() {
     }
 
-    public AulaDto(Long id, String explicacao, Long pontuacaoId, String dicionarioLibrasName) {
+    public  AulaDto(Long id, String explicacao, Long pontuacaoId, String dicionarioLibrasName) {
+
         this.id = id;
         this.explicacao = explicacao;
         this.pontuacaoId = pontuacaoId;

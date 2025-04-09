@@ -7,33 +7,38 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.Setter;
 import jakarta.persistence.Column;
 
 
 
 @Entity
 @Table(name = "aulas")
-public class Aula {
+@getter
+@Setter
+
+public class aulas {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "explicacao", nullable = false, length = 255)
-    private string explicacao;
+    private String explicacao;
 
+    @Column(name="explicação", nullable=false, length=512)
+    public String getDescription() { return explicacao; }
+
+    
     @ManyToOne
     @JoinColumn(name = "Pid")
     private Pontuacao pontuacao;
+
 
     @ManyToOne
     @JoinColumn(name = "DICIOid")
     private Dicionario_Libras dicionarioLibras;
 
-    public Aula() {
-    }
-
-    public Aula(String explicacao, Pontuacao pontuacao, Dicionario_Libras dicionarioLibras) {
+    public void Aula(String explicacao, Pontuacao pontuacao, Dicionario_Libras dicionarioLibras) {
         this.explicacao = explicacao;
         this.pontuacao = pontuacao;
         this.dicionarioLibras = dicionarioLibras;
@@ -51,7 +56,7 @@ public class Aula {
         return explicacao;
     }
 
-    public void setExplicacao(string explicacao) {
+    public void setExplicacao(String explicacao) {
         this.explicacao = explicacao;
     }
 
