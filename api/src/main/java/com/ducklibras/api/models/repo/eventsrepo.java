@@ -2,6 +2,9 @@ package com.ducklibras.api.models.repo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+
+import com.ducklibras.api.models.entitys.EventsEntity;
+
 import java.util.Date;
 import java.util.List;
 

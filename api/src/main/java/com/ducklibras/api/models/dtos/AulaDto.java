@@ -1,5 +1,11 @@
 package com.ducklibras.api.models.dtos;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+
 public class AulaDto {
     private Long id;
     private String explicacao;
