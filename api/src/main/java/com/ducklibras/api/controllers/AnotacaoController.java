@@ -49,7 +49,7 @@ public class AnotacaoController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletarAnotacao(@PathVariable Long id) {
+    public ResponseEntity<Object> deletarAnotacao(@PathVariable Long id) {
         return anotacaoRepository.findById(id)
                 .map(anotacao -> {
                     anotacaoRepository.delete(anotacao);
