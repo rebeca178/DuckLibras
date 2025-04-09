@@ -2,7 +2,6 @@ package com.ducklibras.api.controllers;
 
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,12 +10,11 @@ import com.ducklibras.api.services.BsService;
 @RestController
 @RequestMapping("/api/board-squares")
 public class BsController {
-    
-    @Autowired
+
     private BsService boardSquareService;
     
     @GetMapping("/{boardSquareId}/access")
-    public ResponseEntity<?> checkAccess(
+    public ResponseEntity<Map<String, Object>> checkAccess(
             @PathVariable Long boardSquareId,
             @RequestParam Long alunoId,
             @RequestParam int nivelRequerido) {
@@ -26,7 +24,7 @@ public class BsController {
         if (acesso) {
             return ResponseEntity.ok().body(Map.of(
                 "acesso", true,
-                "message", "Aluno pode ter acesso ao BS"
+                "a", "Aluno pode ter acesso ao BS"
             ));
         } else {
             return ResponseEntity.badRequest().body(Map.of(
@@ -37,7 +35,7 @@ public class BsController {
     }
     
     @PostMapping("/{boardSquareId}/complete")
-    public ResponseEntity<?> completeBoardSquare(
+    public ResponseEntity<Map<String, Object>> completeBoardSquare(
             @PathVariable Long boardSquareId,
             @RequestParam Long alunoId) {
         
@@ -49,7 +47,7 @@ public class BsController {
     }
     
     @GetMapping("/{boardSquareId}/lessons")
-    public ResponseEntity<?> getLessonsForBoardSquare(@PathVariable Long boardSquareId) {
+    public ResponseEntity<Map<String, Object>> getLessonsForBoardSquare(@PathVariable Long boardSquareId) {
         return ResponseEntity.ok().body(Map.of(
             "lessons", new String[]{
             }
@@ -57,7 +55,7 @@ public class BsController {
     }
     
     @GetMapping("/{boardSquareId}/flashcards")
-    public ResponseEntity<?> getFlashcardsForBoardSquare(@PathVariable Long boardSquareId) {
+    public ResponseEntity<Map<String, Object>> getFlashcardsForBoardSquare(@PathVariable Long boardSquareId) {
         return ResponseEntity.ok().body(Map.of(
             "flashcards", new String[]{
             }
