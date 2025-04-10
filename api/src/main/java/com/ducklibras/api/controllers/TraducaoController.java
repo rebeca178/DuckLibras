@@ -1,47 +1,43 @@
-package com.ducklibras.api.controllers;
+package com.ducklibras.api.services;
 
 import com.ducklibras.api.models.entitys.TraducaoEntity;
-import com.ducklibras.api.services.TraducaoService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import com.ducklibras.api.models.repo.TraducaoRepository;
+import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-@RestController
-@RequestMapping("/api/traducoes")
-public class TraducaoController {
+@Service
+public class TraducaoService {
+    
+    private TraducaoRepository traducaoRepository;
 
-    @Autowired
-    private TraducaoService traducaoService;
-
-    @PostMapping
-    public ResponseEntity<TraducaoEntity> criarTraducao(@RequestBody TraducaoEntity traducao) {
-        TraducaoEntity novaTraducao = traducaoService.criarTraducao(traducao);
-        return ResponseEntity.ok(novaTraducao);
+    public TraducaoEntity salvarTraducao(TraducaoEntity traducao) {
+        return traducaoRepository.save(traducao);
     }
 
-    @GetMapping
-    public ResponseEntity<List<TraducaoEntity>> listarTraducoes() {
-        List<TraducaoEntity> traducoes = traducaoService.listarTraducoes();
-        return ResponseEntity.ok(traducoes);
+    public List<TraducaoEntity> listarTodas() {
+        return traducaoRepository.findAll();
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<TraducaoEntity> buscarTraducaoPorId(@PathVariable Long id) {
-        Optional<TraducaoEntity> traducao = traducaoService.buscarTraducaoPorId(id);
-        return traducao.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    public Optional<TraducaoEntity> buscarPorId(Long id) {
+        return traducaoRepository.findById(id);
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<TraducaoEntity> atualizarTraducao(@PathVariable Long id, @RequestBody TraducaoEntity traducaoAtualizada) {
-        TraducaoEntity traducao = traducaoService.atualizarTraducao(id, traducaoAtualizada);
-        return ResponseEntity.ok(traducao);
+    public List<TraducaoEntity> buscarPorIdioma(String idioma) {
+        return traducaoRepository.findByIdioma(idioma);
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletarTraducao(@PathVariable Long id) {
-        traducaoService.deletarTraducao(id);
-        return ResponseEntity.noContent().build();
+    public TraducaoEntity atualizarTraducao(Long id, TraducaoEntity traducaoAtualizada) {
+        return traducaoRepository.findById(id).map(traducao -> {
+            traducao.setTextoOriginal(traducaoAtualizada.getTextoOriginal());
+            traducao.setTextoTraduzido(traducaoAtualizada.getTextoTraduzido());
+            traducao.setIdiomaOrigem(traducaoAtualizada.getIdiomaOrigem());
+            traducao.setIdiomaDestino(traducaoAtualizada.getIdiomaDestino());
+            return traducaoRepository.save(traducao);
+        }).orElseThrow(() -> new RuntimeException("Tradução não encontrada."));
+    }
+
+    public void deletarTraducao(Long id) {
+        traducaoRepository.deleteById(id);
     }
 }

@@ -1,16 +1,16 @@
 package com.ducklibras.api.services;
 
+import com.ducklibras.api.models.dtos.PontuacaoDto;
 import com.ducklibras.api.models.entitys.PontuacaoEntity;
 import com.ducklibras.api.models.repo.PontuacaoRepo;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Service
 public class PontuacaoService {
 
-    @Autowired
     private PontuacaoRepo pontuacaoRepo;
 
     /**
@@ -20,9 +20,10 @@ public class PontuacaoService {
      * @param pontos Pontos a serem adicionados.
      * @return A entidade de pontuação atualizada.
      */
-    public PontuacaoEntity adicionarPontos(Long userId, int pontos) {
-        PontuacaoEntity pontuacao = pontuacaoRepo.findById(userId)
-                .orElseThrow(() -> new IllegalArgumentException("Usuário não encontrado"));
+    public Optional<PontuacaoDto> adicionarPontos(Long userId, int pontos) {
+        Optional<PontuacaoEntity> optionalPontuacao = pontuacaoRepo.findById(userId);
+        if (!optionalPontuacao.isPresent()) return Optional.empty();
+        PontuacaoEntity pontuacao = optionalPontuacao.get();
 
         // Adiciona os pontos
         pontuacao.setPontos(pontuacao.getPontos() + pontos);
@@ -33,7 +34,7 @@ public class PontuacaoService {
         // Atualiza a última modificação
         pontuacao.setUltimaAtualizacao(LocalDateTime.now().toString());
 
-        return pontuacaoRepo.save(pontuacao);
+        return Optional.of(new PontuacaoDto(pontuacaoRepo.save(pontuacao)));
     }
 
     /**

@@ -1,8 +1,7 @@
 package com.ducklibras.api.services;
 
 import com.ducklibras.api.models.entitys.TraducaoEntity;
-import com.ducklibras.api.repositories.TraducaoRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.ducklibras.api.models.repo.TraducaoRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
@@ -10,7 +9,6 @@ import java.util.Optional;
 @Service
 public class TraducaoService {
     
-    @Autowired
     private TraducaoRepository traducaoRepository;
 
     public TraducaoEntity salvarTraducao(TraducaoEntity traducao) {
