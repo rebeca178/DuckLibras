@@ -24,4 +24,16 @@ public class AnotacaoEntity implements Serializable {
     @Column(name = "conteudo", nullable = false, columnDefinition = "TEXT")
     private String conteudo;
 
+    public Object getDataCriacao() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getDataCriacao'");
+    }
+
+    public Object getDescricao() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getDescricao'");
+    }
+
+
+
 }

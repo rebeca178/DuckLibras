@@ -1,9 +1,14 @@
 package com.ducklibras.api.services;
 
+import java.util.Optional;
+
+import javax.print.DocFlavor.STRING;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ducklibras.api.models.dtos.AlunoInDto;
+import com.ducklibras.api.models.dtos.LoginDto;
 import com.ducklibras.api.models.entitys.AlunoEntitys;
 import com.ducklibras.api.models.repo.AlunoRepo;
 
@@ -20,7 +25,7 @@ public class CadService {
     */
     public String createAluno(AlunoInDto aluno) {
         String response;
-        if(ValidateUsers(aluno.getUsername(), aluno.getEmail())) {
+        if(ValidateAluno(aluno.getEmail())){
             alunoRepo.save(new AlunoEntitys(aluno));
             response = "Usuario Cadastrado com Sucesso";
         }else{
@@ -31,13 +36,34 @@ public class CadService {
 
     }
 
+     public boolean ValidateAluno(String email){
+        return alunoRepo.findByEmail(email).isEmpty();
+    }
+
+
+
+
+
     /*
-     * Name: [NF012] Validate User
+     * Name: [NF012] login
      * Description: Method to validate if the user already exists
      * Author: Dhemerson
     */
-    public boolean ValidateUsers(String username, String email){
-        return alunoRepo.findByUsernameAndEmail(username, email).isEmpty();
+    public Optional<String> loginAluno(LoginDto log){
+        if(alunoRepo.existsByEmail(log.getEmail())){
+            Optional<AlunoEntitys> aluno = alunoRepo.findByEmailAndPass(
+                log.getEmail(), 
+                log.getPass()
+                );
+            if(aluno.isPresent()){
+                return Optional.of("Login Realizado com Sucesso");
+            }else{
+                return Optional.of("Senha incorreta");
+            }
+        }else{
+            return Optional.of("Usuario / Email não encontrado");
+        }
     }
 
+ 
 }

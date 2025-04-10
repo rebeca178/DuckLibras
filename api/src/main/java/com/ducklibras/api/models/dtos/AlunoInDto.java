@@ -25,13 +25,13 @@ public class AlunoInDto {
     }
     
     public AlunoInDto(String username, String pass, String email) {
-        this.username = username;
-        this.pass = pass;
         this.email = email;
+        this.pass = pass;
+        this.username = username;
     }
 
-    public AlunoInDto(String username, String pass) {
-        this.username = username;
+    public AlunoInDto(String email, String pass) {
+        this.email = email;
         this.pass = pass;
     }
     

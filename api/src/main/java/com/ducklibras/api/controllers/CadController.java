@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ducklibras.api.models.dtos.AlunoInDto;
+import com.ducklibras.api.models.dtos.LoginDto;
 import com.ducklibras.api.services.CadService;
 
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,5 +31,13 @@ public class CadController{
         return (response.equals("Usuario Cadastrado com Sucesso"))
         ?ResponseEntity.status(202).body(response)
         :ResponseEntity.status(400).body(response);
+    }
+
+        @PostMapping("/loginAluno")
+    public ResponseEntity<String> postMethodName(@RequestBody LoginDto log) {
+        String response = cadService.loginAluno(log).get();
+        return (response.equals("Login realizado com sucesso"))
+        ?ResponseEntity.status(202).body(response)
+        :ResponseEntity.status(404).body(response);
     }
 }
