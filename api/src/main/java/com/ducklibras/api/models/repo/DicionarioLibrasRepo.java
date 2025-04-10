@@ -16,4 +16,4 @@ public interface DicionarioLibrasRepo extends JpaRepository<DicionarioLibrasEnti
      * @return Lista de sinais que correspondem à palavra-chave.
      */
     List<DicionarioLibrasEntity> findByPalavraContainingIgnoreCase(String palavra);
-}
+

@@ -1,5 +1,6 @@
 package com.ducklibras.api.models.dtos;
 
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,7 +16,11 @@ public class AulaDto {
     public AulaDto() {
     }
 
+
     public  AulaDto(Long id, String explicacao, Long pontuacaoId, String dicionarioLibrasName) {
+
+
+    public AulaDto(Long id, String explicacao, Long pontuacaoId, String dicionarioLibrasName) {
 
         this.id = id;
         this.explicacao = explicacao;
@@ -51,7 +56,11 @@ public class AulaDto {
         return dicionarioLibrasName;
     }
 
+
     public void setDicionarioLibrasName(String dicionarioLibrasName) {
         this.dicionarioLibrasName = dicionarioLibrasName;
     }
 }
+
+}
+

@@ -32,4 +32,4 @@ public class PontuacaoEntity implements Serializable {
 
     @Column(name = "ultima_atualizacao", nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private String ultimaAtualizacao;
-}
+

@@ -1,14 +1,28 @@
+<<<<<<< HEAD
+use ducklibras;
+
+INSERT INTO chatbot (id_chat,chat, perguntas, respostas,amizade) VALUES ('1', 'Quem sou eu ?', 'Você é um humano ','1');
+
+INSERT INTO loja (id_lol, produto, preco) VALUES ('1', 'pato aranha', '100P');
+
+INSERT INTO compra (id_cop, quantidade, loja_id,ALID) VALUES ('1', '1','1','1');
+=======
 USE DuckLibras;
+>>>>>>> 4b80aea4b536f033ead3b7fb6c3b09ca79a28f08
 
 insert into dicionario_libras (id,palavra,traducao,sinal,imagem,video_url,descricao,categoria,dificuldade) VALUES  ('1','coelho','coelho2','sinalcoelho', 'imgcoleho','vidocoelho','oqcoelho','animal','Fácil');
 
 insert into pontuacao (id,pontos,nivel) VALUES  ('1','5','1');
 
+<<<<<<< HEAD
+insert into BS (id_bs,STATUS,id_aula,id_flashcard,nivel) VALUES  ('1','1','1','1','1');
+=======
 insert into FLASHCARD (id,quest,Pid,DICIOid) values ('1', 'WHAT?', '1','1');
 
 insert into aulas (id,explicacao,Pid,DICIOid) VALUES  ('1','pipipopo','1','1');
 
 insert into BS (id,STATUS,auID,FlashID,PonId) VALUES  ('1','1','1','1','1');
+>>>>>>> 4b80aea4b536f033ead3b7fb6c3b09ca79a28f08
 
 insert into traducao (id,palavra,dicioId) VALUES  ('1','coelho','1');
 
@@ -21,6 +35,8 @@ insert into aluno (id,username,email,photo,senha,Anoid,TradId,BSid,pontID) VALUE
 
 insert into chat(id,mensagem,remetente,destinatario) VALUES  ('1','oi','1','2');
 
+<<<<<<< HEAD
+=======
 insert into flash_al(id_flashcard,id_aluno) values ('1','1');
 
 insert into au_al(id_aula,id_aluno) VALUES  ('1','1');
@@ -28,3 +44,4 @@ insert into au_al(id_aula,id_aluno) VALUES  ('1','1');
 insert into compra (id,quantidade,loja_id,ALID ) values ('1', '1', '1','1');
 
 insert into dicas (ID,ajuda,Fid,Cid,DICIOid ) values ('1', 'help', '1','1','1');
+>>>>>>> 4b80aea4b536f033ead3b7fb6c3b09ca79a28f08
