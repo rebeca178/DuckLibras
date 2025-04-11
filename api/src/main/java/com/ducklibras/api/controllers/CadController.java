@@ -33,7 +33,7 @@ public class CadController{
         :ResponseEntity.status(400).body(response);
     }
 
-        @PostMapping("/loginAluno")
+    @PostMapping("/loginaluno")
     public ResponseEntity<String> postMethodName(@RequestBody LoginDto log) {
         String response = cadService.loginAluno(log).get();
         return (response.equals("Login realizado com sucesso"))

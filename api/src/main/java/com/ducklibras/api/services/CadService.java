@@ -50,6 +50,7 @@ public class CadService {
      * Author: Dhemerson
     */
     public Optional<String> loginAluno(LoginDto log){
+        System.out.println(log.getEmail());
         if(alunoRepo.existsByEmail(log.getEmail())){
             Optional<AlunoEntitys> aluno = alunoRepo.findByEmailAndPass(
                 log.getEmail(), 

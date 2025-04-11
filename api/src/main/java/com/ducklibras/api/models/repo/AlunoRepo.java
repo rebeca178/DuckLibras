@@ -14,7 +14,6 @@ public interface AlunoRepo extends JpaRepository<AlunoEntitys, Long> {
     @Query("SELECT a FROM AlunoEntitys a WHERE a.email = ?1")
     public Optional<AlunoEntitys> findByEmail(String email);
 
-    @Query("SELECT COUNT(a) > 0 FROM AlunoEntitys a WHERE a.email = ?1")
     public boolean existsByEmail(String Email);
 
     @Query("SELECT a FROM AlunoEntitys a WHERE (a.email = ?1) AND a.pass = ?2")
