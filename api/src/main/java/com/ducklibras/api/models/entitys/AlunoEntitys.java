@@ -2,14 +2,21 @@ package com.ducklibras.api.models.entitys;
 
 
 import java.io.Serializable;
+import java.util.Set;
 
 import com.ducklibras.api.models.dtos.AlunoInDto;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -38,10 +45,29 @@ public class AlunoEntitys implements Serializable{
 
     @Column(name = "photo", nullable = false, length = 160)
     private String photo;
+    
 
+    @ManyToMany
+    @JoinTable(
+        name = "au_al",
+        joinColumns = @JoinColumn(name = "id_aula"),
+        inverseJoinColumns = @JoinColumn(name = "id_aluno")
+    )
+    
+    @OneToOne
+    @JoinColumn(name = "BSid")
+    private BsEntitys BSid;
+
+    @OneToOne
+    @JoinColumn(name = "pontID")
+    private PontuacaoEntity pontId;
+
+    @OneToMany(mappedBy = "aluno")
+    private Set<AulasEntity> aulas;
+    
     public AlunoEntitys() {
     }
-
+    
     public AlunoEntitys(Long id, String username, String pass, String email, String photo) {
         if (id != null) this.id = id;
         if (username != null) this.username = username;

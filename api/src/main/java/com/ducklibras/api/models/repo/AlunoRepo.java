@@ -18,6 +18,7 @@ public interface AlunoRepo extends JpaRepository<AlunoEntitys, Long> {
 
     @Query("SELECT a FROM AlunoEntitys a WHERE (a.email = ?1) AND a.pass = ?2")
     public Optional<AlunoEntitys> findByEmailAndPass(String email, String pass);
+    
 
     }
 
