@@ -1,7 +1,7 @@
 package com.ducklibras.api.models.dtos;
 
 
-import com.ducklibras.api.models.entitys.AlunoEntitys;
+
 
 import lombok.Getter;
 import lombok.Setter;
@@ -40,16 +40,6 @@ public class AlunoDto {
         if (username != null) this.username = username;
         if (pass != null) this.pass = pass;
         if (email != null) this.email = email;
-    }
-
-    public AlunoDto(AlunoEntitys user) {
-        if(user!= null){
-            this.id = user.getId();
-            this.username = user.getUsername();
-            this.pass = user.getPass();
-            this.email = user.getEmail();
-            this.photo = user.getPass();
-        }
     }
 
 }

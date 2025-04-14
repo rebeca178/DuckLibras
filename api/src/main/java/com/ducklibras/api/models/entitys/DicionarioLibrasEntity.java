@@ -1,12 +1,8 @@
 package com.ducklibras.api.models.entitys;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 import java.io.Serializable;
 
-@Getter
-@Setter
 
 @Entity
 @Table(name = "dicionario")
@@ -48,9 +44,6 @@ public class DicionarioLibrasEntity implements Serializable {
     @JoinColumn(name = "anotacoesId", nullable = false)
     private AnotacaoEntity anotacoes;
 
-    @ManyToOne
-    @JoinColumn(name = "aulasId", nullable = false)
-    private AulasEntity aulasId;
 
     @ManyToOne
     @JoinColumn(name = "traducoesId", nullable = false)
