@@ -51,5 +51,15 @@ public class FlashCardsEntity implements Serializable{
         throw new UnsupportedOperationException("Unimplemented method 'getQuest'");
     }
 
+    public Object getResposta() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getResposta'");
+    }
+
+    public void setResposta(Object resposta) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setResposta'");
+    }
+
     
 }
