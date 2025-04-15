@@ -1,7 +1,7 @@
 package com.ducklibras.api.models.dtos;
 
 
-
+import com.ducklibras.api.models.entitys.AlunoEntitys;
 
 import lombok.Getter;
 import lombok.Setter;

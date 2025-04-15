@@ -1,7 +1,13 @@
 package com.ducklibras.api.controllers;
 
+import com.ducklibras.api.models.dtos.AlunoInDto;
+import com.ducklibras.api.models.dtos.AnotacaoinDto;
 import com.ducklibras.api.models.entitys.AnotacaoEntity;
 import com.ducklibras.api.models.repo.AnotacaoRepository;
+import com.ducklibras.api.services.AnotacaoService;
+import com.ducklibras.api.services.CadService;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +17,9 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/anotacoes")
 public class AnotacaoController {
+
+    @Autowired 
+    private AnotacaoService anotacaoservice;
 
     private final AnotacaoRepository anotacaoRepository;
 
@@ -51,4 +60,13 @@ public class AnotacaoController {
         }
         return ResponseEntity.notFound().build();
     }
+
+    @PostMapping("/cadA")
+    public ResponseEntity<String> teste(@RequestBody AnotacaoinDto aula) {
+        String response = anotacaoservice.createAula(aula);
+        return (response.equals("Aula Cadastrada com Sucesso"))
+        ?ResponseEntity.status(404).body(response)
+        :ResponseEntity.status(202).body(response);
+    }
+    
 }

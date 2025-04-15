@@ -14,7 +14,11 @@ import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 
 @Entity
 @Table(name = "aluno")
@@ -45,7 +49,6 @@ public class AlunoEntitys implements Serializable{
         joinColumns = @JoinColumn(name = "id_aula"),
         inverseJoinColumns = @JoinColumn(name = "id_aluno")
     )
-    
 
     @OneToOne
     @JoinColumn(name = "pontID")
