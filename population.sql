@@ -1,4 +1,4 @@
-use ducklibras;
+use DuckLibras;
 
 insert into chatbot (id_chat,chat, perguntas, respostas,amizade) VALUES ('1', 'Quem sou eu ?', 'Você é um humano ','1');
 
