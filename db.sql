@@ -124,20 +124,6 @@ Create table AU_AL(
     FOREIGN KEY (id_aula) REFERENCES aulas(id),
     FOREIGN KEY (id_aluno) REFERENCES aluno(id)
 );
-  
-
-Create table BS(
-    id_bs INT(10) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    STATUS BOOLEAN NOT NULL,
-    nivel int,
-    id_aula int, 
-    id_flashcard int,
-    id_pontuacao int,
-    CONSTRAINT fk_nivel FOREIGN KEY (nivel) REFERENCES pontuacao(nivel),
-    FOREIGN KEY (id_pontuacao) REFERENCES pontuacao(id_pontuacao),
-    FOREIGN KEY (id_aula) REFERENCES aulas(id_aula),
-    FOREIGN KEY (id_flashcard) REFERENCES FLASHCARD(id_flashcard)
-);
 
 create table chat(
     id_c int primary key auto_increment,
