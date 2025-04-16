@@ -1,4 +1,4 @@
-use ducklibras;
+use DuckLibras;
 
 --RF01 Cadastrar
   SELECT *  from aluno a WHERE   a.username = 'francisco' and a.email='fran@gmail.com' and a.senha = MD5('1') and a.photo='franfoto';
