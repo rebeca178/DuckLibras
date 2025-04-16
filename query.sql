@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-USE DuckLibras;
+use ducklibras;
 
 --RF01 Cadastrar
   SELECT *  from aluno a WHERE   a.username = 'francisco' and a.email='fran@gmail.com' and a.senha = MD5('1') and a.photo='franfoto';
@@ -60,9 +59,6 @@ SELECT a1.username AS Aluno_1, a2.username AS Aluno_2, COUNT(c.id) AS Mensagens_
 -- [RF21] Metas
 SELECT a.username, COUNT(DISTINCT fa.id_flashcard) AS Flashcards_Completados, COUNT(DISTINCT aa.id_aula) AS Aulas_Realizadas, p.pontos, p.nivel FROM aluno a LEFT JOIN FLASH_AL fa ON fa.id_aluno = a.id LEFT JOIN AU_AL aa ON aa.id_aluno = a.id LEFT JOIN Pontuacao p ON p.id = a.pontID GROUP BY a.id ORDER BY a.username;
 
-=======
-USE DuckLibras;
-
 -- RF01 Cadastrar  
 SELECT * FROM aluno WHERE username = 'francisco' AND email = 'fran@gmail.com' AND senha = MD5('1') AND photo = 'franfoto';  
 
@@ -119,4 +115,3 @@ SELECT a1.username AS Aluno_1, a2.username AS Aluno_2, COUNT(c.id) AS Mensagens_
 
 -- [RF21] Metas
 SELECT a.username AS Aluno, COUNT(DISTINCT fa.id_flashcard) AS Flashcards_Completados, COUNT(DISTINCT aa.id_aula) AS Aulas_Realizadas, p.pontos AS Pontuacao_Atual, p.nivel AS Nivel_Atual FROM aluno a LEFT JOIN flash_al fa ON fa.id_aluno = a.id LEFT JOIN au_al aa ON aa.id_aluno = a.id LEFT JOIN pontuacao p ON p.id = a.pontID GROUP BY a.id ORDER BY a.username;
->>>>>>> 4b80aea4b536f033ead3b7fb6c3b09ca79a28f08
