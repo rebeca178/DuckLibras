@@ -1,11 +1,9 @@
 package com.ducklibras.api.controllers;
 
-import com.ducklibras.api.models.dtos.AlunoInDto;
 import com.ducklibras.api.models.dtos.AnotacaoinDto;
 import com.ducklibras.api.models.entitys.AnotacaoEntity;
 import com.ducklibras.api.models.repo.AnotacaoRepository;
 import com.ducklibras.api.services.AnotacaoService;
-import com.ducklibras.api.services.CadService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
