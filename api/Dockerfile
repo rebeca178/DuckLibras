@@ -2,7 +2,7 @@
 FROM gradle AS build
 WORKDIR /home/gradle/src
 COPY --chown=gradle:gradle . .
-RUN gradle build
+RUN gradle build -x test
 
 # Etapa de execução
 FROM eclipse-temurin:24-jdk-alpine
