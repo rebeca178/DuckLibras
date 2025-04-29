@@ -1,5 +1,5 @@
 # Etapa de build
-FROM gradle:7.6.1-jdk24 AS build
+FROM gradle AS build
 WORKDIR /home/gradle/src
 COPY --chown=gradle:gradle . .
 RUN gradle build -x 
