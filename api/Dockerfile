@@ -1,18 +1,12 @@
-FROM gradle AS build
-
-COPY --chown=gradle:gradle . /home/gradle/src
-
+# Etapa de build
+FROM gradle:7.6.1-jdk24 AS build
 WORKDIR /home/gradle/src
+COPY --chown=gradle:gradle . .
+RUN gradle build -x 
 
-RUN gradle build -x test
-
+# Etapa de execução
 FROM eclipse-temurin:24-jdk-alpine
-
+WORKDIR /app
+COPY --from=build /home/gradle/src/build/libs/*.jar app.jar
 EXPOSE 8080
-
-RUN mkdir /app
-
-COPY --from=build /home/gradle/src/build/libs/*.jar /app/spring-boot-application.jar
-
-ENTRYPOINT ["java","-jar","/app/spring-boot-application.jar"]
-
+ENTRYPOINT ["java", "-jar", "app.jar"]
