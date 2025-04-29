@@ -1,19 +1,17 @@
-FROM eclipse-temurin:24-jdk-alpine AS gradle-base
-RUN apk add --no-cache bash curl zip unzip
-RUN curl -s https://downloads.gradle-dn.com/distributions/gradle-8.12.1-bin.zip -o gradle.zip && \
-    unzip gradle.zip -d /opt && \
-    rm gradle.zip && \
-    ln -s /opt/gradle-8.12.1/bin/gradle /usr/bin/gradle
+FROM gradle:8.12.1-jdk23-alpine AS build
 
-# Etapa de build
-FROM gradle-base AS build
 WORKDIR /home/gradle/src
-COPY --chown=gradle:gradle . .
-RUN gradle build -x test --stacktrace --info
 
-# Etapa de execução
-FROM eclipse-temurin:22-jdk-alpine
-WORKDIR /app
-COPY --from=build /home/gradle/src/build/libs/*.jar app.jar
+COPY --chown=gradle:gradle . /home/gradle/src
+
+RUN gradle build -x test
+
+FROM eclipse-temurin:23-jdk-alpine
+
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "app.jar"]
+
+RUN mkdir /app
+
+COPY --from=build /home/gradle/src/build/libs/*.jar /app/spring-boot-application.jar
+
+ENTRYPOINT ["java", "-jar", "/app/spring-boot-application.jar"]
