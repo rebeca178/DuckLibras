@@ -1,4 +1,4 @@
-FROM gradle:8.12.1-jdk23-alpine AS build
+FROM gradle:8.12.1-jdk22-alpine AS build
 
 WORKDIR /home/gradle/src
 
@@ -6,7 +6,7 @@ COPY --chown=gradle:gradle . /home/gradle/src
 
 RUN gradle build -x test
 
-FROM eclipse-temurin:23-jdk-alpine
+FROM eclipse-temurin:22-jdk-alpine
 
 EXPOSE 8080
 
