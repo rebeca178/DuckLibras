@@ -1,6 +1,6 @@
 FROM eclipse-temurin:24-jdk-alpine AS gradle-base
 RUN apk add --no-cache bash curl zip unzip
-RUN curl -s https://downloads.gradle-dn.com/distributions/gradle-8.1.2-bin.zip -o gradle.zip && \
+RUN curl -s https://downloads.gradle-dn.com/distributions/gradle-8.12.1-bin.zip -o gradle.zip && \
     unzip gradle.zip -d /opt && \
     rm gradle.zip && \
     ln -s /opt/gradle-8.12.1/bin/gradle /usr/bin/gradle
