@@ -12,7 +12,7 @@ COPY --chown=gradle:gradle . .
 RUN gradle build -x test --stacktrace --info
 
 # Etapa de execução
-FROM eclipse-temurin:24-jdk-alpine
+FROM eclipse-temurin:22-jdk-alpine
 WORKDIR /app
 COPY --from=build /home/gradle/src/build/libs/*.jar app.jar
 EXPOSE 8080
