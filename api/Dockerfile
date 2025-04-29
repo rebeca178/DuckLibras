@@ -1,4 +1,4 @@
-FROM gradle:8.12.1-jdk24-alpine AS build
+FROM gradle AS build
 
 COPY --chown=gradle:gradle . /home/gradle/src
 
