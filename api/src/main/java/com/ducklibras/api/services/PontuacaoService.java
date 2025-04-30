@@ -42,9 +42,6 @@ public class PontuacaoService {
         // Atualiza o nível com base na pontuação
         atualizarNivel(pontuacao);
 
-        // Atualiza a última modificação
-        pontuacao.setUltimaAtualizacao(LocalDateTime.now().toString());
-
         return Optional.of(new PontuacaoDto(pontuacaoRepo.save(pontuacao)));
     }
 
