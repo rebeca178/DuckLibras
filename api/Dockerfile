@@ -1,17 +1,11 @@
-FROM gradle:8.12.1-jdk23-alpine AS build
+FROM maven:3.9.9-eclipse-temurin-24-noble AS build
+WORKDIR /app
+COPY pom.xml .
+COPY src ./src
+RUN mvn clean package -DskipTests
 
-WORKDIR /home/gradle/src
-
-COPY --chown=gradle:gradle . /home/gradle/src
-
-RUN gradle build -x test
-
-FROM eclipse-temurin:23-jdk-alpine
-
+FROM eclipse-temurin:24-jdk-alpine
+WORKDIR /app
+COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
-
-RUN mkdir /app
-
-COPY --from=build /home/gradle/src/build/libs/*.jar /app/spring-boot-application.jar
-
-ENTRYPOINT ["java", "-jar", "/app/spring-boot-application.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
