@@ -31,9 +31,6 @@ public class PontuacaoEntity implements Serializable {
 
     @Column(name = "nivel", nullable = false, columnDefinition = "INT DEFAULT 1")
     private int nivel;
-
-    @Column(name = "ultima_atualizacao", nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private String ultimaAtualizacao;
     
     @ManyToOne
     @JoinColumn(name = "FlashCardId", nullable = false)

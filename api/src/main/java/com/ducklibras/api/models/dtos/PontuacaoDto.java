@@ -20,7 +20,6 @@ public class PontuacaoDto {
             this.id = user.getId();
             this.pontos = user.getPontos();
             this.nivel = user.getNivel();
-            this.ultimaAtualizacao = user.getUltimaAtualizacao();
 
         }
         
