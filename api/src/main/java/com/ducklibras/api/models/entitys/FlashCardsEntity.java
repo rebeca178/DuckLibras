@@ -28,6 +28,9 @@ public class FlashCardsEntity implements Serializable{
 
     @Column(name = "quest", nullable = false, columnDefinition = "TEXT")
     private String quest;
+    
+     @Column(name = "resposta", nullable = false, columnDefinition = "TEXT")
+    private String resposta;
 
     
     
