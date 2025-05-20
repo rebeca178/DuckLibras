@@ -29,6 +29,8 @@ public class FlashCardsEntity implements Serializable{
     @Column(name = "quest", nullable = false, columnDefinition = "TEXT")
     private String quest;
 
+    
+    
     @ManyToOne
     @JoinColumn(name = "pontuacaoId", nullable = false)
     private PontuacaoEntity pontuacaoId;
