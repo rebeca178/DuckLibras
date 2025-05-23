@@ -4,71 +4,106 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
+import android.view.inputmethod.InputMethodManager;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
+import com.example.ducklibras.databinding.ActivityAnotacoesBinding;
+import com.google.android.material.snackbar.Snackbar;
 
 public class AnotacoesActivity extends AppCompatActivity {
 
-    private EditText noteEditText;
-    private TextView savedNotesTextView;
-    private Button saveButton;
-    private Button clearButton;
+    private ActivityAnotacoesBinding binding;
     private AnotacoesViewModel viewModel;
+    private InputMethodManager inputMethodManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notes);
+        
+        binding = ActivityAnotacoesBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         
         viewModel = new ViewModelProvider(this).get(AnotacoesViewModel.class);
-        inicializarViews();
-        configurarObservers();
+        inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+        
+        configurarToolbar();
+        configurarObservadores();
         configurarListeners();
     }
 
-    private void inicializarViews() {
-        noteEditText = findViewById(R.id.noteEditText);
-        savedNotesTextView = findViewById(R.id.savedNotesTextView);
-        saveButton = findViewById(R.id.saveNoteButton);
-        clearButton = findViewById(R.id.clearNotesButton);
+    private void configurarToolbar() {
+        setSupportActionBar(binding.toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setTitle("Minhas Anotações");
+        }
         
-        saveButton.setEnabled(false);
+        binding.toolbar.setNavigationOnClickListener(v -> finish());
     }
 
-    private void configurarObservers() {
+    private void configurarObservadores() {
         viewModel.getNotas().observe(this, notas -> {
-            savedNotesTextView.setText(notas);
-            clearButton.setEnabled(!notas.isEmpty());
+            if (notas == null || notas.isEmpty()) {
+                binding.savedNotesTextView.setText("Nenhuma anotação salva ainda");
+                binding.clearButton.setEnabled(false);
+            } else {
+                binding.savedNotesTextView.setText(notas);
+                binding.clearButton.setEnabled(true);
+            }
+        });
+        
+        viewModel.getEstadoSalvamento().observe(this, sucesso -> {
+            if (sucesso != null) {
+                mostrarFeedback(sucesso ? 
+                    "Anotação salva com sucesso" : 
+                    "Erro ao salvar anotação");
+            }
         });
     }
 
     private void configurarListeners() {
-        noteEditText.addTextChangedListener(new TextWatcher() {
+        binding.noteEditText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                saveButton.setEnabled(s.length() > 0);
+                binding.saveButton.setEnabled(s.length() > 0);
             }
 
             @Override
             public void afterTextChanged(Editable s) {}
         });
 
-        saveButton.setOnClickListener(v -> {
-            String texto = noteEditText.getText().toString().trim();
+        // Botão Salvar
+        binding.saveButton.setOnClickListener(v -> {
+            String texto = binding.noteEditText.getText().toString().trim();
             viewModel.adicionarNota(texto);
-            noteEditText.setText("");
-            Utils.mostrarToast(this, "Nota salva com sucesso");
+            esconderTeclado();
+            binding.noteEditText.setText("");
         });
 
-        clearButton.setOnClickListener(v -> {
+        // Botão Limpar
+        binding.clearButton.setOnClickListener(v -> {
             viewModel.limparNotas();
-            Utils.mostrarToast(this, "Notas removidas");
+            esconderTeclado();
         });
+    }
+
+    private void esconderTeclado() {
+        if (getCurrentFocus() != null) {
+            inputMethodManager.hideSoftInputFromWindow(
+                getCurrentFocus().getWindowToken(), 0);
+        }
+    }
+
+    private void mostrarFeedback(String mensagem) {
+        Snackbar.make(binding.getRoot(), mensagem, Snackbar.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        binding = null;
     }
 }
