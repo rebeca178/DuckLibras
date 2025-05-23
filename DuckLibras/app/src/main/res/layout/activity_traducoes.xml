@@ -2,9 +2,11 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fundo_app">
+    android:background="@color/fundo_app"
+    android:fitsSystemWindows="true">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -19,7 +21,8 @@
             android:background="@color/card_background"
             app:title="Tradutor LIBRAS"
             app:titleTextColor="@color/texto_primario"
-            app:navigationIcon="@drawable/ic_arrow_back"/>
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:titleTextAppearance="@style/ToolbarTitle"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -33,123 +36,177 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="72dp">
 
-            <!-- Card Tradutor -->
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardTradutor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="2dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="1dp"
                 app:strokeColor="@color/borda_cards"
-                app:strokeWidth="1dp"
-                android:layout_marginBottom="16dp">
+                app:strokeWidth="0.5dp"
+                android:layout_marginBottom="24dp"
+                app:cardBackgroundColor="@color/card_background">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:padding="20dp">
 
+                    <!-- Campo de Texto com Floating Label -->
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:hintEnabled="false"
-                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+                        app:hintEnabled="true"
+                        app:hintAnimationEnabled="true"
+                        app:boxStrokeColor="@color/cor_primaria"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        app:startIconDrawable="@drawable/ic_translate"
+                        app:startIconTint="@color/cor_primaria">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/translationEditText"
                             android:layout_width="match_parent"
                             android:layout_height="120dp"
                             android:hint="Digite o texto para traduzir"
+                            android:inputType="textCapSentences"
                             android:textColor="@color/texto_primario"
-                            android:textSize="16sp"/>
+                            android:textSize="16sp"
+                            android:maxLines="5"
+                            android:gravity="top|start"/>
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:layout_marginTop="12dp">
+                        android:layout_marginTop="20dp"
+                        android:gravity="center">
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/translateButton"
                             style="@style/ButtonPrincipal"
                             android:layout_width="0dp"
-                            android:layout_height="48dp"
+                            android:layout_height="52dp"
                             android:layout_weight="1"
-                            android:text="Traduzir"/>
+                            android:text="Traduzir"
+                            android:textAllCaps="false"
+                            app:icon="@drawable/ic_translate"
+                            app:iconGravity="textStart"
+                            app:iconPadding="8dp"
+                            app:iconTint="@color/branco"/>
 
                         <Space
-                            android:layout_width="8dp"
+                            android:layout_width="12dp"
                             android:layout_height="1dp"/>
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/playTranslationButton"
                             style="@style/ButtonSecundario"
                             android:layout_width="0dp"
-                            android:layout_height="48dp"
+                            android:layout_height="52dp"
                             android:layout_weight="1"
-                            android:text="Reproduzir"/>
+                            android:text="Reproduzir"
+                            android:textAllCaps="false"
+                            app:icon="@drawable/ic_play"
+                            app:iconGravity="textStart"
+                            app:iconPadding="8dp"
+                            app:iconTint="@color/cor_primaria"/>
                     </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardResultado"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="2dp"
+                android:layout_height="300dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="1dp"
                 app:strokeColor="@color/borda_cards"
-                app:strokeWidth="1dp"
-                android:layout_marginBottom="16dp">
+                app:strokeWidth="0.5dp"
+                app:cardBackgroundColor="@color/card_background">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Resultado"
-                        android:textColor="@color/texto_primario"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:padding="16dp"/>
+                        android:orientation="horizontal"
+                        android:padding="16dp"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_libras"
+                            android:tint="@color/cor_primaria"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tradução em LIBRAS"
+                            android:textColor="@color/texto_primario"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:layout_marginStart="12dp"/>
+                    </LinearLayout>
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:background="@color/borda_cards"/>
 
-                    <ScrollView
+                    <androidx.core.widget.NestedScrollView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:padding="16dp">
+                        android:padding="16dp"
+                        android:clipToPadding="false">
 
                         <TextView
                             android:id="@+id/translationResultTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textColor="@color/texto_secundario"
-                            android:textSize="16sp"/>
-                    </ScrollView>
+                            android:textSize="16sp"
+                            android:lineSpacingExtra="4dp"/>
+                    </androidx.core.widget.NestedScrollView>
+
+                    <ImageView
+                        android:id="@+id/sinalImageView"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="16dp"
+                        android:visibility="gone"
+                        tools:src="@drawable/ic_libras_ola"/>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Palavras Rápidas"
+                android:text="Palavras Frequentes"
                 android:textColor="@color/texto_primario"
                 android:textSize="16sp"
-                android:layout_marginBottom="8dp"/>
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="12dp"
+                android:drawableStart="@drawable/ic_lightning"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/cor_secundaria"
+                android:paddingLeft="4dp"/>
 
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:scrollbars="none">
+                android:scrollbars="none"
+                android:paddingBottom="8dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -157,40 +214,58 @@
                     android:orientation="horizontal">
 
                     <com.google.android.material.button.MaterialButton
-                        style="@style/ButtonPalavra"
+                        android:id="@+id/btn_palavra1"
+                        style="@style/ButtonPalavraRapida"
                         android:layout_width="wrap_content"
-                        android:layout_height="40dp"
+                        android:layout_height="42dp"
                         android:layout_marginEnd="8dp"
                         android:text="Olá"/>
 
                     <com.google.android.material.button.MaterialButton
-                        style="@style/ButtonPalavra"
+                        android:id="@+id/btn_palavra2"
+                        style="@style/ButtonPalavraRapida"
                         android:layout_width="wrap_content"
-                        android:layout_height="40dp"
+                        android:layout_height="42dp"
                         android:layout_marginEnd="8dp"
                         android:text="Obrigado"/>
 
                     <com.google.android.material.button.MaterialButton
-                        style="@style/ButtonPalavra"
+                        android:id="@+id/btn_palavra3"
+                        style="@style/ButtonPalavraRapida"
                         android:layout_width="wrap_content"
-                        android:layout_height="40dp"
+                        android:layout_height="42dp"
                         android:layout_marginEnd="8dp"
                         android:text="Bom dia"/>
 
                     <com.google.android.material.button.MaterialButton
-                        style="@style/ButtonPalavra"
+                        android:id="@+id/btn_palavra4"
+                        style="@style/ButtonPalavraRapida"
                         android:layout_width="wrap_content"
-                        android:layout_height="40dp"
+                        android:layout_height="42dp"
                         android:layout_marginEnd="8dp"
                         android:text="Como vai?"/>
 
                     <com.google.android.material.button.MaterialButton
-                        style="@style/ButtonPalavra"
+                        android:id="@+id/btn_palavra5"
+                        style="@style/ButtonPalavraRapida"
                         android:layout_width="wrap_content"
-                        android:layout_height="40dp"
+                        android:layout_height="42dp"
                         android:text="Ajuda"/>
                 </LinearLayout>
             </HorizontalScrollView>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabFavoritos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="24dp"
+        android:contentDescription="Adicionar aos favoritos"
+        app:backgroundTint="@color/cor_secundaria"
+        app:tint="@color/branco"
+        app:srcCompat="@drawable/ic_star"
+        app:elevation="4dp"
+        app:borderWidth="0dp"/>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
