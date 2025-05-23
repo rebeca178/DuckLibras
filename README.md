@@ -1,1 +1,1 @@
-#DuckLibras
+DuckLibras
