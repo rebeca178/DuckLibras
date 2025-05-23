@@ -18,4 +18,8 @@
     <color name="cor_primaria">#0F766E</color>
     <color name="cor_primaria_clara">#2DD4BF</color>
     <color name="cor_secundaria">#0EA5E9</color>
+    <color name="branco">#FFFFFF</color>
+    <color name="cor_primaria">#0F766E</color>
+    <color name="cor_primaria_clara">#2DD4BF</color>
+    <color name="borda_cards">#E2E8F0</color>
 </resources>
