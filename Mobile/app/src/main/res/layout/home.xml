@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".Menu.presetation.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

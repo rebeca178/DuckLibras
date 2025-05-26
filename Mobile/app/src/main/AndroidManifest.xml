@@ -13,13 +13,13 @@
         android:theme="@style/Theme.DuckLibras"
         tools:targetApi="31">
         <activity
-            android:name=".Cadastro"
+            android:name=".Cadastro.presetation.Cadastro"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Menu.presetation.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name=".Login.presetation.Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

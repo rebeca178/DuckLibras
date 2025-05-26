@@ -8,7 +8,7 @@
     android:backgroundTint="#FFFFFF"
     android:backgroundTintMode="add"
     android:clickable="true"
-    tools:context=".DicionarioActivity">
+    tools:context=".Dicionario.presetation.DicionarioActivity">
 
     <EditText
         android:id="@+id/editTextText"

@@ -1,4 +1,4 @@
-package com.example.ducklibras;
+package com.example.ducklibras.Login.presetation;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.example.ducklibras.R;
 
 public class Login extends AppCompatActivity {
     private TextView text_tela_cadastro;
@@ -25,7 +27,9 @@ public class Login extends AppCompatActivity {
 
         });
     }
-    private void Iniciarcomponentes(){
-        text_tela_cadastro = findViewById(R.id.text_tela_cadastro);
+    public void loginActivity(View view){
+        Intent intent = new Intent (this, Login.class);
+        startActivities(intent);
     }
+
 }

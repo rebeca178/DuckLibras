@@ -1,10 +1,12 @@
-package com.example.ducklibras;
+package com.example.ducklibras.Traducoes.presetation;
 
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
+
+import com.example.ducklibras.R;
 import com.example.ducklibras.databinding.ActivityTraducoesBinding;
 import com.google.android.material.snackbar.Snackbar;
 

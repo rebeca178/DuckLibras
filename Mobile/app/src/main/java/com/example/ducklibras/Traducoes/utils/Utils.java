@@ -1,4 +1,4 @@
-package com.example.ducklibras;
+package com.example.ducklibras.Traducoes.utils;
 
 import android.content.Context;
 import android.widget.Toast;

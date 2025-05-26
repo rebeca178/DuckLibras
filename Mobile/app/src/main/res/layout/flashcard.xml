@@ -12,7 +12,7 @@
         android:backgroundTint="#FFFFFF"
         android:backgroundTintMode="add"
         android:clickable="true"
-        tools:context=".DicionarioActivity"
+        tools:context=".Dicionario.presetation.DicionarioActivity"
         tools:layout_editor_absoluteX="-4dp"
         tools:layout_editor_absoluteY="-2dp">
 

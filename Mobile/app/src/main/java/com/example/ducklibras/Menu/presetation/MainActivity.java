@@ -1,4 +1,4 @@
-package com.example.ducklibras;
+package com.example.ducklibras.Menu.presetation;
 
 import static android.view.View.VISIBLE;
 
@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.example.ducklibras.R;
 
 public class MainActivity extends AppCompatActivity {
 
