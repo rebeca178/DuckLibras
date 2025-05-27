@@ -1,6 +1,6 @@
-package com.example.ducklibras.Cadastro.data;
+package com.example.mobileducklibras.Cadastro.data;
 
-public class Cadastro {
+public class SignUp {
     private String name;
 
     private String email;

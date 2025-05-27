@@ -1,4 +1,4 @@
-package com.example.ducklibras.Login.presetation;
+package com.example.mobileducklibras.Login.presetation;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +11,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.ducklibras.R;
+import com.example.mobileducklibras.R;
 
 public class Login extends AppCompatActivity {
     private TextView text_tela_cadastro;
