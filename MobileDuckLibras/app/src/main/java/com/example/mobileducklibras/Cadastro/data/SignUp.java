@@ -9,20 +9,20 @@ public class SignUp {
 
     private String photo;
 
-    public void setName(){
+    public void setName(String name){
         this.name = name;
     }
     public String getName(){
         return this.name;
     }
-    public void setEmail(){
+    public void setEmail(String email){
         this.email = email;
     }
     public String getEmail(){
         return this.email;
     }
 
-    public void setPassword(){
+    public void setPassword(String senha){
         this.password = password;
     }
     public String getPassword(){

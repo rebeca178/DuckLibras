@@ -1,6 +1,12 @@
 package com.example.mobileducklibras.Cadastro.presetation;
 
+import static android.view.View.GONE;
+import static android.view.View.VISIBLE;
+
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,16 +15,18 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.mobileducklibras.Cadastro.data.SignUp;
-import com.example.mobileducklibras.Cadastro.utils.SignUpService;
+import com.example.mobileducklibras.Cadastro.utils.SignUpLibs;
 import com.example.mobileducklibras.R;
-import com.example.mobileducklibras.shared.utils.RetrofitClient;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class Cadastro extends AppCompatActivity {
     private String resp;
+
+    private EditText edit_nome;
+    private EditText edit_email;
+    private EditText edit_senha;
+    private TextView issue_lb;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,26 +37,32 @@ public class Cadastro extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        SignUpService service = RetrofitClient
-                .getRetrofitInstance()
-                .create(SignUpService.class);
 
-        SignUp signUp = new SignUp();
-        retrofit2.Call<String> call = service.SignUpUser(signUp);
-        call.enqueue(new Callback<String>(){
-            @Override
-            public void onResponse(retrofit2.Call<String> call, Response<String> response){
-                if(response.isSuccessful())
-                {
-                    resp = response.body();
-                }
-            }
-            @Override
-            public void onFailure(Call<String> call, Throwable t){
-                resp = "User Não Encontrado";
-            }
+        edit_nome = findViewById(R.id.edit_nome);
+        edit_email = findViewById(R.id.edit_email);
+        edit_senha = findViewById(R.id.edit_senha);
+        issue_lb = findViewById(R.id.issue_lb);
+        issue_lb.setVisibility(GONE);
 
-     });
+     }
+    public void SignUpUser(View view) {
+        String issue = "*";
+        String nome = edit_nome.getText().toString();
+        String email = edit_email.getText().toString();
+        String senha = edit_senha.getText().toString();
 
+        if (nome.isEmpty()) issue += "Campo nome e obrigatorio \n ";
+        if (email.isEmpty()) issue += "Campo email e obrigatorio\n ";
+        if (issue.equals("*"))
+        {
+            SignUpLibs libs = new SignUpLibs();
+            SignUp signup = new SignUp();
+            signup.setName(nome);
+            signup.setEmail(email);
+            signup.setPassword(senha);
+            issue = libs.SignupUser(signup);
+        }
+        issue_lb.setText(issue);
+        issue_lb.setVisibility(VISIBLE);
+        }
     }
-}
