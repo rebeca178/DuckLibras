@@ -22,7 +22,7 @@ public class SignUp {
         return this.email;
     }
 
-    public void setPassword(String senha){
+    public void setPassword(String password){
         this.password = password;
     }
     public String getPassword(){

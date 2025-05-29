@@ -61,7 +61,8 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/appCompatButton"
         style="@style/Button"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="52dp"
+        android:onClick="SignUpUser"
         android:text="Cadastrar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,14 +74,15 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="264dp"
         android:padding="10dp"
-        android:text="[PLACE ROUDER]"
+        android:textColor="@color/black"
         android:textSize="20sp"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.438"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/componentes"
-        tools:layout_editor_absoluteX="118dp" />
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

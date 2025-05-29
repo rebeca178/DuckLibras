@@ -53,13 +53,18 @@ public class Cadastro extends AppCompatActivity {
 
         if (nome.isEmpty()) issue += "Campo nome e obrigatorio \n ";
         if (email.isEmpty()) issue += "Campo email e obrigatorio\n ";
+        if(senha.isEmpty()) issue += "Campo senha e obrigatorio\n ";
         if (issue.equals("*"))
         {
             SignUpLibs libs = new SignUpLibs();
             SignUp signup = new SignUp();
             signup.setName(nome);
+            System.out.println(signup.getName());
             signup.setEmail(email);
+            System.out.println(signup.getEmail());
             signup.setPassword(senha);
+            System.out.println(signup.getPassword());
+            System.out.println(signup.getPhoto());
             issue = libs.SignupUser(signup);
         }
         issue_lb.setText(issue);
