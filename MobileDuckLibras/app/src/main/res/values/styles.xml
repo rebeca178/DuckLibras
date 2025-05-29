@@ -35,18 +35,6 @@
         <item name="colorSecondary">@color/cor_secundaria</item>
         <item name="colorOnPrimary">@android:color/white</item>
     </style>
-    <style name="ButtonPrincipal" parent="Widget.Material3.Button">
-        <item name="backgroundTint">@color/cor_primaria</item>
-        <item name="android:textColor">@android:color/white</item>
-        <item name="cornerRadius">24dp</item>
-        <item name="android:textSize">16sp</item>
-    </style>
-    <style name="ButtonSecundario" parent="Widget.Material3.Button.OutlinedButton">
-        <item name="strokeColor">@color/cor_primaria</item>
-        <item name="android:textColor">@color/cor_primaria</item>
-        <item name="cornerRadius">24dp</item>
-        <item name="android:textSize">16sp</item>
-    </style>
     <style name="ButtonPalavra" parent="Widget.Material3.Button.OutlinedButton">
         <item name="strokeColor">@color/cor_secundaria</item>
         <item name="android:textColor">@color/cor_secundaria</item>
