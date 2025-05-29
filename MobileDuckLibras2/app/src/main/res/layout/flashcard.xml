@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="415dp"
+        android:layout_height="733dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:backgroundTintMode="add"
+        android:clickable="true"
+        tools:context=".Dicionario.presetation.DicionarioActivity"
+        tools:layout_editor_absoluteX="-4dp"
+        tools:layout_editor_absoluteY="-2dp">
+
+        <ImageView
+            android:id="@+id/imageView14"
+            android:layout_width="267dp"
+            android:layout_height="206dp"
+            android:src="@drawable/correr__1_"
+            tools:layout_editor_absoluteX="81dp"
+            tools:layout_editor_absoluteY="100dp" />
+
+        <CheckBox
+            android:id="@+id/Pato"
+            android:layout_width="225dp"
+            android:layout_height="58dp"
+            android:text="Pato"
+            android:textSize="34sp"
+            tools:layout_editor_absoluteX="81dp"
+            tools:layout_editor_absoluteY="336dp" />
+
+        <CheckBox
+            android:id="@+id/Pato"
+            android:layout_width="203dp"
+            android:layout_height="60dp"
+            android:text="Gato"
+            android:textSize="34sp"
+            tools:layout_editor_absoluteX="81dp"
+            tools:layout_editor_absoluteY="488dp" />
+
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="55dp"
+            android:layout_height="67dp"
+            android:layout_marginEnd="32dp"
+            android:backgroundTint="#FFFFFF"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/loupe_78956"
+            tools:layout_editor_absoluteY="26dp" />
+
+        <LinearLayout
+            android:layout_width="409dp"
+            android:layout_height="70dp"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="660dp">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:src="@drawable/_96_sem_t_tulo" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:src="@drawable/_96_sem_t_tulo_20250515165227" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:src="@drawable/_96_sem_t_tulo_20250515165235" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:src="@drawable/_96_sem_t_tulo_20250515165246" />
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:src="@drawable/_96_sem_t_tulo_20250515165339" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/Pato"
+            android:layout_width="207dp"
+            android:layout_height="58dp"
+            android:text="Cachorro"
+            android:textSize="34sp"
+            tools:layout_editor_absoluteX="81dp"
+            tools:layout_editor_absoluteY="408dp" />
+
+        <CheckBox
+            android:id="@+id/Pato"
+            android:layout_width="197dp"
+            android:layout_height="62dp"
+            android:text="Dinheiro"
+            android:textSize="34sp"
+            tools:layout_editor_absoluteX="81dp"
+            tools:layout_editor_absoluteY="570dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

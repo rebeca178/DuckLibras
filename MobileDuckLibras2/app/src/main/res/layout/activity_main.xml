@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".Menu.presetation.MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="139dp"
+        android:layout_height="141dp"
+        android:padding="20sp"
+        app:srcCompat="@drawable/design_sem_nome_removebg_preview" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="10sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ADM Duck"
+            android:textAlignment="center"
+            android:textSize="34sp" />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="18dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="262dp"
+        android:layout_height="wrap_content"
+        android:text="E-mail:" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:text="ducklibras@gmail.com" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="31dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="261dp"
+        android:layout_height="wrap_content"
+        android:text="Senha:" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:text="17052007" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="31dp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="263dp"
+        android:layout_height="33dp"
+        android:text="Nível:"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="267dp"
+        android:layout_height="33dp"
+        android:text="45"
+        android:textSize="24sp"
+        android:textStyle="normal" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="31dp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="263dp"
+        android:layout_height="38dp"
+        android:text="Pontos:"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="263dp"
+        android:layout_height="38dp"
+        android:text="1550 exp."
+        android:textSize="24sp"
+        android:textStyle="normal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            app:srcCompat="@drawable/_96_sem_t_tulo_20250515165227" />
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="15sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            app:srcCompat="@drawable/_96_sem_t_tulo" />
+
+        <ImageView
+            android:id="@+id/imageView15"
+            android:layout_width="30sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            app:srcCompat="@drawable/_96_sem_t_tulo_20250515165235" />
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="15sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            app:srcCompat="@drawable/_96_sem_t_tulo_20250515165339" />
+
+        <ImageView
+            android:id="@+id/imageView13"
+            android:layout_width="15sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            app:srcCompat="@drawable/_96_sem_t_tulo_20250515165246" />
+
+    </LinearLayout>
+
+</LinearLayout>
