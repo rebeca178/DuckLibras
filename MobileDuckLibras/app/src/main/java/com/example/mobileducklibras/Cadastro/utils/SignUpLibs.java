@@ -12,7 +12,7 @@ public class SignUpLibs {
     private String resp;
     public SignUpLibs(){}
 
-    public String SignupUser(SignUp signup)
+    public String SignUpUser(SignUp signup)
     {
         SignUpService service = RetrofitClient
                 .getRetrofitInstance()
@@ -30,7 +30,7 @@ public class SignUpLibs {
             @Override
             public void onFailure(Call<String> call, Throwable t) {
 
-                resp = t.getMessage();
+                resp = "Não foi possivel cadastrar o usuario";
 
             }
         });

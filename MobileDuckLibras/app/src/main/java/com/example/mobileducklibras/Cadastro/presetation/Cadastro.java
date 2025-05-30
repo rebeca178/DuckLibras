@@ -20,12 +20,13 @@ import com.example.mobileducklibras.R;
 
 
 public class Cadastro extends AppCompatActivity {
-    private String resp;
+
 
     private EditText edit_nome;
     private EditText edit_email;
     private EditText edit_senha;
     private TextView issue_lb;
+    private String issue = "*";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,27 +46,22 @@ public class Cadastro extends AppCompatActivity {
         issue_lb.setVisibility(GONE);
 
      }
-    public void SignUpUser(View view) {
-        String issue = "*";
-        String nome = edit_nome.getText().toString();
+    public void SignUpUser(View view)
+    {
+        String name = edit_nome.getText().toString();
         String email = edit_email.getText().toString();
-        String senha = edit_senha.getText().toString();
-
-        if (nome.isEmpty()) issue += "Campo nome e obrigatorio \n ";
+        String password = edit_senha.getText().toString();
+        if (name.isEmpty()) issue += "Campo nome e obrigatorio \n ";
         if (email.isEmpty()) issue += "Campo email e obrigatorio\n ";
-        if(senha.isEmpty()) issue += "Campo senha e obrigatorio\n ";
+        if(password.isEmpty()) issue += "Campo senha e obrigatorio\n ";
         if (issue.equals("*"))
         {
             SignUpLibs libs = new SignUpLibs();
             SignUp signup = new SignUp();
-            signup.setName(nome);
-            System.out.println(signup.getName());
+            signup.setName(name);
             signup.setEmail(email);
-            System.out.println(signup.getEmail());
-            signup.setPassword(senha);
-            System.out.println(signup.getPassword());
-            System.out.println(signup.getPhoto());
-            issue = libs.SignupUser(signup);
+            signup.setPassword(password);
+            issue = libs.SignUpUser(signup);
         }
         issue_lb.setText(issue);
         issue_lb.setVisibility(VISIBLE);
