@@ -1,5 +1,7 @@
 package com.ducklibras.api.controllers;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ducklibras.api.models.dtos.AlunoInDto;
 import com.ducklibras.api.models.dtos.LoginDto;
+import com.ducklibras.api.models.dtos.ResponseModel;
 import com.ducklibras.api.services.CadService;
 
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,23 +29,45 @@ public class CadController{
      * Author:Dhemerson
     */
     @PostMapping("/signup")
-    public ResponseEntity<String> teste(@RequestBody AlunoInDto aluno) {
+
+    public ResponseEntity<ResponseModel> teste(@RequestBody AlunoInDto aluno) 
+    {
+
+        ResponseModel responseDto = new ResponseModel();
+        
         String response = cadService.createAluno(aluno);
-        return (response.equals("Usuario Cadastrado com Sucesso"))
-        ?ResponseEntity.status(202).body(response)
-        :ResponseEntity.status(400).body(response);
+        
+        responseDto.setResponse(response);
+
+        if(response == null) {
+            return(response.equals("Usuario Cadastrado"))
+                ? ResponseEntity.status(201).body(responseDto)
+                : ResponseEntity.status(400).body(responseDto);
+        }
+        else{
+            return ResponseEntity.status(500).body(responseDto);
+        }
+            
+        
     }
 
     @PostMapping("/loginaluno")
-    public ResponseEntity<String> postMethodName(@RequestBody LoginDto log) {
-        String response = cadService.loginAluno(log).get();
-        return (response.equals("Login realizado com sucesso"))
-        ?ResponseEntity.status(404).body(response)
-        :ResponseEntity.status(202).body(response);
+    public ResponseEntity<ResponseModel> postMethodName(@RequestBody LoginDto log) 
+    {
+          ResponseModel responseDto = new ResponseModel();
+
+        Optional<String> response = cadService.loginAluno(log);
+
+        responseDto.setResponse(response.orElse("Erro ao logar usuario"));
+
+        if(response.isPresent()){
+            return(response.get().equals("Login Realizado com Sucesso"))
+                ? ResponseEntity.status(201).body(responseDto)
+                : ResponseEntity.status(400).body(responseDto);
+        }
+        else{
+            return ResponseEntity.status(500).body(responseDto);
+        }
+            
     }
 }
-/*
-     * Arroz fui ao bosque comprar melão é a formiguinha subiu na minha mão eu sacudi
-     * fui ao bosque comprar cebola é a formiguinha... 
-     * 
-    */
