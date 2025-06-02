@@ -48,6 +48,7 @@ public class Cadastro extends AppCompatActivity {
      }
     public void SignUpUser(View view)
     {
+        String issue= "*";
         String name = edit_nome.getText().toString();
         String email = edit_email.getText().toString();
         String password = edit_senha.getText().toString();
@@ -61,7 +62,8 @@ public class Cadastro extends AppCompatActivity {
             signup.setName(name);
             signup.setEmail(email);
             signup.setPassword(password);
-            issue = libs.SignUpUser(signup);
+            libs.SignupUser(signup);
+            issue = libs.getResp();
         }
         issue_lb.setText(issue);
         issue_lb.setVisibility(VISIBLE);

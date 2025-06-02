@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="formTitleLb">Cadastro</string>
+    <string name="nome_lb">Nome:</string>
+    <string name="email_lb">E-mail:</string>
+    <string name="pass_lb">Senha:</string>
+    <string name="signupLb">Cadastrar</string>
+    <string name="issue_lb">[placeholder]</string>
+</resources>
