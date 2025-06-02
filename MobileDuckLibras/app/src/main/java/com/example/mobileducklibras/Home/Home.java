@@ -13,4 +13,6 @@ public class Home extends AppCompatActivity {
         Intent intent = new Intent(this, FlashcardActivity.class);
         startActivity(intent);
     }
+
+    //teste
 }
