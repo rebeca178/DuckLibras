@@ -1,4 +1,4 @@
-package com.example.ducklibras.Anotacoes.presetation;
+package com.example.mobileducklibras.Anotacoes.presetation;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
-import com.example.ducklibras.databinding.ActivityAnotacoesBinding;
+
 import com.google.android.material.snackbar.Snackbar;
 
 public class AnotacoesActivity extends AppCompatActivity {
