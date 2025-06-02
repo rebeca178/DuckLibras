@@ -11,6 +11,6 @@ public class Home extends AppCompatActivity {
 
     public void flashcard_btn(View view) {
         Intent intent = new Intent(this, FlashcardActivity.class);
-        startActivity(intent);
+        startActivity(intent)
     }
 }
