@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"name": "DuckLibras",
+			"path": "."
+		},
+		{
+			"name": "Erros",
+			"path": "../../../Desktop/Erros"
+		}
+	],
+	"settings": {
+		"java.compile.nullAnalysis.mode": "automatic",
+		"java.configuration.updateBuildConfiguration": "disabled"
+	}
+}
