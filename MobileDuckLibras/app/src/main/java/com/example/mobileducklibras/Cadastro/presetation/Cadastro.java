@@ -21,7 +21,6 @@ import com.example.mobileducklibras.R;
 
 public class Cadastro extends AppCompatActivity {
 
-
     private EditText edit_nome;
     private EditText edit_email;
     private EditText edit_senha;
@@ -48,6 +47,8 @@ public class Cadastro extends AppCompatActivity {
      }
     public void SignUpUser(View view)
     {
+
+
         String name = edit_nome.getText().toString();
         String email = edit_email.getText().toString();
         String password = edit_senha.getText().toString();
@@ -67,3 +68,4 @@ public class Cadastro extends AppCompatActivity {
         issue_lb.setVisibility(VISIBLE);
         }
     }
+    
