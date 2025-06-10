@@ -1,20 +1,20 @@
 package com.example.mobileducklibras.Cadastro.data;
 
 public class SignUp {
-    private String name;
+    private String username;
 
     private String email;
 
     private String password;
 
-    public void setName(String name){
+    public void setName(String username){
 
-        this.name = name;
+        this.username = username;
     }
     public String getName()
     {
 
-        return this.name;
+        return this.username;
     }
     public void setEmail(String email){
 
