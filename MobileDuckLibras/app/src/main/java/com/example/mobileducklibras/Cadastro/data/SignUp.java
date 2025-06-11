@@ -5,13 +5,13 @@ public class SignUp {
 
     private String email;
 
-    private String password;
+    private String pass;
 
-    public void setName(String username){
+    public void setUsername(String username){
 
         this.username = username;
     }
-    public String getName()
+    public String getUsername()
     {
 
         return this.username;
@@ -25,13 +25,13 @@ public class SignUp {
         return this.email;
     }
 
-    public void setPassword(String password){
+    public void setPass(String pass){
 
-        this.password = password;
+        this.pass = pass;
     }
     public String getPassword()
     {
-        return this.password;
+        return this.pass;
     }
 
     public SignUp(){}

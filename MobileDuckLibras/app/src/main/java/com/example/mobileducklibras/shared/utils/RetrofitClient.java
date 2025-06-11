@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class    RetrofitClient {
 
-    private static final String BASE_URL = "https://ducklibras.onrender.com/";
+    private static final String BASE_URL = "https://teste-oqbx.onrender.com/";
 
     private  static Retrofit retrofit;
 

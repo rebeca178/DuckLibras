@@ -1,7 +1,6 @@
 package com.example.mobileducklibras.Cadastro.presetation;
 
 import static android.view.View.GONE;
-import static android.view.View.VISIBLE;
 
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +14,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.mobileducklibras.Cadastro.data.SignUp;
+import com.example.mobileducklibras.Cadastro.data.SignUpListener;
 import com.example.mobileducklibras.Cadastro.utils.SignUpLibs;
 import com.example.mobileducklibras.R;
 
@@ -44,28 +44,45 @@ public class Cadastro extends AppCompatActivity {
         issue_lb = findViewById(R.id.issue_lb);
         issue_lb.setVisibility(GONE);
 
-     }
-    public void SignUpUser(View view)
-    {
+    }
+
+    public void SignUpUser(View view) {
 
 
-        String name = edit_nome.getText().toString();
+        String username = edit_nome.getText().toString();
         String email = edit_email.getText().toString();
-        String password = edit_senha.getText().toString();
-        if (name.isEmpty()) issue += "Campo nome e obrigatorio \n ";
+        String pass = edit_senha.getText().toString();
+        if (username.isEmpty()) issue += "Campo nome e obrigatorio \n ";
         if (email.isEmpty()) issue += "Campo email e obrigatorio\n ";
-        if(password.isEmpty()) issue += "Campo senha e obrigatorio\n ";
-        if (issue.equals("*"))
-        {
-            SignUpLibs libs = new SignUpLibs();
+        if (pass.isEmpty()) issue += "Campo senha e obrigatorio\n ";
+        if (issue.equals("*")) {
             SignUp signup = new SignUp();
-            signup.setName(name);
+            signup.setUsername(username);
             signup.setEmail(email);
-            signup.setPassword(password);
-            issue = libs.SignUpUser(signup);
-        }
-        issue_lb.setText(issue);
-        issue_lb.setVisibility(VISIBLE);
+            signup.setPass(pass);  // Corrigido para setPassword
+
+            // Implementação correta com listener
+            SignUpLibs libs = new SignUpLibs(new SignUpListener() {
+                @Override
+                public void onSignUpSuccess(String response) {
+                    runOnUiThread(() -> {
+                        // Atualizar UI com sucesso
+                        issue_lb.setText("Cadastro realizado com sucesso!");
+                        issue_lb.setVisibility(View.VISIBLE);
+                    });
+                }
+
+                @Override
+                public void onSignUpFailure(String error) {
+                    runOnUiThread(() -> {
+                        // Mostrar erro para o usuário
+                        issue_lb.setText(error);
+                        issue_lb.setVisibility(View.VISIBLE);
+                    });
+                }
+            });
+
+            libs.SignupUser(signup);
         }
     }
-    
+}
