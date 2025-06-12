@@ -7,9 +7,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
 
-public class SignInService {
+public interface SignInService {
     @POST("cad/signin")
-    Call<ResponseModel> signUpUser(@Body SignIn signIn) {
-        return null;
-    }
+    Call<ResponseModel> signUpUser(@Body SignIn signIn);
 }

@@ -1,4 +1,7 @@
 package com.example.mobileducklibras.Login.data;
 
-public class SignInListener {
+public interface SignInListener {
+    void onSignInSucess(String response);
+
+    void onSignInFailure(String response);
 }

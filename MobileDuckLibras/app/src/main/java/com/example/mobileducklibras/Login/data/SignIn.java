@@ -5,7 +5,7 @@ public class SignIn {
     private String pass;
 
     public void setUsernameOrEmail(String usernameOrEmail){
-        this.usernameOrEmail = usernameOrEmail;
+        this.usernameOrEmail = this.usernameOrEmail;
     }
     public String getUsernameOrEmail(){
         return this.usernameOrEmail;

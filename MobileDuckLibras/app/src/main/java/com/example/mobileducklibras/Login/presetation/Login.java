@@ -1,9 +1,9 @@
 package com.example.mobileducklibras.Login.presetation;
 
 import static android.view.View.GONE;
+import static android.view.View.VISIBLE;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -16,7 +16,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.mobileducklibras.Login.data.SignIn;
-import com.example.mobileducklibras.Login.utils.SingInLibs;
+import com.example.mobileducklibras.Login.utils.SignInLibs;
 import com.example.mobileducklibras.R;
 
 public class Login extends AppCompatActivity {
@@ -47,12 +47,18 @@ public class Login extends AppCompatActivity {
         if(usernameOrEmail.isEmpty()) issue += "Campo Usuario/email é Obrigatorio\n";
         if (pass.isEmpty()) issue += "Campo Senha é Obrigatoria\n";
         if(issue.equals("*"));
-    }
-    {
-        SingInLibs libs = new SingInLibs();
-        SignIn signIn = new SignIn();
-        signIn.setUsernameOrEmail(UsernameOrEmail);
-    }
 
+    {
+        SignInLibs libs = new SignInLibs();
+        SignIn signin = new SignIn();
+        signin.setUsernameOrEmail(usernameOrEmail);
+        signin.setPass(pass);
+        libs.SignInUser(signin);
+        issue = libs.getResp();
+    }
+        issue_lb.setText(issue);
+        issue_lb.setVisibility(VISIBLE);
+
+}
 
 }
