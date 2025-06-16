@@ -4,188 +4,154 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    android:backgroundTint="#FFFFFF"
-    android:backgroundTintMode="add"
-    android:clickable="true"
+    android:background="@color/fundo_app"
     tools:context=".Dicionario.presetation.DicionarioActivity">
 
-    <EditText
-        android:id="@+id/editTextText"
-        android:layout_width="wrap_content"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Buscar"
-        tools:layout_editor_absoluteX="67dp"
-        tools:layout_editor_absoluteY="56dp" />
+        android:background="@android:color/transparent"
+        android:elevation="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <ImageButton
-        android:id="@+id/imageButton4"
-        android:layout_width="55dp"
-        android:layout_height="67dp"
-        android:layout_marginEnd="76dp"
-        android:backgroundTint="#FFFFFF"
-        android:scaleType="fitCenter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/loupe_78956"
-        tools:layout_editor_absoluteY="42dp" />
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/card_background"
+            app:title="Dicionário LIBRAS"
+            app:titleTextColor="@color/texto_primario"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:titleTextAppearance="@style/ToolbarTitle"/>
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Filhote"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="190dp"
-        tools:layout_editor_absoluteY="153dp" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Disparar"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="190dp"
-        tools:layout_editor_absoluteY="325dp" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Acelerar-se"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="190dp"
-        tools:layout_editor_absoluteY="293dp" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nota"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="190dp"
-        tools:layout_editor_absoluteY="434dp" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Moeda"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="190dp"
-        tools:layout_editor_absoluteY="466dp" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cachorro"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="190dp"
-        tools:layout_editor_absoluteY="121dp" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Correr"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="190dp"
-        tools:layout_editor_absoluteY="261dp" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Dinheiro"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="190dp"
-        tools:layout_editor_absoluteY="402dp" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cão"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="190dp"
-        tools:layout_editor_absoluteY="185dp" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="118dp"
-        android:layout_height="118dp"
-        android:src="@drawable/design_sem_nome__1_"
-        tools:layout_editor_absoluteX="67dp"
-        tools:layout_editor_absoluteY="121dp" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="118dp"
-        android:layout_height="118dp"
-        android:clickable="true"
-        android:src="@drawable/correr"
-        tools:layout_editor_absoluteX="67dp"
-        tools:layout_editor_absoluteY="261dp" />
-
-    <ImageView
-        android:id="@+id/imageView14"
-        android:layout_width="118dp"
-        android:layout_height="118dp"
-        android:src="@drawable/correr__1_"
-        tools:layout_editor_absoluteX="67dp"
-        tools:layout_editor_absoluteY="402dp" />
+    </com.google.android.material.appbar.AppBarLayout>
 
     <LinearLayout
-        android:layout_width="409dp"
+        android:id="@+id/search_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:boxStrokeColor="@color/cor_primaria"
+            app:hintEnabled="false"
+            app:startIconDrawable="@drawable/loupe_78956"
+            app:startIconTint="@color/cor_primaria">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/searchEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Buscar palavra..."
+                android:inputType="text"
+                android:textColor="@color/texto_primario"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageButton
+            android:id="@+id/searchButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/loupe_78956"
+            app:tint="@color/cor_primaria"
+            android:contentDescription="Buscar" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewDicionario"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="8dp"
+        android:clipToPadding="false"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_dicionario"
+        app:layout_constraintTop_toBottomOf="@id/search_bar_layout"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/bottom_navigation_bar"
+        android:layout_width="match_parent"
         android:layout_height="70dp"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="660dp">
+        android:gravity="center_vertical"
+        android:background="@color/card_background"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
+            android:id="@+id/home_btn"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:clickable="true"
-            android:src="@drawable/_96_sem_t_tulo" />
+            android:focusable="true"
+            android:padding="8dp"
+            app:srcCompat="@drawable/_96_sem_t_tulo"
+            android:contentDescription="Home" />
 
         <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="wrap_content"
+            android:id="@+id/flashcard_btn"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:clickable="true"
-            android:src="@drawable/_96_sem_t_tulo_20250515165227" />
+            android:focusable="true"
+            android:padding="8dp"
+            app:srcCompat="@drawable/_96_sem_t_tulo_20250515165227"
+            android:contentDescription="Flashcards" />
 
         <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="wrap_content"
+            android:id="@+id/pontuacao_btn"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:clickable="true"
-            android:src="@drawable/_96_sem_t_tulo_20250515165235" />
+            android:focusable="true"
+            android:padding="8dp"
+            app:srcCompat="@drawable/_96_sem_t_tulo_20250515165235"
+            android:contentDescription="Pontuação" />
 
         <ImageView
-            android:id="@+id/imageView7"
-            android:layout_width="wrap_content"
+            android:id="@+id/dicionario_btn"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:clickable="true"
-            android:src="@drawable/_96_sem_t_tulo_20250515165246" />
+            android:focusable="true"
+            android:padding="8dp"
+            app:srcCompat="@drawable/_96_sem_t_tulo_20250515165246"
+            android:contentDescription="Dicionário" />
 
         <ImageView
-            android:id="@+id/imageView8"
-            android:layout_width="wrap_content"
+            android:id="@+id/traducao_btn"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:clickable="true"
-            android:src="@drawable/_96_sem_t_tulo_20250515165339" />
+            android:focusable="true"
+            android:padding="8dp"
+            app:srcCompat="@drawable/_96_sem_t_tulo_20250515165339"
+            android:contentDescription="Tradução" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
