@@ -4,12 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.MenuItem; // Se estiver usando a toolbar com menu
-import android.widget.EditText; // Se estiver usando a barra de pesquisa
-import android.widget.ImageView; // Necessário para os botões da barra de navegação
-import android.widget.Toast; // Para as mensagens Toast
+import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
 
-import androidx.annotation.NonNull; // Se estiver usando @NonNull
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -85,7 +85,7 @@ public class DicionarioActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Dicionário LIBRAS");
 
-        // Configuração dos botões da barra de navegação inferior
+        // --- INÍCIO DA SEÇÃO DE ONCLICKLISTENERS DA BARRA DE NAVEGAÇÃO ---
         ImageView homeButton = findViewById(R.id.home_btn);
         ImageView flashcardButton = findViewById(R.id.flashcard_btn);
         ImageView dicionarioButton = findViewById(R.id.dicionario_btn);
@@ -94,29 +94,31 @@ public class DicionarioActivity extends AppCompatActivity {
 
         homeButton.setOnClickListener(v -> {
             startActivity(new Intent(DicionarioActivity.this, Home.class));
-            finish();
+            finish(); // Opcional: finaliza a atividade atual
         });
 
         flashcardButton.setOnClickListener(v -> {
             startActivity(new Intent(DicionarioActivity.this, FlashcardActivity.class));
-            finish();
+            finish(); // Opcional
         });
 
         dicionarioButton.setOnClickListener(v -> {
+            // Já está na DicionarioActivity
             Toast.makeText(DicionarioActivity.this, "Você já está no Dicionário!", Toast.LENGTH_SHORT).show();
         });
 
         traducaoButton.setOnClickListener(v -> {
-            // Implementar a navegação para a TraducaoActivity quando ela estiver pronta
+            // Adicionar Intent para TraducaoActivity se/quando ela existir
             // startActivity(new Intent(DicionarioActivity.this, TraducaoActivity.class));
             Toast.makeText(DicionarioActivity.this, "Funcionalidade de Tradução em breve!", Toast.LENGTH_SHORT).show();
         });
 
         pontuacaoButton.setOnClickListener(v -> {
-            // Implementar a navegação para a PontuacaoActivity quando ela estiver pronta
+            // Adicionar Intent para PontuacaoActivity se/quando ela existir
             // startActivity(new Intent(DicionarioActivity.this, PontuacaoActivity.class));
             Toast.makeText(DicionarioActivity.this, "Funcionalidade de Pontuação em breve!", Toast.LENGTH_SHORT).show();
         });
+        // --- FIM DA SEÇÃO DE ONCLICKLISTENERS DA BARRA DE NAVEGAÇÃO ---
     }
 
     @Override
