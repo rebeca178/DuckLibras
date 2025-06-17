@@ -1,42 +1,25 @@
-package com.example.mobileducklibras.Dicionario.data; // Novo pacote para os modelos de dados do dicionário
+package com.example.mobileducklibras.Dicionario.data;
 
-import com.google.gson.annotations.SerializedName; // Para mapeamento JSON, se os nomes forem diferentes na API
-
+import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
+
 public class DicionarioLibrasEntity implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-
-    // Use @SerializedName se o nome do campo no JSON for diferente do nome da variável Java
-    @SerializedName("id")
     private Long id;
-
-    @SerializedName("palavra")
     private String palavra;
-
-    @SerializedName("traducao")
     private String traducao;
-
-    @SerializedName("sinal")
-    private String sinal; // Geralmente seria uma URL para um vídeo ou imagem do sinal
-
-    @SerializedName("imagem")
+    private String sinal; // URL para um vídeo ou imagem do sinal
     private String imagem; // URL da imagem
-
-    @SerializedName("videoUrl")
     private String videoUrl; // URL do vídeo
-
-    @SerializedName("descricao")
     private String descricao;
-
-    @SerializedName("categoria")
     private String categoria;
-
-    @SerializedName("ultimaAtualizacao")
     private String ultimaAtualizacao;
 
+    // Construtor vazio
     public DicionarioLibrasEntity() {
     }
+
+    // Construtor com todos os campos (opcional, mas útil)
     public DicionarioLibrasEntity(Long id, String palavra, String traducao, String sinal, String imagem, String videoUrl, String descricao, String categoria, String ultimaAtualizacao) {
         this.id = id;
         this.palavra = palavra;
@@ -49,8 +32,7 @@ public class DicionarioLibrasEntity implements Serializable {
         this.ultimaAtualizacao = ultimaAtualizacao;
     }
 
-    // Getters e Setters para todos os campos (essenciais para GSON/Retrofit)
-
+    // Getters e Setters
     public Long getId() {
         return id;
     }
@@ -122,8 +104,4 @@ public class DicionarioLibrasEntity implements Serializable {
     public void setUltimaAtualizacao(String ultimaAtualizacao) {
         this.ultimaAtualizacao = ultimaAtualizacao;
     }
-
-    // Anotações @ManyToOne como anotacoesId e traducoesId não são necessárias aqui,
-    // pois o cliente Android geralmente não precisa entender as relações de banco de dados do backend.
-    // Ele apenas consome os dados serializados.
 }
