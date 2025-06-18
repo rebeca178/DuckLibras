@@ -19,7 +19,8 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
-
+    }
+    
     public void flashcard_btn(View view) {
         Intent intent = new Intent(this, FlashcardActivity.class);
         startActivity(intent);
