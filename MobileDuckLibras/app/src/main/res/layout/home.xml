@@ -6,8 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:orientation="vertical"
-    tools:context=".Menu.presetation. HomeActivity">
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -36,7 +35,9 @@
             android:id="@+id/user"
             android:layout_width="78dp"
             android:layout_height="wrap_content"
-            android:clickable="false"
+            android:clickable="true"
+            android:contentDescription="user"
+            android:onClick="user_btn"
             app:srcCompat="@drawable/user" />
 
     </LinearLayout>
@@ -50,6 +51,9 @@
             android:id="@+id/BS1"
             android:layout_width="378dp"
             android:layout_height="116dp"
+            android:clickable="true"
+            android:contentDescription="bsativo"
+            android:onClick="bsativo_btn"
             app:srcCompat="@drawable/bsativo" />
 
         <ImageView
@@ -94,6 +98,9 @@
             android:layout_width="87dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:clickable="true"
+            android:contentDescription="flashcard"
+            android:onClick="flashcard_btn"
             app:srcCompat="@drawable/flashcard" />
 
         <ImageView
@@ -101,6 +108,9 @@
             android:layout_width="87dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:clickable="true"
+            android:contentDescription="anotacao"
+            android:onClick="anotacao_btn"
             app:srcCompat="@drawable/anotacoes" />
 
         <ImageView
@@ -108,13 +118,18 @@
             android:layout_width="87dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:clickable="true"
+            android:contentDescription="dicionario"
+            android:onClick="dicionario_btn"
             app:srcCompat="@drawable/dicionario" />
 
         <ImageView
             android:id="@+id/traducao"
             android:layout_width="87dp"
             android:layout_height="wrap_content"
+            android:clickable="true"
+            android:contentDescription="traducao"
+            android:onClick="traducao_btn"
             app:srcCompat="@drawable/traducoes" />
 
     </LinearLayout>
-</LinearLayout>
