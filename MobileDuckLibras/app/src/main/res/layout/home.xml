@@ -27,6 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:autofillHints=""
             android:ems="10"
             android:inputType="text"
             android:text="nivel" />
@@ -133,3 +134,4 @@
             app:srcCompat="@drawable/traducoes" />
 
     </LinearLayout>
+</LinearLayout>
