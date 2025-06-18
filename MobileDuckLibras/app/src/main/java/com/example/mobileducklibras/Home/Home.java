@@ -1,18 +1,24 @@
 package com.example.mobileducklibras.Home;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mobileducklibras.Aulas.Aula1Activity;
 import com.example.mobileducklibras.FlashCard.FlashcardActivity;
+import com.example.mobileducklibras.R;
 import com.example.mobileducklibras.Traducao.TraducaoActivity;
 import com.example.mobileducklibras.anotacao.AnotacaoActivity;
 import com.example.ducklibras.Dicionario.presetation.DicionarioActivity;
-import com.example.ducklibras.user.presetation.ProfileActivity;
 
 public class Home extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.home);
 
     public void flashcard_btn(View view) {
         Intent intent = new Intent(this, FlashcardActivity.class);
