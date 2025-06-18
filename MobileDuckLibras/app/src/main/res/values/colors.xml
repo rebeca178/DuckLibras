@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="laranja">#BF781B</color>
+    <color name="laranja2">#754910</color>
+    <color name="laranjaclaro">#FFB755</color>
+    <color name="azulclaro">#B7D8E7</color>
+    <color name="azulclaro2">#BDE5FE</color>
+    <color name="azulescuro">#001928</color>
+    <color name="azulescuro2">#255069</color>
+    <color name="azulclaro3">#6fbff0</color>
+     <color name="fundo_app">#F8FAFC</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="borda_cards">#E2E8F0</color>
+    <color name="texto_primario">#1E293B</color>
+    <color name="texto_secundario">#64748B</color>
+    <color name="cor_secundaria">#0EA5E9</color>
+    <color name="cor_primaria">#0F766E</color>
+    <color name="cor_primaria_clara">#2DD4BF</color>
+    <color name="branco">#FFFFFF</color>
+</resources>
