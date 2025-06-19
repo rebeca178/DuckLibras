@@ -24,4 +24,7 @@
     <color name="accent_blue">#2196F3</color>
     <color name="menu_background">#BBDEFB</color>
     <color name="button_text">#FFFFFF</color>
+    <color name="primary">#90CAF9</color>
+    <color name="primaryDark">#0D47A1</color>
+    <color name="background">#E3F2FD</color>
 </resources>
