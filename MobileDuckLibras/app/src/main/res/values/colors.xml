@@ -19,4 +19,9 @@
     <color name="cor_primaria">#0F766E</color>
     <color name="cor_primaria_clara">#2DD4BF</color>
     <color name="branco">#FFFFFF</color>
+    <color name="background_color">#E3F2FD</color>
+    <color name="primary_text">#1A237E</color>
+    <color name="accent_blue">#2196F3</color>
+    <color name="menu_background">#BBDEFB</color>
+    <color name="button_text">#FFFFFF</color>
 </resources>
