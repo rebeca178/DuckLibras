@@ -15,13 +15,13 @@
         android:theme="@style/Theme.MobileDuckLibras"
         tools:targetApi="31">
 
-        <activity android:name=".Home.Home" />
+        <activity android:name=".Login.presetation.Login"/>
         <activity
             android:name=".FlashCard.FlashcardActivity"
             android:exported="false" />
         <activity android:name=".Cadastro.presetation.Cadastro" />
         <activity
-            android:name=".Login.presetation.Login"
+            android:name=".Home.Home"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

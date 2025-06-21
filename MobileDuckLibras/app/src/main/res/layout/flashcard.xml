@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-             android:layout_height="match_parent">
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="415dp"
@@ -18,47 +18,64 @@
 
         <ImageView
             android:id="@+id/imageView14"
-            android:layout_width="267dp"
-            android:layout_height="206dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="68dp"
+            android:layout_marginEnd="68dp"
+            android:layout_marginBottom="30dp"
             android:src="@drawable/correr__1_"
-            tools:layout_editor_absoluteX="81dp"
-            tools:layout_editor_absoluteY="100dp" />
+            app:layout_constraintBottom_toTopOf="@+id/checkBoxPato"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton4" />
 
         <CheckBox
-            android:id="@+id/Pato"
+            android:id="@+id/checkBoxPato"
             android:layout_width="225dp"
-            android:layout_height="58dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="14dp"
             android:text="Pato"
             android:textSize="34sp"
-            tools:layout_editor_absoluteX="81dp"
-            tools:layout_editor_absoluteY="336dp" />
+            app:layout_constraintBottom_toTopOf="@+id/checkBoxCachorro"
+            app:layout_constraintStart_toStartOf="@+id/imageView14"
+            app:layout_constraintTop_toBottomOf="@+id/imageView14" />
 
         <CheckBox
-            android:id="@+id/Pato"
-            android:layout_width="203dp"
-            android:layout_height="60dp"
+            android:id="@+id/checkBoxGato"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="22dp"
             android:text="Gato"
             android:textSize="34sp"
-            tools:layout_editor_absoluteX="81dp"
-            tools:layout_editor_absoluteY="488dp" />
+            app:layout_constraintBottom_toTopOf="@+id/checkBoxDinheiro"
+            app:layout_constraintEnd_toEndOf="@+id/checkBoxCachorro"
+            app:layout_constraintStart_toStartOf="@+id/checkBoxCachorro"
+            app:layout_constraintTop_toBottomOf="@+id/checkBoxCachorro" />
 
         <ImageButton
             android:id="@+id/imageButton4"
             android:layout_width="55dp"
-            android:layout_height="67dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="26dp"
             android:layout_marginEnd="32dp"
+            android:layout_marginBottom="7dp"
             android:backgroundTint="#FFFFFF"
             android:scaleType="fitCenter"
+            app:layout_constraintBottom_toTopOf="@+id/imageView14"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/loupe_78956"
-            tools:layout_editor_absoluteY="26dp" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/loupe_78956" />
 
         <LinearLayout
-            android:layout_width="409dp"
-            android:layout_height="70dp"
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="3dp"
             android:orientation="horizontal"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="660dp">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/checkBoxDinheiro">
 
             <ImageView
                 android:id="@+id/imageView4"
@@ -98,31 +115,37 @@
 
             <ImageView
                 android:id="@+id/imageView8"
-                android:onClick="traducao_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:clickable="true"
+                android:onClick="traducao_btn"
                 android:src="@drawable/_96_sem_t_tulo_20250515165339" />
         </LinearLayout>
 
         <CheckBox
-            android:id="@+id/Pato"
-            android:layout_width="207dp"
-            android:layout_height="58dp"
+            android:id="@+id/checkBoxCachorro"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="22dp"
             android:text="Cachorro"
             android:textSize="34sp"
-            tools:layout_editor_absoluteX="81dp"
-            tools:layout_editor_absoluteY="408dp" />
+            app:layout_constraintBottom_toTopOf="@+id/checkBoxGato"
+            app:layout_constraintEnd_toEndOf="@+id/checkBoxPato"
+            app:layout_constraintStart_toStartOf="@+id/checkBoxPato"
+            app:layout_constraintTop_toBottomOf="@+id/checkBoxPato" />
 
         <CheckBox
-            android:id="@+id/Pato"
-            android:layout_width="197dp"
-            android:layout_height="62dp"
+            android:id="@+id/checkBoxDinheiro"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="28dp"
             android:text="Dinheiro"
             android:textSize="34sp"
-            tools:layout_editor_absoluteX="81dp"
-            tools:layout_editor_absoluteY="570dp" />
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintEnd_toEndOf="@+id/checkBoxGato"
+            app:layout_constraintStart_toStartOf="@+id/checkBoxGato"
+            app:layout_constraintTop_toBottomOf="@+id/checkBoxGato" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

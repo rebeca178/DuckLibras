@@ -33,8 +33,9 @@ public class FlashcardActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void bsativo_btn(View view) {
+    public void dicionario_btn(View view) {
         Intent intent = new Intent(this, AulasActivity.class);
         startActivity(intent);
     }
+
 }
