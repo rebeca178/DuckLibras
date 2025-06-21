@@ -66,6 +66,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:clickable="true"
+                android:onClick="anotacao_btn"
                 android:src="@drawable/_96_sem_t_tulo" />
 
             <ImageView
@@ -74,6 +75,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:clickable="true"
+                android:onClick="flashcard_btn"
                 android:src="@drawable/_96_sem_t_tulo_20250515165227" />
 
             <ImageView
@@ -82,6 +84,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:clickable="true"
+                android:onClick="home_btn"
                 android:src="@drawable/_96_sem_t_tulo_20250515165235" />
 
             <ImageView
@@ -90,10 +93,12 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:clickable="true"
+                android:onClick="dicionario_btn"
                 android:src="@drawable/_96_sem_t_tulo_20250515165246" />
 
             <ImageView
                 android:id="@+id/imageView8"
+                android:onClick="traducao_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

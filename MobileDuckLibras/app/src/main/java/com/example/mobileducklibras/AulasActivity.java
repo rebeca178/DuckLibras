@@ -1,4 +1,4 @@
-package com.example.seuprojeto;
+package com.example.mobileducklibras;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.mobileducklibras.R;
 
 public class AulasActivity extends AppCompatActivity {
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+          xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -17,11 +17,9 @@
 
         <activity android:name=".Home.Home" />
         <activity
-            android:name=".Dicionario.presetation.DicionarioActivity"
+            android:name=".FlashCard.FlashcardActivity"
             android:exported="false" />
-        <activity
-            android:name=".DicionarioActivity"
-            android:exported="false" />
+        <activity android:name=".Cadastro.presetation.Cadastro" />
         <activity
             android:name=".Login.presetation.Login"
             android:exported="true">

@@ -84,5 +84,16 @@
         app:layout_constraintTop_toBottomOf="@+id/componentes"
         app:layout_constraintVertical_bias="0.0" />
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="51dp"
+        android:layout_height="56dp"
+        app:layout_constraintBottom_toTopOf="@+id/componentes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="VoltLogin"
+        app:srcCompat="@drawable/ic_arrow_back" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

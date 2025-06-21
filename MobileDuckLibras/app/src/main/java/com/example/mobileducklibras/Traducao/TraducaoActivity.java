@@ -9,8 +9,9 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mobileducklibras.Home.Home;
 import com.example.mobileducklibras.R;
-import com.google.android.ads.mediationtestsuite.activities.HomeActivity;
+
 
 public class TraducaoActivity extends AppCompatActivity {
 
@@ -52,8 +53,8 @@ public class TraducaoActivity extends AppCompatActivity {
     }
 
     private void irParaHome() {
-        // Intent para HomeActivity (troque pelo nome real)
-        Intent intent = new Intent(this, HomeActivity.class);
+
+        Intent intent = new Intent(this, Home.class);
         startActivity(intent);
         finish();
     }

@@ -17,6 +17,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.mobileducklibras.Cadastro.presetation.Cadastro;
 import com.example.mobileducklibras.Home.Home;
 import com.example.mobileducklibras.Login.data.SignIn;
 import com.example.mobileducklibras.Login.data.SignInListener;
@@ -77,5 +78,14 @@ public class Login extends AppCompatActivity implements SignInListener {
         issue_lb.setText(response);
         issue_lb.setVisibility(VISIBLE);
         Toast.makeText(this, response, Toast.LENGTH_LONG).show();
+    }
+    public void abrirCadastro(View view) {
+        Intent intent = new Intent(this, Cadastro.class);
+        startActivity(intent);
+    }
+
+    public void VoltLogin(View view) {
+        Intent intent = new Intent(this, Cadastro.class);
+        startActivity(intent);
     }
 }
