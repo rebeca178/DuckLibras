@@ -2,8 +2,13 @@ package com.ducklibras.api.models.entitys;
 
 import jakarta.persistence.*;
 import java.io.Serializable;
+import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
-
+@Getter
+@Setter
 @Entity
 @Table(name = "dicionario")
 public class DicionarioLibrasEntity implements Serializable {
@@ -38,14 +43,7 @@ public class DicionarioLibrasEntity implements Serializable {
     @Column(name = "ultima_atualizacao", nullable = false)
     private String ultimaAtualizacao;
 
-   
-
-    @ManyToOne
-    @JoinColumn(name = "anotacoesId", nullable = false)
-    private AnotacaoEntity anotacoes;
-
-
-    @ManyToOne
-    @JoinColumn(name = "traducoesId", nullable = false)
-    private TraducaoEntity traducoes;
+    @OneToMany(mappedBy = "dicionario") 
+    @JsonManagedReference
+    private List<FlashCardsEntity> flashcards;
 }

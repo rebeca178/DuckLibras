@@ -1,4 +1,4 @@
-package com.ducklibras.api.services;
+package com.ducklibras.api.models.services;
 
 import com.ducklibras.api.models.entitys.TraducaoEntity;
 import com.ducklibras.api.models.repo.TraducaoRepository;

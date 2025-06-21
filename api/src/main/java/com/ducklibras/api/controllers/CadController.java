@@ -1,13 +1,16 @@
 package com.ducklibras.api.controllers;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ducklibras.api.models.dtos.AlunoDto;
 import com.ducklibras.api.models.dtos.AlunoInDto;
-import com.ducklibras.api.models.dtos.LoginDto;
-import com.ducklibras.api.services.CadService;
+import com.ducklibras.api.models.dtos.ResponseModel;
+import com.ducklibras.api.models.services.CadService;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -26,23 +29,17 @@ public class CadController{
      * Author:Dhemerson
     */
     @PostMapping("/signup")
-    public ResponseEntity<String> teste(@RequestBody AlunoInDto aluno) {
-        String response = cadService.createAluno(aluno);
-        return (response.equals("Usuario Cadastrado com Sucesso"))
-        ?ResponseEntity.status(202).body(response)
-        :ResponseEntity.status(400).body(response);
+
+    public ResponseEntity<ResponseModel> createAluno(@RequestBody AlunoDto aluno) 
+    {
+        ResponseModel responseDto = cadService.createAluno(aluno);
+        return ResponseEntity.status(responseDto.getStatus()).body(responseDto);
     }
 
-    @PostMapping("/loginaluno")
-    public ResponseEntity<String> postMethodName(@RequestBody LoginDto log) {
-        String response = cadService.loginAluno(log).get();
-        return (response.equals("Login realizado com sucesso"))
-        ?ResponseEntity.status(404).body(response)
-        :ResponseEntity.status(202).body(response);
+    @PostMapping("/signin")
+    public ResponseEntity<ResponseModel> signInUser(@RequestBody AlunoInDto signin)
+    {
+        ResponseModel responseDto = cadService.loginAluno(signin);
+        return ResponseEntity.status(responseDto.getStatus()).body(responseDto);
     }
-}
-/*
-     * Arroz fui ao bosque comprar melão é a formiguinha subiu na minha mão eu sacudi
-     * fui ao bosque comprar cebola é a formiguinha... 
-     * 
-    */
+}   

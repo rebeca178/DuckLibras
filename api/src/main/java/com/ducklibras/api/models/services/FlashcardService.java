@@ -1,5 +1,4 @@
-
-package com.ducklibras.api.services;
+package com.ducklibras.api.models.services;
 
 import com.ducklibras.api.models.entitys.FlashCardsEntity;
 import com.ducklibras.api.models.repo.FlashCardRepo;

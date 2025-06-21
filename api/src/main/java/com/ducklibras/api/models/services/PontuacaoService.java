@@ -1,4 +1,4 @@
-package com.ducklibras.api.services;
+package com.ducklibras.api.models.services;
 
 import com.ducklibras.api.models.dtos.PontuacaoDto;
 import com.ducklibras.api.models.entitys.PontuacaoEntity;

@@ -2,6 +2,10 @@ package com.ducklibras.api.models.entitys;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -32,7 +36,4 @@ public class PontuacaoEntity implements Serializable {
     @Column(name = "nivel", nullable = false, columnDefinition = "INT DEFAULT 1")
     private int nivel;
     
-    @ManyToOne
-    @JoinColumn(name = "FlashCardId", nullable = false)
-    private FlashCardsEntity FlashCardId;
 }

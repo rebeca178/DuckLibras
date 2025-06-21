@@ -6,28 +6,26 @@ import lombok.Setter;
 
 @Getter
 @Setter
-
 public class DicionarioLibrasDto {
-
     private Long id;
     private String palavra;
+    private String traducao;
+    private String sinal;
+    private String imagem;
     private String videoUrl;
-    private String imagemUrl;
     private String descricao;
     private String categoria;
-    private String dataCriacao;
-    private String dataAtualizacao;
+    private String ultimaAtualizacao;
 
-    public DicionarioLibrasDto(DicionarioLibrasEntity user) {
-        if(user!= null){
-            this.id = getId();
-            this.palavra = getPalavra();
-            this.videoUrl = getVideoUrl();
-            this.imagemUrl = getImagemUrl();
-            this.descricao = getDescricao();
-            this.categoria = getCategoria();
-            this.dataCriacao = getDataAtualizacao();
-            this.dataAtualizacao = getDataAtualizacao();
+    public DicionarioLibrasDto(DicionarioLibrasEntity entity) {
+        this.id = entity.getId();
+        this.palavra = entity.getPalavra();
+        this.traducao = entity.getTraducao();
+        this.sinal = entity.getSinal();
+        this.imagem = entity.getImagem();
+        this.videoUrl = entity.getVideoUrl();
+        this.descricao = entity.getDescricao();
+        this.categoria = entity.getCategoria();
+        this.ultimaAtualizacao = entity.getUltimaAtualizacao();
     }
-        }
-    }
+}

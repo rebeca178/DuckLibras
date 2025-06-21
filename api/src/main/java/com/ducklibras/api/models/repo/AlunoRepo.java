@@ -2,8 +2,8 @@ package com.ducklibras.api.models.repo;
 
 import java.util.Optional;
 
+import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.ducklibras.api.models.entitys.AlunoEntitys;
@@ -11,14 +11,19 @@ import com.ducklibras.api.models.entitys.AlunoEntitys;
 @Repository
 public interface AlunoRepo extends JpaRepository<AlunoEntitys, Long> {
     
-    @Query("SELECT a FROM AlunoEntitys a WHERE a.email = ?1")
-    public Optional<AlunoEntitys> findByEmail(String email);
+    Optional<AlunoEntitys> findByEmail(String email);
 
-    public boolean existsByEmail(String Email);
+    Optional<AlunoEntitys> findByUsernameOrEmail(String email, String username);
 
-    @Query("SELECT a FROM AlunoEntitys a WHERE (a.email = ?1) AND a.pass = ?2")
-    public Optional<AlunoEntitys> findByEmailAndPass(String email, String pass);
-    
+    Optional<AlunoEntitys> findByUsername(String username);
+
+    boolean existsByUsername(String username);
+
+    boolean existsByEmail(String email);
+
+    boolean existsByUsernameOrEmail(String email, String username);
+
+    Optional<AlunoEntitys> findByEmailAndPass(String email, String pass);
 
     }
 

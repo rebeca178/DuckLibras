@@ -1,7 +1,7 @@
 package com.ducklibras.api.controllers;
 
 import com.ducklibras.api.models.dtos.PontuacaoDto;
-import com.ducklibras.api.services.PontuacaoService;
+import com.ducklibras.api.models.services.PontuacaoService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

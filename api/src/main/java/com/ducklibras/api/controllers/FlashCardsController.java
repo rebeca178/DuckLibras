@@ -1,7 +1,7 @@
 package com.ducklibras.api.controllers;
 
 import com.ducklibras.api.models.entitys.FlashCardsEntity;
-import com.ducklibras.api.services.FlashcardService;
+import com.ducklibras.api.models.services.FlashcardService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

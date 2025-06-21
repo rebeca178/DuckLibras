@@ -7,6 +7,7 @@ import lombok.Setter;
 import java.io.Serializable;
 
 import com.ducklibras.api.models.dtos.AnotacaoinDto;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Getter
 @Setter
@@ -31,23 +32,9 @@ public class AnotacaoEntity implements Serializable {
     public AnotacaoEntity() {
     }
 
-    public AnotacaoEntity(Long id, String titulo, String conteudo) {
-        if (id != null) this.id = id;
-        if (titulo != null) this.titulo = titulo;
-        if (conteudo != null) this.conteudo = conteudo;
-    }
-
-    public AnotacaoEntity(String titulo, String conteudo) {
-        if (titulo != null) this.titulo = titulo;
-        if (conteudo != null) this.conteudo = conteudo;
-    }
-
-    public AnotacaoEntity(AnotacaoinDto aula){
-        if(aula != null){
-        this.titulo = aula.getTitulo();
-        this.conteudo = aula.getConteudo();
-
-        }
+    public AnotacaoEntity(AnotacaoinDto dto) {
+        this.titulo = dto.getTitulo();
+        this.conteudo = dto.getConteudo();
     }
 
 }

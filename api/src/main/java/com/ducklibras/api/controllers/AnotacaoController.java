@@ -1,9 +1,10 @@
 package com.ducklibras.api.controllers;
 
+import com.ducklibras.api.models.dtos.AnotacaoDTO;
 import com.ducklibras.api.models.dtos.AnotacaoinDto;
 import com.ducklibras.api.models.entitys.AnotacaoEntity;
 import com.ducklibras.api.models.repo.AnotacaoRepository;
-import com.ducklibras.api.services.AnotacaoService;
+import com.ducklibras.api.models.services.AnotacaoService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -26,9 +27,12 @@ public class AnotacaoController {
     }
 
     @GetMapping
-    public List<AnotacaoEntity> listarAnotacoes() {
-        return anotacaoRepository.findAll();
-    }
+    public List<AnotacaoDTO> listarAnotacoes() {
+    return anotacaoRepository.findAll()
+        .stream()
+        .map(AnotacaoDTO::new)
+        .toList();
+}
 
     @GetMapping("/{id}")
     public ResponseEntity<AnotacaoEntity> buscarPorId(@PathVariable Long id) {

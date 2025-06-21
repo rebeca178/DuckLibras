@@ -1,4 +1,4 @@
-package com.ducklibras.api.services;
+package com.ducklibras.api.models.services;
 
 import com.ducklibras.api.models.entitys.DicionarioLibrasEntity;
 import com.ducklibras.api.models.repo.DicionarioLibrasRepo;
