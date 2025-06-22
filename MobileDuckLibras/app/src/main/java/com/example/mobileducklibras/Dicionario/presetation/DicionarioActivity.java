@@ -4,23 +4,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobileducklibras.Anotacao.AnotacaoActivity;
+import com.example.mobileducklibras.AulasActivity;
 import com.example.mobileducklibras.FlashCard.presetation.FlashcardActivity;
 import com.example.mobileducklibras.Home.Home;
 import com.example.mobileducklibras.R;
 import com.example.mobileducklibras.Traducao.TraducaoActivity;
-import com.example.mobileducklibras.AulasActivity;
 
 import java.util.ArrayList;
 
@@ -74,12 +72,6 @@ public class DicionarioActivity extends AppCompatActivity {
 
         // Carrega os dados do dicionário
         dicionarioViewModel.loadDicionario();
-
-        // Configuração da Toolbar
-        androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Dicionário LIBRAS");
     }
 
     // Métodos de navegação para usar no android:onClick do XML
@@ -105,20 +97,12 @@ public class DicionarioActivity extends AppCompatActivity {
     }
 
     public void dicionario_btn(View view) {
-        Toast.makeText(this, "Você já está no Dicionário!", Toast.LENGTH_SHORT).show();
+        // Já está na tela de dicionário
+        // Toast.makeText(this, "Você já está no Dicionário!", Toast.LENGTH_SHORT).show();
     }
 
     public void dicionarioAulas_btn(View view) {
         startActivity(new Intent(this, AulasActivity.class));
         finish();
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            onBackPressed();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 }

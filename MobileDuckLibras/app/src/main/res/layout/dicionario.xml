@@ -26,7 +26,6 @@
             app:titleTextColor="@color/texto_primario"
             app:navigationIcon="@drawable/ic_arrow_back"
             app:titleTextAppearance="@style/ToolbarTitle"/>
-
     </com.google.android.material.appbar.AppBarLayout>
 
     <LinearLayout
@@ -40,25 +39,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        <EditText
+            android:id="@+id/searchEditText"
             android:layout_width="0dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:layout_weight="1"
-            app:boxStrokeColor="@color/cor_primaria"
-            app:hintEnabled="false"
-            app:startIconDrawable="@drawable/loupe_78956"
-            app:startIconTint="@color/cor_primaria">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/searchEditText"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:hint="Buscar palavra..."
-                android:inputType="text"
-                android:textColor="@color/texto_primario"
-                android:textSize="16sp" />
-        </com.google.android.material.textfield.TextInputLayout>
+            android:hint="Buscar palavra..."
+            android:inputType="text"
+            android:textColor="@color/texto_primario"
+            android:textSize="16sp" />
 
         <ImageButton
             android:id="@+id/searchButton"
@@ -82,10 +71,8 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@id/bottom_navigation_bar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/search_bar_layout"
-        app:layout_constraintVertical_bias="0.0"
         tools:listitem="@layout/item_dicionario" />
 
     <LinearLayout
