@@ -2,60 +2,51 @@ package com.example.mobileducklibras.Traducao;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.view.View;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mobileducklibras.Anotacao.AnotacaoActivity;
+import com.example.mobileducklibras.AulasActivity;
+import com.example.mobileducklibras.FlashCard.presetation.FlashcardActivity;
 import com.example.mobileducklibras.Home.Home;
 import com.example.mobileducklibras.R;
 
-
 public class TraducaoActivity extends AppCompatActivity {
 
-    private TextView pontosTextView;
-    private TextView nivelTextView;
-    private ImageView iconeLibras;
-
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.traducao);
 
-        // Referências UI
-        pontosTextView = findViewById(R.id.pontos);
-        nivelTextView = findViewById(R.id.nivel);
-        iconeLibras = findViewById(R.id.icone_libras);
-
-        // Definindo valores iniciais (exemplo)
-        pontosTextView.setText("Pontos: 120");
-        nivelTextView.setText("Nível: 3");
-
-        // Click no ícone libras só para exemplo
-        iconeLibras.setOnClickListener(v -> {
-            Toast.makeText(this, "Ícone Libras clicado!", Toast.LENGTH_SHORT).show();
-        });
-
-        // Configura os botões do menu inferior
-        findViewById(R.id.home_btn).setOnClickListener(v -> irParaHome());
-        findViewById(R.id.traducao).setOnClickListener(v -> {
-            // Já está aqui, pode mostrar feedback ou ignorar
-            Toast.makeText(this, "Você já está na Tradução!", Toast.LENGTH_SHORT).show();
-        });
-
-        // Menu superior - usuário
-        findViewById(R.id.user).setOnClickListener(v -> {
-            Toast.makeText(this, "Perfil do usuário clicado!", Toast.LENGTH_SHORT).show();
-            // Aqui pode abrir a activity de perfil futuramente
-        });
+        // Seu código de inicialização da tela...
     }
 
-    private void irParaHome() {
+    // Métodos de navegação para usar no android:onClick do XML
 
-        Intent intent = new Intent(this, Home.class);
-        startActivity(intent);
+    public void home_btn(View view) {
+        startActivity(new Intent(this, Home.class));
         finish();
+    }
+
+    public void flashcard_btn(View view) {
+        startActivity(new Intent(this, FlashcardActivity.class));
+        finish();
+    }
+
+    public void anotacao_btn(View view) {
+        startActivity(new Intent(this, AnotacaoActivity.class));
+        finish();
+    }
+
+    public void dicionario_btn(View view) {
+        startActivity(new Intent(this, AulasActivity.class));
+        finish();
+    }
+
+    public void traducao_btn(View view) {
+        // Já está na tela de tradução
+        // Opcional: mostrar um Toast
+        // Toast.makeText(this, "Você já está na Tradução!", Toast.LENGTH_SHORT).show();
     }
 }

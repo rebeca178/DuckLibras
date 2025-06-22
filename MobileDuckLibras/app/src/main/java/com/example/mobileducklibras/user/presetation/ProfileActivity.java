@@ -1,5 +1,6 @@
 package com.example.mobileducklibras.user.presetation;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Button;
@@ -11,8 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.mobileducklibras.R; // Certifique-se que este import está correto
-import com.example.mobileducklibras.user.data.AlunoEntity; // Importe a entidade do aluno
+import com.example.mobileducklibras.R;
+import com.example.mobileducklibras.user.data.AlunoEntity;
 import com.example.mobileducklibras.user.presetation.ProfileViewModel;
 
 public class ProfileActivity extends AppCompatActivity {
@@ -30,8 +31,8 @@ public class ProfileActivity extends AppCompatActivity {
         // Configuração da Toolbar
         androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolbarProfile);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // Habilita o botão de voltar
-        getSupportActionBar().setTitle("Meu Perfil"); // Define o título
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Meu Perfil");
 
         // Inicializa as Views
         nameTextView = findViewById(R.id.nameTextView);
@@ -48,7 +49,18 @@ public class ProfileActivity extends AppCompatActivity {
             if (alunoEntity != null) {
                 nameTextView.setText(alunoEntity.getNome());
                 emailTextView.setText(alunoEntity.getEmail());
-                scoreTextView.setText("Pontuação: " + alunoEntity.getPontuacao());
+
+                // Lê a pontuação salva do SharedPreferences
+                String usuarioId = "usuario1"; // Use o mesmo ID do usuário logado no Flashcard
+                SharedPreferences prefs = getSharedPreferences("usuario", MODE_PRIVATE);
+                int pontuacao = prefs.getInt(usuarioId + "_pontuacao", 0);
+
+                scoreTextView.setText("Pontuação: " + pontuacao);
+
+                // Se quiser usar a pontuação do AlunoEntity, pode comparar e escolher a maior:
+                // int pontuacaoMaior = Math.max(alunoEntity.getPontuacao(), pontuacao);
+                // scoreTextView.setText("Pontuação: " + pontuacaoMaior);
+
                 // Carregar imagem de perfil se houver URL (usando Glide, se aplicável)
                 // if (alunoEntity.getProfileImageUrl() != null && !alunoEntity.getProfileImageUrl().isEmpty()) {
                 //     Glide.with(this).load(alunoEntity.getProfileImageUrl()).into(profileImageView);
@@ -76,7 +88,7 @@ public class ProfileActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
-            onBackPressed(); // Volta para a tela anterior ao clicar no botão de voltar da toolbar
+            onBackPressed();
             return true;
         }
         return super.onOptionsItemSelected(item);

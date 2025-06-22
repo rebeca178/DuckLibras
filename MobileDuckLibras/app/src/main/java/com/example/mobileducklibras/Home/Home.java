@@ -7,13 +7,13 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mobileducklibras.Anotacao.AnotacaoActivity;
-import com.example.mobileducklibras.FlashCard.FlashcardActivity;
+import com.example.mobileducklibras.FlashCard.presetation.FlashcardActivity;
 import com.example.mobileducklibras.R;
 import com.example.mobileducklibras.Traducao.TraducaoActivity;
 import com.example.mobileducklibras.AulasActivity;
+import com.example.mobileducklibras.user.presetation.ProfileActivity;
 
 public class Home extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,8 +35,13 @@ public class Home extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void bsativo_btn(View view) {
+    public void dicionario_btn(View view) {
         Intent intent = new Intent(this, AulasActivity.class);
+        startActivity(intent);
+    }
+
+    public void user_btn(View view) {
+        Intent intent = new Intent(this, com.example.mobileducklibras.user.presetation.ProfileActivity.class);
         startActivity(intent);
     }
 

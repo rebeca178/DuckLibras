@@ -15,11 +15,6 @@
         android:theme="@style/Theme.MobileDuckLibras"
         tools:targetApi="31">
 
-        <activity android:name=".Login.presetation.Login"/>
-        <activity
-            android:name=".FlashCard.FlashcardActivity"
-            android:exported="false" />
-        <activity android:name=".Cadastro.presetation.Cadastro" />
         <activity
             android:name=".Home.Home"
             android:exported="true">
@@ -31,6 +26,8 @@
         <activity android:name=".AulasActivity" />
         <activity android:name=".Anotacao.AnotacaoActivity" />
         <activity android:name=".Traducao.TraducaoActivity" />
+        <activity android:name="com.example.mobileducklibras.FlashCard.presetation.FlashcardActivity" />
+        <activity android:name="com.example.mobileducklibras.user.presetation.ProfileActivity" />
 
     </application>
 

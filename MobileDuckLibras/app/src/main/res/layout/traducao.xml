@@ -73,6 +73,7 @@
             android:id="@+id/home_btn"
             android:layout_width="87dp"
             android:layout_height="wrap_content"
+            android:onClick="home_btn"
             app:srcCompat="@drawable/home" />
 
         <ImageView

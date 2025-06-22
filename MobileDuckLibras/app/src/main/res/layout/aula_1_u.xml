@@ -24,46 +24,11 @@
             android:id="@+id/home_btn"
             android:layout_width="87dp"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/home" />
-
-        <ImageView
-            android:id="@+id/flashcard"
-            android:layout_width="87dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:contentDescription="flashcard"
-            android:onClick="flashcard_btn"
-            app:srcCompat="@drawable/flashcard" />
-
-        <ImageView
-            android:id="@+id/anotacao"
-            android:layout_width="87dp"
-            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:clickable="true"
             android:contentDescription="anotacao"
-            android:onClick="anotacao_btn"
-            app:srcCompat="@drawable/anotacoes" />
-
-        <ImageView
-            android:id="@+id/dicionario"
-            android:layout_width="87dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:contentDescription="dicionario"
-            android:onClick="dicionario_btn"
-            app:srcCompat="@drawable/dicionario" />
-
-        <ImageView
-            android:id="@+id/traducao"
-            android:layout_width="87dp"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:contentDescription="traducao"
-            android:onClick="traducao_btn"
-            app:srcCompat="@drawable/traducoes" />
+            android:onClick="home_btn"
+            app:srcCompat="@drawable/home" />
     </LinearLayout>
 
     <TextView

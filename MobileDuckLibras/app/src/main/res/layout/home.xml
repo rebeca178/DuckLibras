@@ -90,7 +90,7 @@
 
         <ImageView
             android:id="@+id/home_btn"
-            android:layout_width="87dp"
+            android:layout_width="82dp"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/home" />
 

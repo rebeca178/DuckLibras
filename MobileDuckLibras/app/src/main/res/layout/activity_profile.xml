@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fundo_app"
-    tools:context=".User.presetation.ProfileActivity">
+    tools:context=".user.presetation.ProfileActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayoutProfile"
@@ -32,24 +32,26 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
         android:padding="16dp"
-        android:gravity="center_horizontal"
-        app:layout_constraintTop_toBottomOf="@id/appBarLayoutProfile"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/appBarLayoutProfile"
+        app:layout_constraintVertical_bias="0.0">
 
         <ImageView
             android:id="@+id/profileImageView"
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:src="@drawable/ic_launcher_foreground"
-            android:scaleType="centerCrop"
-            android:background="@drawable/circle_shape"
-            android:padding="4dp"
             android:layout_marginTop="24dp"
-            android:contentDescription="Imagem de Perfil" />
+            android:background="@drawable/circle_shape"
+            android:contentDescription="Imagem de Perfil"
+            android:padding="4dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_foreground" />
 
         <TextView
             android:id="@+id/nameTextView"
@@ -57,9 +59,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Nome do Usuário"
+            android:textColor="@color/texto_primario"
             android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="@color/texto_primario" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/emailTextView"
@@ -67,8 +69,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="email@example.com"
-            android:textSize="18sp"
-            android:textColor="@color/texto_secundario" />
+            android:textColor="@color/texto_secundario"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/scoreTextView"
@@ -76,19 +78,19 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Pontuação: 0"
+            android:textColor="@color/cor_primaria"
             android:textSize="20sp"
-            android:textStyle="italic"
-            android:textColor="@color/cor_primaria" />
+            android:textStyle="italic" />
 
         <Button
             android:id="@+id/editProfileButton"
+            style="@style/Widget.Material3.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="Editar Perfil"
-            android:textColor="@color/white"
             android:backgroundTint="@color/cor_primaria"
-            style="@style/Widget.Material3.Button"/>
+            android:text="Editar Perfil"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 

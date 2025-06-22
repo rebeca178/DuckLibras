@@ -3,149 +3,154 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".FlashCard.presetation.FlashcardActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="415dp"
-        android:layout_height="733dp"
-        android:background="#FFFFFF"
-        android:backgroundTint="#FFFFFF"
-        android:backgroundTintMode="add"
-        android:clickable="true"
-        tools:context=".Dicionario.presetation.DicionarioActivity"
-        tools:layout_editor_absoluteX="-4dp"
-        tools:layout_editor_absoluteY="-2dp">
+    <TextView
+        android:id="@+id/scoreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Pontuação: 0"
+        android:textColor="@color/cor_primaria"
+        android:textSize="20sp"
+        android:textStyle="italic" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="32dp"
+        android:contentDescription="Imagem da pergunta"
+        android:scaleType="fitCenter"
+        android:src="@drawable/a"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/checkBoxPato"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="A"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView14" />
+
+    <CheckBox
+        android:id="@+id/checkBoxCachorro"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="B"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkBoxPato" />
+
+    <CheckBox
+        android:id="@+id/checkBoxGato"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="C"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkBoxCachorro" />
+
+    <CheckBox
+        android:id="@+id/checkBoxDinheiro"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="D"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkBoxGato" />
+
+    <Button
+        android:id="@+id/proximoBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Próximo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkBoxDinheiro" />
+
+    <Button
+        android:id="@+id/finalizarBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:enabled="false"
+        android:text="Finalizar Exercício"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/proximoBtn" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
-            android:id="@+id/imageView14"
-            android:layout_width="354dp"
-            android:layout_height="188dp"
-            android:layout_marginStart="68dp"
-            android:layout_marginEnd="68dp"
-            android:layout_marginBottom="30dp"
-            android:src="@drawable/correr__1_"
-            app:layout_constraintBottom_toTopOf="@+id/checkBoxPato"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton4" />
-
-        <CheckBox
-            android:id="@+id/checkBoxPato"
-            android:layout_width="225dp"
-            android:layout_height="0dp"
-            android:layout_marginBottom="14dp"
-            android:text="Pato"
-            android:textSize="34sp"
-            app:layout_constraintBottom_toTopOf="@+id/checkBoxCachorro"
-            app:layout_constraintStart_toStartOf="@+id/imageView14"
-            app:layout_constraintTop_toBottomOf="@+id/imageView14" />
-
-        <CheckBox
-            android:id="@+id/checkBoxGato"
+            android:id="@+id/home_btn"
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginBottom="22dp"
-            android:text="Gato"
-            android:textSize="34sp"
-            app:layout_constraintBottom_toTopOf="@+id/checkBoxDinheiro"
-            app:layout_constraintEnd_toEndOf="@+id/checkBoxCachorro"
-            app:layout_constraintStart_toStartOf="@+id/checkBoxCachorro"
-            app:layout_constraintTop_toBottomOf="@+id/checkBoxCachorro" />
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:contentDescription="Home"
+            android:onClick="home_btn"
+            android:src="@drawable/home" />
 
-        <ImageButton
-            android:id="@+id/imageButton4"
-            android:layout_width="55dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="26dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginBottom="7dp"
-            android:backgroundTint="#FFFFFF"
-            android:scaleType="fitCenter"
-            app:layout_constraintBottom_toTopOf="@+id/imageView14"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/loupe_78956" />
-
-        <LinearLayout
-            android:id="@+id/linearLayout"
+        <ImageView
+            android:id="@+id/flashcard"
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginBottom="3dp"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/checkBoxDinheiro">
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:contentDescription="Flashcard"
+            android:src="@drawable/flashcard" />
 
-            <ImageView
-                android:id="@+id/home_btn"
-                android:layout_width="87dp"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/home" />
-
-            <ImageView
-                android:id="@+id/flashcard"
-                android:layout_width="87dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:contentDescription="flashcard"
-                android:onClick="flashcard_btn"
-                app:srcCompat="@drawable/flashcard" />
-
-            <ImageView
-                android:id="@+id/anotacao"
-                android:layout_width="87dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:contentDescription="anotacao"
-                android:onClick="anotacao_btn"
-                app:srcCompat="@drawable/anotacoes" />
-
-            <ImageView
-                android:id="@+id/dicionario"
-                android:layout_width="87dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:contentDescription="dicionario"
-                android:onClick="dicionario_btn"
-                app:srcCompat="@drawable/dicionario" />
-
-            <ImageView
-                android:id="@+id/traducao"
-                android:layout_width="87dp"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:contentDescription="traducao"
-                android:onClick="traducao_btn"
-                app:srcCompat="@drawable/traducoes" />
-        </LinearLayout>
-
-        <CheckBox
-            android:id="@+id/checkBoxCachorro"
+        <ImageView
+            android:id="@+id/anotacao"
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginBottom="22dp"
-            android:text="Cachorro"
-            android:textSize="34sp"
-            app:layout_constraintBottom_toTopOf="@+id/checkBoxGato"
-            app:layout_constraintEnd_toEndOf="@+id/checkBoxPato"
-            app:layout_constraintStart_toStartOf="@+id/checkBoxPato"
-            app:layout_constraintTop_toBottomOf="@+id/checkBoxPato" />
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:contentDescription="Anotação"
+            android:onClick="anotacao_btn"
+            android:src="@drawable/anotacoes" />
 
-        <CheckBox
-            android:id="@+id/checkBoxDinheiro"
+        <ImageView
+            android:id="@+id/dicionario"
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginBottom="28dp"
-            android:text="Dinheiro"
-            android:textSize="34sp"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-            app:layout_constraintEnd_toEndOf="@+id/checkBoxGato"
-            app:layout_constraintStart_toStartOf="@+id/checkBoxGato"
-            app:layout_constraintTop_toBottomOf="@+id/checkBoxGato" />
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:contentDescription="Dicionário"
+            android:onClick="dicionario_btn"
+            android:src="@drawable/dicionario" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/traducao"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:contentDescription="Tradução"
+            android:onClick="traducao_btn"
+            android:src="@drawable/traducoes" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
