@@ -93,12 +93,8 @@
   <component name="ChangeListManager">
     <list default="true" id="60dec155-006e-4dfa-aca6-bdf3b90de0d0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/Anotacao/AnotacaoActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/Anotacao/AnotacaoActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/Cadastro/presetation/Cadastro.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/Cadastro/presetation/Cadastro.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/FlashCard/presetation/FlashcardActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/FlashCard/presetation/FlashcardActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/Home/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/Home/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/Traducao/TraducaoActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/Traducao/TraducaoActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dicionario.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dicionario.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

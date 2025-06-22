@@ -154,8 +154,9 @@ public class FlashcardActivity extends AppCompatActivity {
         finish();
     }
 
-    public void dicionario_btn(View view) {
-        Intent intent = new Intent(this, DicionarioActivity.class);
-        startActivity(intent);
-    }
+   public void dicionario_btn(View view) {
+    Intent intent = new Intent(this, DicionarioActivity.class);
+    startActivity(intent);
+    finish(); 
+}
 }
