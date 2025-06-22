@@ -3,8 +3,6 @@ package com.ducklibras.api.models.entitys;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -31,7 +29,7 @@ public class PontuacaoEntity implements Serializable {
     private Long id;
 
     @Column(name = "pontos", nullable = false, columnDefinition = "INT DEFAULT 0")
-    private int pontos;
+    private int pontos; // Corrigido: removido o 'a'
 
     @Column(name = "nivel", nullable = false, columnDefinition = "INT DEFAULT 1")
     private int nivel;
