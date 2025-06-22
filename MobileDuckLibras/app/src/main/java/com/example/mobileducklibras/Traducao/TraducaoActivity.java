@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mobileducklibras.Anotacao.AnotacaoActivity;
 import com.example.mobileducklibras.AulasActivity;
+import com.example.mobileducklibras.Dicionario.presetation.DicionarioActivity;
 import com.example.mobileducklibras.FlashCard.presetation.FlashcardActivity;
 import com.example.mobileducklibras.Home.Home;
 import com.example.mobileducklibras.R;
@@ -40,8 +41,8 @@ public class TraducaoActivity extends AppCompatActivity {
     }
 
     public void dicionario_btn(View view) {
-        startActivity(new Intent(this, AulasActivity.class));
-        finish();
+        Intent intent = new Intent(this, DicionarioActivity.class);
+        startActivity(intent);
     }
 
     public void traducao_btn(View view) {

@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mobileducklibras.Anotacao.AnotacaoActivity;
 import com.example.mobileducklibras.AulasActivity;
+import com.example.mobileducklibras.Dicionario.presetation.DicionarioActivity;
 import com.example.mobileducklibras.FlashCard.data.FlashCardEntity;
 import com.example.mobileducklibras.FlashCard.utils.FlashCardService;
 import com.example.mobileducklibras.R;
@@ -154,8 +155,7 @@ public class FlashcardActivity extends AppCompatActivity {
     }
 
     public void dicionario_btn(View view) {
-        Intent intent = new Intent(this, AulasActivity.class);
+        Intent intent = new Intent(this, DicionarioActivity.class);
         startActivity(intent);
-        finish();
     }
 }

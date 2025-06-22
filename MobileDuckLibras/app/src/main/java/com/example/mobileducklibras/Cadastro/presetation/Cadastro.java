@@ -84,5 +84,7 @@ public class Cadastro extends AppCompatActivity {
 
             libs.SignupUser(signup);
         }
+
     }
+
 }

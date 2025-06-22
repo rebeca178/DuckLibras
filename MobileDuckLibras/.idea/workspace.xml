@@ -92,28 +92,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60dec155-006e-4dfa-aca6-bdf3b90de0d0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/FlashCard/data/FlashCardEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/FlashCard/utils/FlashCardService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/user/data/UsuarioEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/ids.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/Anotacao/AnotacaoActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/Anotacao/AnotacaoActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/Dicionario/presetation/DicionarioActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/Dicionario/presetation/DicionarioActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/FlashCard/FlashcardActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/FlashCard/presetation/FlashcardActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/Cadastro/presetation/Cadastro.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/Cadastro/presetation/Cadastro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/FlashCard/presetation/FlashcardActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/FlashCard/presetation/FlashcardActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/Home/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/Home/Home.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/Traducao/TraducaoActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/Traducao/TraducaoActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/user/presetation/ProfileActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/user/presetation/ProfileActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/aula_1_a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/aula_1_a.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/aula_1_e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/aula_1_e.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/aula_1_i.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/aula_1_i.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/aula_1_o.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/aula_1_o.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/aula_1_u.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/aula_1_u.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dicionario.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dicionario.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/flashcard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/flashcard.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/home.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/traducao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/traducao.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

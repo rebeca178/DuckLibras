@@ -7,6 +7,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mobileducklibras.Anotacao.AnotacaoActivity;
+import com.example.mobileducklibras.Dicionario.presetation.DicionarioActivity;
 import com.example.mobileducklibras.FlashCard.presetation.FlashcardActivity;
 import com.example.mobileducklibras.R;
 import com.example.mobileducklibras.Traducao.TraducaoActivity;
@@ -36,7 +37,7 @@ public class Home extends AppCompatActivity {
     }
 
     public void dicionario_btn(View view) {
-        Intent intent = new Intent(this, AulasActivity.class);
+        Intent intent = new Intent(this, DicionarioActivity.class);
         startActivity(intent);
     }
 
@@ -44,6 +45,13 @@ public class Home extends AppCompatActivity {
         Intent intent = new Intent(this, com.example.mobileducklibras.user.presetation.ProfileActivity.class);
         startActivity(intent);
     }
+
+    public void bsativo_btn(View view) {
+        Intent intent = new Intent(this, AulasActivity.class);
+        startActivity(intent);
+    }
+
+
 
     // Se tiver outros botões, adicione métodos aqui também
 }
