@@ -42,6 +42,10 @@ public class AlunoEntitys{
     @Column(name = "photo", nullable = true, length = 160)
     private String photo;
 
+    @OneToMany(mappedBy = "aluno", cascade = jakarta.persistence.CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
+    private List<PontuacaoEntity> pontuacoes;
+
     public AlunoEntitys() {
     }
     

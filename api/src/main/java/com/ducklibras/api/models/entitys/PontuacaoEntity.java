@@ -36,4 +36,8 @@ public class PontuacaoEntity implements Serializable {
     @Column(name = "nivel", nullable = false, columnDefinition = "INT DEFAULT 1")
     private int nivel;
     
+    @ManyToOne
+    @JoinColumn(name = "aluno_id", nullable = false)
+    @JsonBackReference
+    private AlunoEntitys aluno;
 }
