@@ -100,58 +100,48 @@
 
         <ImageView
             android:id="@+id/home_btn"
-            android:layout_width="0dp"
+            android:layout_width="87dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            android:padding="8dp"
-            app:srcCompat="@drawable/_96_sem_t_tulo"
-            android:contentDescription="Home" />
+            app:srcCompat="@drawable/home" />
 
         <ImageView
-            android:id="@+id/flashcard_btn"
-            android:layout_width="0dp"
+            android:id="@+id/flashcard"
+            android:layout_width="87dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:clickable="true"
-            android:focusable="true"
-            android:padding="8dp"
-            app:srcCompat="@drawable/_96_sem_t_tulo_20250515165227"
-            android:contentDescription="Flashcards" />
+            android:contentDescription="flashcard"
+            android:onClick="flashcard_btn"
+            app:srcCompat="@drawable/flashcard" />
 
         <ImageView
-            android:id="@+id/pontuacao_btn"
-            android:layout_width="0dp"
+            android:id="@+id/anotacao"
+            android:layout_width="87dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:clickable="true"
-            android:focusable="true"
-            android:padding="8dp"
-            app:srcCompat="@drawable/_96_sem_t_tulo_20250515165235"
-            android:contentDescription="Pontuação" />
+            android:contentDescription="anotacao"
+            android:onClick="anotacao_btn"
+            app:srcCompat="@drawable/anotacoes" />
 
         <ImageView
-            android:id="@+id/dicionario_btn"
-            android:layout_width="0dp"
+            android:id="@+id/dicionario"
+            android:layout_width="87dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:clickable="true"
-            android:focusable="true"
-            android:padding="8dp"
-            app:srcCompat="@drawable/_96_sem_t_tulo_20250515165246"
-            android:contentDescription="Dicionário" />
+            android:contentDescription="dicionario"
+            android:onClick="dicionario_btn"
+            app:srcCompat="@drawable/dicionario" />
 
         <ImageView
-            android:id="@+id/traducao_btn"
-            android:layout_width="0dp"
+            android:id="@+id/traducao"
+            android:layout_width="87dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:clickable="true"
-            android:focusable="true"
-            android:padding="8dp"
-            app:srcCompat="@drawable/_96_sem_t_tulo_20250515165339"
-            android:contentDescription="Tradução" />
+            android:contentDescription="traducao"
+            android:onClick="traducao_btn"
+            app:srcCompat="@drawable/traducoes" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

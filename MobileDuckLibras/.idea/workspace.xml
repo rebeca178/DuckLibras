@@ -40,6 +40,26 @@
           <theme>@style/Theme.MobileDuckLibras</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/aula_1_e.xml">
+        <config>
+          <theme>@style/Theme.MobileDuckLibras</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/aula_1_i.xml">
+        <config>
+          <theme>@style/Theme.MobileDuckLibras</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/aula_1_o.xml">
+        <config>
+          <theme>@style/Theme.MobileDuckLibras</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/aula_1_u.xml">
+        <config>
+          <theme>@style/Theme.MobileDuckLibras</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/dicionario.xml">
         <config>
           <theme>@style/Theme.MobileDuckLibras</theme>
@@ -47,7 +67,6 @@
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/flashcard.xml">
         <config>
-          <state>portrait</state>
           <theme>@style/Theme.MobileDuckLibras</theme>
         </config>
       </layout>
@@ -73,22 +92,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60dec155-006e-4dfa-aca6-bdf3b90de0d0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/Dicionario/data/DicionarioLibrasEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/Dicionario/data/DicionarioService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/Dicionario/presetation/DicionarioActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/Dicionario/presetation/DicionarioAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/Dicionario/presetation/DicionarioViewModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/shared/data/ApiResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/shared/service/ProfileService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/user/data/AlunoEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/user/presetation/ProfileActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/user/presetation/ProfileViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Erros/joao/ResponseModel2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Erros/joao/ResponseModel2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/FlashCard/FlashcardActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mobileducklibras/FlashCard/FlashcardActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/aula_1_a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/aula_1_a.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/aula_1_e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/aula_1_e.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/aula_1_i.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/aula_1_i.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/aula_1_o.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/aula_1_o.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/aula_1_u.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/aula_1_u.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dicionario.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dicionario.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/flashcard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/flashcard.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/traducao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/traducao.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,22 +172,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Android App.app.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "com.google.services.firebase.aqiPopupShown": "true",
-    "git-widget-placeholder": "dev",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Desktop/Documents/repositorio/DuckLibras/MobileDuckLibras"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Android App.app.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Desktop/Documents/repositorio/DuckLibras/MobileDuckLibras&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Desktop\Documents\repositorio\DuckLibras\MobileDuckLibras\app\src\main\java\com\example\mobileducklibras" />
@@ -271,12 +283,12 @@
       <map>
         <entry key="com.example.mobileducklibras">
           <value>
-            <CheckInfo lastCheckTimestamp="1750467974969" />
+            <CheckInfo lastCheckTimestamp="1750558104789" />
           </value>
         </entry>
         <entry key="com.example.mobileducklibras.test">
           <value>
-            <CheckInfo lastCheckTimestamp="1750467974970" />
+            <CheckInfo lastCheckTimestamp="1750558104772" />
           </value>
         </entry>
       </map>
