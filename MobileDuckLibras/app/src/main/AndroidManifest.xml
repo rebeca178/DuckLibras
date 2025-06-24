@@ -16,7 +16,7 @@
         tools:targetApi="31">
 
         <activity
-            android:name=".Home.Home"
+            android:name=".Login.presetation.Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".AulasActivity" />
-        <activity android:name=".Login.presetation.Login" />
+        <activity android:name=".Home.Home" />
         <activity android:name=".Anotacao.AnotacaoActivity" />
         <activity android:name=".Traducao.TraducaoActivity" />
         <activity android:name="com.example.mobileducklibras.FlashCard.presetation.FlashcardActivity" />
