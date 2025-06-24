@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".Login.presetation.Login">
+
+  <TextView
+      android:id="@+id/issue_lb"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="264dp"
+      android:padding="10dp"
+      android:textColor="@color/black"
+      android:textSize="20sp"
+      android:visibility="visible"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.498"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.43" />
+
+  <ImageView
+      android:id="@+id/logo"
+      android:layout_width="150dp"
+      android:layout_height="200sp"
+      android:src="@drawable/logo"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <View
+      android:id="@+id/componentes"
+      style="@style/TelaLogin"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/logo" />
+
+  <EditText
+      android:id="@+id/edit_email"
+      style="@style/Edite_Text"
+      android:drawableRight="@drawable/ic_email"
+      android:hint="Email"
+      android:inputType="textEmailAddress"
+      app:layout_constraintEnd_toEndOf="@id/componentes"
+      app:layout_constraintStart_toStartOf="@id/componentes"
+      app:layout_constraintTop_toTopOf="@id/componentes" />
+
+  <EditText
+      android:id="@+id/edit_senha"
+      style="@style/Edite_Text"
+      android:drawableRight="@drawable/ic_olho"
+      android:hint="Senha"
+      android:inputType="textPassword"
+      app:layout_constraintEnd_toEndOf="@id/componentes"
+      app:layout_constraintStart_toStartOf="@id/componentes"
+      app:layout_constraintTop_toBottomOf="@id/edit_email" />
+
+  <androidx.appcompat.widget.AppCompatButton
+      android:id="@+id/appCompatButton2"
+      style="@style/Button"
+      android:onClick="singInUser"
+      android:text="@string/Entrar"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/edit_senha" />
+
+  <TextView
+      android:id="@+id/text_tela_cadastro"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:clickable="true"
+      android:focusable="true"
+      android:onClick="abrirCadastro"
+      android:text="@string/Text_cadastro"
+      android:textColor="@color/white"
+      android:textSize="20sp"
+      android:textStyle="bold"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.698" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

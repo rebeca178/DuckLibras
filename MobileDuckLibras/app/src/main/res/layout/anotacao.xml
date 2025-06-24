@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color">
+
+    <!-- Top Bar: nível, pontos e user -->
+    <TextView
+        android:id="@+id/nivel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif"
+        android:text="Nível"
+        android:textColor="@color/primary_text"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/pontos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif"
+        android:text="Pontos"
+        android:textColor="@color/primary_text"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/nivel"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/user"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/user"
+        android:contentDescription="Usuário"
+        android:clickable="true"
+        android:onClick="user_btn"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp" />
+
+    <!-- CardView central -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardAnotacao"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintTop_toBottomOf="@id/nivel"
+        app:layout_constraintBottom_toTopOf="@id/menuInferior"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardBackgroundColor="@color/card_background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tituloAnotacao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Anotação de Estudo"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_text"
+                android:fontFamily="@font/poppins_regular" />
+
+            <EditText
+                android:id="@+id/campoAnotacao"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:hint="Digite aqui sua anotação sobre LIBRAS..."
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:background="@drawable/bg_card"
+                android:textColor="@color/primary_text"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppins_regular"
+                android:padding="12dp"
+                android:elevation="1dp" />
+
+            <Button
+                android:id="@+id/salvarAnotacao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Salvar"
+                android:textColor="@color/button_text"
+                android:textStyle="bold"
+                android:layout_gravity="end"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_button"
+                android:onClick="salvarAnotacao"
+                android:fontFamily="@font/poppins_regular" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Menu inferior com 5 botões -->
+    <LinearLayout
+        android:id="@+id/menuInferior"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@color/menu_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/home_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/home"
+            android:contentDescription="Início"
+            android:onClick="home_btn"
+            android:scaleType="centerInside" />
+
+        <ImageView
+            android:id="@+id/flashcard"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/flashcard"
+            android:contentDescription="Flashcard"
+            android:onClick="flashcard_btn"
+            android:scaleType="centerInside" />
+
+        <ImageView
+            android:id="@+id/anotacao"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/anotacoes"
+            android:contentDescription="Anotação"
+            android:onClick="anotacao_btn"
+            android:scaleType="centerInside" />
+
+        <ImageView
+            android:id="@+id/dicionario"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/dicionario"
+            android:contentDescription="Dicionário"
+            android:onClick="dicionario_btn"
+            android:scaleType="centerInside" />
+
+        <ImageView
+            android:id="@+id/traducao"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/traducoes"
+            android:contentDescription="Tradução"
+            android:onClick="traducao_btn"
+            android:scaleType="centerInside" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

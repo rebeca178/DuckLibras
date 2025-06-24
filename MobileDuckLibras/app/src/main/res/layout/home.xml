@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/pontos"
+            android:layout_width="182dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text"
+            android:text="pontos" />
+
+        <EditText
+            android:id="@+id/nivel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:autofillHints=""
+            android:ems="10"
+            android:inputType="text"
+            android:text="nivel" />
+
+        <ImageView
+            android:id="@+id/user"
+            android:layout_width="78dp"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:contentDescription="user"
+            android:onClick="user_btn"
+            app:srcCompat="@drawable/user" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="593dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/BS1"
+            android:layout_width="378dp"
+            android:layout_height="116dp"
+            android:clickable="true"
+            android:contentDescription="bsativo"
+            android:onClick="bsativo_btn"
+            app:srcCompat="@drawable/bsativo" />
+
+        <ImageView
+            android:id="@+id/BS2"
+            android:layout_width="515dp"
+            android:layout_height="116dp"
+            app:srcCompat="@drawable/bsinativo" />
+
+        <ImageView
+            android:id="@+id/BS3"
+            android:layout_width="347dp"
+            android:layout_height="116dp"
+            app:srcCompat="@drawable/bsinativo" />
+
+        <ImageView
+            android:id="@+id/BS4"
+            android:layout_width="200dp"
+            android:layout_height="116dp"
+            app:srcCompat="@drawable/bsinativo" />
+
+        <ImageView
+            android:id="@+id/BS5"
+            android:layout_width="match_parent"
+            android:layout_height="116dp"
+            app:srcCompat="@drawable/bsinativo" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/home_btn"
+            android:layout_width="82dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/home" />
+
+        <ImageView
+            android:id="@+id/flashcard"
+            android:layout_width="87dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:contentDescription="flashcard"
+            android:onClick="flashcard_btn"
+            app:srcCompat="@drawable/flashcard" />
+
+        <ImageView
+            android:id="@+id/anotacao"
+            android:layout_width="87dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:contentDescription="anotacao"
+            android:onClick="anotacao_btn"
+            app:srcCompat="@drawable/anotacoes" />
+
+        <ImageView
+            android:id="@+id/dicionario"
+            android:layout_width="87dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:contentDescription="dicionario"
+            android:onClick="dicionario_btn"
+            app:srcCompat="@drawable/dicionario" />
+
+        <ImageView
+            android:id="@+id/traducao"
+            android:layout_width="87dp"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:contentDescription="traducao"
+            android:onClick="traducao_btn"
+            app:srcCompat="@drawable/traducoes" />
+
+    </LinearLayout>
+</LinearLayout>
