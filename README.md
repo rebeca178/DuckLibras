@@ -51,7 +51,7 @@ Utilizamos o Render para criação do banco de dados e para subir a API na nuvem
 
 <p>Abra uma nova aba em seu navegador com o banco de dados criado</p>
 <li>Preencha o valor de cada variável no campo VALUE</li>
-<li>No final da URL: comece com jdbc:, pegue a URL interna e apague tudo do '@' para a esquerda até chegar em '//'</li>
+<li>No final da URL: comece com jdbc:, pegue a URL interna e apague tudo do '@' inclusive o '@' para a esquerda até chegar em '//'</li>
 <li>Depois, adicione a porta 5432 à direita, antes do / (que é o nome do banco), ficando assim: :5432/NomeDoBanco</li>
 
 # 🐞 Bugs:
