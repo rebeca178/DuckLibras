@@ -39,11 +39,15 @@ Utilizamos o Render para criação do banco de dados e para subir a API na nuvem
 <li>Root Directory: api/</li>
 <li>Instance Type: Escolha o que desejar</li>
 
-<li>Environment Variables: </li>
+<p></p>
+
+<p>Environment Variables: </p>
 <li>Adicione 3 variáveis, cada uma contendo: </li>
 <li>DATABASE_USERNAME</li>
 <li>DATABASE_PASSWORD</li>
 <li>DATABASE_URL</li>
+
+<p></p>
 
 <p>Abra uma nova aba em seu navegador com o banco de dados criado</p>
 <li>Preencha o valor de cada variável no campo VALUE</li>
