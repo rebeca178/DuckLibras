@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -6,14 +5,13 @@
     android:layout_height="match_parent"
     android:background="@color/background_color">
 
-    <!-- Top Bar: nível, pontos e user -->
+
     <TextView
         android:id="@+id/nivel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:fontFamily="sans-serif"
         android:text="Nível"
         android:textColor="@color/primary_text"
         android:textSize="16sp"
@@ -27,7 +25,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
-        android:fontFamily="sans-serif"
         android:text="Pontos"
         android:textColor="@color/primary_text"
         android:textSize="16sp"
@@ -48,7 +45,7 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp" />
 
-    <!-- CardView central -->
+    <!-- CardView central com anotação -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardAnotacao"
         android:layout_width="0dp"
@@ -68,29 +65,17 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <TextView
+            <EditText
                 android:id="@+id/tituloAnotacao"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Anotação de Estudo"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="@color/primary_text"
-                android:fontFamily="@font/poppins_regular" />
+                android:hint="Título da anotação" />
 
             <EditText
                 android:id="@+id/campoAnotacao"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:hint="Digite aqui sua anotação sobre LIBRAS..."
-                android:gravity="top"
-                android:inputType="textMultiLine"
-                android:background="@drawable/bg_card"
-                android:textColor="@color/primary_text"
-                android:textSize="16sp"
-                android:fontFamily="@font/poppins_regular"
-                android:padding="12dp"
-                android:elevation="1dp" />
+                android:layout_height="wrap_content"
+                android:hint="Digite sua anotação aqui" />
 
             <Button
                 android:id="@+id/salvarAnotacao"
@@ -104,10 +89,17 @@
                 android:background="@drawable/bg_button"
                 android:onClick="salvarAnotacao"
                 android:fontFamily="@font/poppins_regular" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewAnotacoes"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_card"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <!-- Menu inferior com 5 botões -->
+
     <LinearLayout
         android:id="@+id/menuInferior"
         android:layout_width="0dp"

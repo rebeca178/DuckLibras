@@ -12,7 +12,6 @@ import com.example.mobileducklibras.FlashCard.presetation.FlashcardActivity;
 import com.example.mobileducklibras.R;
 import com.example.mobileducklibras.Traducao.TraducaoActivity;
 import com.example.mobileducklibras.AulasActivity;
-import com.example.mobileducklibras.user.presetation.ProfileActivity;
 
 public class Home extends AppCompatActivity {
     @Override

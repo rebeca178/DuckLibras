@@ -13,7 +13,6 @@ import android.content.SharedPreferences;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mobileducklibras.Anotacao.AnotacaoActivity;
-import com.example.mobileducklibras.AulasActivity;
 import com.example.mobileducklibras.Dicionario.presetation.DicionarioActivity;
 import com.example.mobileducklibras.FlashCard.data.FlashCardEntity;
 import com.example.mobileducklibras.FlashCard.utils.FlashCardService;

@@ -7,7 +7,6 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mobileducklibras.Anotacao.AnotacaoActivity;
-import com.example.mobileducklibras.AulasActivity;
 import com.example.mobileducklibras.Dicionario.presetation.DicionarioActivity;
 import com.example.mobileducklibras.FlashCard.presetation.FlashcardActivity;
 import com.example.mobileducklibras.Home.Home;
